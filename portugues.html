@@ -1,1262 +1,1179 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portugues- Educaí</title>
-    <link rel="icon" type="image/png" href="img/flavicon.png">
 
+```
+<title>Português - Educaí</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
-        }
+<link rel="stylesheet" href="css/português.css">
+<link rel="icon" type="image/png" href="img/flavicon.png">
+```
 
-        :root {
-            --primary: #45c7cc;
-            --secondary: #46c2bc;
-            --background: #f5f6fa;
-            --card: #ffffff;
-            --text: #222;
-            --muted: #6b7280;
-            --border: #e5e7eb;
-            --success: #16a34a;
-            --danger: #dc2626;
-        }
-
-        body.dark {
-            --background: #111827;
-            --card: #1f2937;
-            --text: #f9fafb;
-            --muted: #9ca3af;
-            --border: #374151;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background: var(--background);
-            color: var(--text);
-            transition: 0.3s;
-        }
-
-       
-
-        .sidebar {
-            position: fixed;
-            left: 0;
-            top: 0;
-            width: 250px;
-            height: 100vh;
-            background: linear-gradient(180deg, #2a7f76, #1d9e98);
-            color: white;
-            padding: 25px 15px;
-            z-index: 1000;
-            overflow-y: auto;
-        }
-
-        .logo {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .logo h1 {
-            font-size: 24px;
-        }
-
-        .logo p {
-            font-size: 12px;
-            opacity: 0.8;
-            margin-top: 5px;
-        }
-
-        .menu {
-            list-style: none;
-        }
-
-        .menu li {
-            margin: 8px 0;
-        }
-
-        .menu a {
-            display: block;
-            color: white;
-            text-decoration: none;
-            padding: 12px;
-            border-radius: 10px;
-            transition: 0.2s;
-        }
-
-        .menu a:hover {
-            background: rgba(255,255,255,0.18);
-            transform: translateX(4px);
-        }
-
-      
-
-        .main {
-            margin-left: 250px;
-            padding: 30px;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 25px;
-        }
-
-        .welcome h2 {
-            font-size: 30px;
-        }
-
-        .welcome p {
-            color: var(--muted);
-            margin-top: 5px;
-        }
-
-        .theme-btn {
-            border: none;
-            background: var(--card);
-            color: var(--text);
-            border: 1px solid var(--border);
-            padding: 10px 15px;
-            border-radius: 10px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-       
-
-        .search-box {
-            margin-bottom: 30px;
-        }
-
-        .search-box input {
-            width: 100%;
-            padding: 16px;
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            outline: none;
-            background: var(--card);
-            color: var(--text);
-            font-size: 16px;
-        }
-
-        .search-box input:focus {
-            border-color: var(--primary);
-        }
-
-       
-        .transforme {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 15px;
-            padding: 25px;
-            margin-top: 35px;
-        }
-
-        .transforme-header {
-            margin-bottom: 20px;
-        }
-
-        .transforme-header h2 {
-            margin-bottom: 8px;
-        }
-
-        .transforme-header p {
-            color: var(--muted);
-            line-height: 1.6;
-        }
-
-        .transforme-upload {
-            border: 2px dashed var(--primary);
-            border-radius: 12px;
-            padding: 22px;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .transforme-upload input {
-            margin-top: 12px;
-            max-width: 100%;
-        }
-
-        .transforme-options {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 12px;
-            margin-top: 15px;
-        }
-
-        .transforme-option {
-            border: 1px solid var(--border);
-            background: var(--card);
-            color: var(--text);
-            border-radius: 12px;
-            padding: 16px;
-            cursor: pointer;
-            text-align: left;
-            transition: 0.2s;
-        }
-
-        .transforme-option:hover {
-            transform: translateY(-3px);
-            border-color: var(--primary);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.07);
-        }
-
-        .transforme-option strong {
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .transforme-option span {
-            color: var(--muted);
-            font-size: 14px;
-        }
-
-        .transforme-input {
-            width: 100%;
-            min-height: 130px;
-            resize: vertical;
-            padding: 14px;
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            outline: none;
-            background: var(--card);
-            color: var(--text);
-            font-family: Arial, Helvetica, sans-serif;
-            margin-top: 12px;
-        }
-
-        .transforme-input:focus {
-            border-color: var(--primary);
-        }
-
-        .transforme-result {
-            display: none;
-            margin-top: 20px;
-            padding: 20px;
-            border-radius: 12px;
-            background: rgba(69,199,204,0.08);
-            border-left: 4px solid var(--primary);
-            line-height: 1.7;
-        }
-
-        .transforme-result h3 {
-            margin-bottom: 10px;
-            color: var(--primary);
-        }
-
-        .transforme-result.show {
-            display: block;
-        }
-
-        .libras-info {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 16px;
-        }
-
-        .conteudo-libras {
-            max-height: 260px;
-            overflow-y: auto;
-            margin-top: 12px;
-            padding: 14px;
-            background: rgba(69,199,204,0.06);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            white-space: pre-wrap;
-            line-height: 1.6;
-        }
-
-        .arquivo-status {
-            display: block;
-            margin-top: 10px;
-            color: var(--muted);
-            font-size: 14px;
-        }
-
-        .transforme-result ul {
-            margin-left: 22px;
-        }
-
-        .transforme-clear {
-            margin-top: 12px;
-            border: 1px solid var(--border);
-            background: var(--card);
-            color: var(--text);
-            padding: 9px 14px;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-
-        @media (max-width: 600px) {
-            .transforme-options {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        
-        .section-title {
-            margin: 35px 0 15px;
-            font-size: 24px;
-        }
-
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 18px;
-        }
-
-        .card {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 15px;
-            padding: 22px;
-            transition: 0.25s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-        }
-
-        .card .icon {
-            font-size: 35px;
-            margin-bottom: 12px;
-        }
-
-        .card h3 {
-            margin-bottom: 8px;
-        }
-
-        .card p {
-            color: var(--muted);
-            line-height: 1.5;
-        }
-
-        .card button {
-            margin-top: 15px;
-            border: none;
-            background: var(--primary);
-            color: white;
-            padding: 9px 14px;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-
-
-        .progress-card {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 15px;
-            padding: 25px;
-            margin-top: 20px;
-        }
-
-        .progress-info {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-        }
-
-        .progress-bar {
-            width: 100%;
-            height: 15px;
-            background: #ddd;
-            border-radius: 20px;
-            overflow: hidden;
-        }
-
-        .progress-fill {
-            height: 100%;
-            width: 35%;
-            background: linear-gradient(90deg, #3dc5ba, #43beaa);
-            border-radius: 20px;
-            transition: width 0.5s;
-        }
-
-       
-
-        .study {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 15px;
-            padding: 25px;
-            margin-top: 20px;
-        }
-
-        .study h3 {
-            color: var(--primary);
-            margin: 20px 0 10px;
-        }
-
-        .study p,
-        .study li {
-            line-height: 1.7;
-        }
-
-        .study ul {
-            margin-left: 25px;
-        }
-
-        .example {
-            background: rgba(108,92,231,0.1);
-            border-left: 4px solid var(--primary);
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 5px;
-        }
-
-        .tip {
-            background: rgba(22,163,74,0.1);
-            border-left: 4px solid var(--success);
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 5px;
-        }
-
-     
-
-        .quiz {
-            background: var(--card);
-            border: 1px solid var(--border);
-            padding: 25px;
-            border-radius: 15px;
-            margin-top: 20px;
-        }
-
-        .question {
-            margin-bottom: 25px;
-        }
-
-        .question h3 {
-            margin-bottom: 12px;
-        }
-
-        .option {
-            display: block;
-            padding: 12px;
-            margin: 8px 0;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-
-        .option:hover {
-            background: rgba(108,92,231,0.1);
-        }
-
-        .quiz button {
-            padding: 12px 20px;
-            border: none;
-            background: var(--primary);
-            color: white;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-
-        .logo{
-            display:inline-flex;
-            align-items:center;
-            gap:10px;
-            min-width:0;
-            text-decoration:none;
-            flex-shrink:0;
-            }
-            .logo-mark{
-            width:44px;
-            height:44px;
-            display:grid;
-            place-items:center;
-            flex-shrink:0;
-            }
-            .logo-mark img{
-            display:block;
-            width:100%;
-            height:100%;
-            object-fit:contain;
-            }
-            .logo-text{
-            font-family:'Fraunces',serif;
-            font-weight:700;
-            font-size:1.45rem;
-            letter-spacing:.02em;
-            color:var(--ink);
-            color: white;
-        }
-
-        #resultado {
-            margin-top: 20px;
-            font-size: 20px;
-            font-weight: bold;
-        }
-
-        button {
-            border: none;
-            background: #45c7cc;
-            color: white;
-            padding: 12px 18px;
-            border-radius: 9px;
-            cursor: pointer;
-            font-size: 15px;
-        }
-
-       
-        footer {
-            margin-top: 50px;
-            padding: 25px;
-            text-align: center;
-            color: var(--muted);
-            border-top: 1px solid var(--border);
-        }
-
-      
-        @media (max-width: 800px) {
-            .sidebar {
-                width: 200px;
-            }
-
-            .main {
-                margin-left: 200px;
-                padding: 20px;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .sidebar {
-                position: relative;
-                width: 100%;
-                height: auto;
-            }
-
-            .main {
-                margin-left: 0;
-                padding: 15px;
-            }
-
-            header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 15px;
-            }
-
-        }
-    </style>
 </head>
 
 <body>
 
+```
+<aside class="sidebar">
 
-    <aside class="sidebar">
-
-        <div class="logo">
+    <div class="logo-container">
         <a class="logo" href="index.html" aria-label="Educaí - Início">
-            <div class="logo-mark" aria-hidden="true"><img src="img/logo/logo.png" alt=""></div>
+            <div class="logo-mark">
+                <img src="img/logo/logo.png" alt="Logo Educaí">
+            </div>
+
             <span class="logo-text">Educaí</span>
-            </a>
+        </a>
+    </div>
+
+    <ul class="menu">
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#transformar">Transforme meu estudo</a></li>
+        <li><a href="#materias">Conteúdos</a></li>
+        <li><a href="#gramatica">Gramática</a></li>
+        <li><a href="#sintaxe">Sintaxe</a></li>
+        <li><a href="#ortografia">Ortografia</a></li>
+        <li><a href="#acentuacao">Acentuação</a></li>
+        <li><a href="#literatura">Literatura</a></li>
+        <li><a href="#figuras">Figuras de linguagem</a></li>
+        <li><a href="#interpretacao">Interpretação</a></li>
+        <li><a href="#redacao">Redação</a></li>
+        <li><a href="#quiz">Quiz</a></li>
+
+        <li>
+            <button class="voltar" onclick="voltarEducai()">
+                ← Voltar para Educaí
+            </button>
+        </li>
+    </ul>
+
+</aside>
+
+<main class="main">
+
+    <header id="inicio">
+
+        <div class="welcome">
+            <h2>Olá, estudante!</h2>
+            <p>Prepare-se para estudar Português.</p>
         </div>
 
-        <ul class="menu">
-            <li><a href="#inicio"> Início</a></li>
-            <li><a href="#transformar"> Transforme meu estudo</a></li>
-            <li><a href="#materias">Conteúdos</a></li>
-            <li><a href="#gramatica"> Gramática</a></li>
-            <li><a href="#sintaxe"> Sintaxe</a></li>
-            <li><a href="#ortografia"> Ortografia</a></li>
-            <li><a href="#acentuacao"> Acentuação</a></li>
-            <li><a href="#literatura"> Literatura</a></li>
-            <li><a href="#figuras"> Figuras de linguagem</a></li>
-            <li><a href="#interpretacao"> Interpretação</a></li>
-            <li><a href="#redacao"> Redação</a></li>
-            <li><a href="#quiz"> Quiz</a></li>
+        <button class="theme-btn" onclick="alternarTema()">
+            Modo escuro
+        </button>
 
-            <button class="voltar" onclick="voltarEducai()">
-                    ← Voltar para Educaí
+    </header>
+
+
+    <!-- TRANSFORME MEU ESTUDO -->
+
+    <section class="transforme" id="transformar">
+
+        <div class="transforme-header">
+            <h2>Transforme meu estudo</h2>
+
+            <p>
+                Envie um material ou cole um texto e escolha a forma que
+                combina com você para estudar.
+            </p>
+        </div>
+
+        <div class="transforme-upload">
+
+            <strong>📎 Envie seu material</strong>
+
+            <p>
+                Você pode enviar um PDF, Docx ou outro arquivo para consultar.
+            </p>
+
+            <input
+                type="file"
+                id="arquivoEstudo"
+                accept=".pdf,.txt,.docx,.pptx"
+            >
+
+            <textarea
+                id="textoEstudo"
+                class="transforme-input"
+                placeholder="Ou cole aqui o conteúdo que você quer transformar..."
+            ></textarea>
+
+        </div>
+
+        <h3>Como você quer estudar?</h3>
+
+        <div class="transforme-options">
+
+            <button
+                class="transforme-option"
+                onclick="transformarEstudo('ouvir')"
+            >
+                <strong>Quero ouvir</strong>
+                <span>Leia o conteúdo enviado em voz alta.</span>
             </button>
 
+            <button
+                class="transforme-option"
+                onclick="transformarEstudo('libras')"
+            >
+                <strong>Quero traduzir para Libras</strong>
+                <span>Traduza somente o conteúdo enviado e abra o avatar.</span>
+            </button>
+
+            <button
+                class="transforme-option"
+                onclick="transformarEstudo('mapa')"
+            >
+                <strong>Quero um mapa mental</strong>
+                <span>Organize as principais ideias do conteúdo.</span>
+            </button>
+
+            <button
+                class="transforme-option"
+                onclick="transformarEstudo('simples')"
+            >
+                <strong>Quero uma explicação simples</strong>
+                <span>Veja uma versão mais fácil de compreender.</span>
+            </button>
+
+            <button
+                class="transforme-option"
+                onclick="transformarEstudo('exercicios')"
+            >
+                <strong>Quero exercícios</strong>
+                <span>Crie sugestões de questões para praticar.</span>
+            </button>
+
+            <button
+                class="transforme-option"
+                onclick="transformarEstudo('resumo')"
+            >
+                <strong>Quero um resumo</strong>
+                <span>Veja uma síntese do conteúdo.</span>
+            </button>
+
+        </div>
+
+        <div id="resultadoTransforme" class="transforme-result"></div>
+
+    </section>
+
+
+    <!-- CONTEÚDOS -->
+
+    <h2 class="section-title" id="materias">
+        Conteúdos
+    </h2>
+
+    <div class="cards" id="cards">
+
+        <div class="card">
+            <div class="icon"></div>
+            <h3>Gramática</h3>
+            <p>Classes gramaticais, verbos, pronomes e muito mais.</p>
+            <button onclick="mostrar('gramatica')">Estudar</button>
+        </div>
+
+        <div class="card">
+            <div class="icon"></div>
+            <h3>Sintaxe</h3>
+            <p>Aprenda sobre sujeito, predicado e termos da oração.</p>
+            <button onclick="mostrar('sintaxe')">Estudar</button>
+        </div>
+
+        <div class="card">
+            <div class="icon"></div>
+            <h3>Ortografia</h3>
+            <p>Aprenda a escrever corretamente as palavras.</p>
+            <button onclick="mostrar('ortografia')">Estudar</button>
+        </div>
+
+        <div class="card">
+            <div class="icon"></div>
+            <h3>Acentuação</h3>
+            <p>Regras de acentuação e classificação das palavras.</p>
+            <button onclick="mostrar('acentuacao')">Estudar</button>
+        </div>
+
+        <div class="card">
+            <div class="icon"></div>
+            <h3>Literatura</h3>
+            <p>Conheça os principais movimentos literários.</p>
+            <button onclick="mostrar('literatura')">Estudar</button>
+        </div>
+
+        <div class="card">
+            <div class="icon"></div>
+            <h3>Figuras de linguagem</h3>
+            <p>Metáfora, ironia, hipérbole, antítese e outras.</p>
+            <button onclick="mostrar('figuras')">Estudar</button>
+        </div>
+
+        <div class="card">
+            <div class="icon"></div>
+            <h3>Interpretação</h3>
+            <p>Aprenda a compreender e interpretar textos.</p>
+            <button onclick="mostrar('interpretacao')">Estudar</button>
+        </div>
+
+        <div class="card">
+            <div class="icon"></div>
+            <h3>Redação</h3>
+            <p>Aprenda a construir textos claros e bem estruturados.</p>
+            <button onclick="mostrar('redacao')">Estudar</button>
+        </div>
+
+        <div class="card">
+            <div class="icon"></div>
+            <h3>Classes de palavras</h3>
+            <p>Substantivos, adjetivos, verbos, pronomes e outras classes.</p>
+            <button onclick="mostrar('classes')">Estudar</button>
+        </div>
+
+        <div class="card">
+            <div class="icon"></div>
+            <h3>Pronomes</h3>
+            <p>Tipos de pronomes e seus usos nas frases.</p>
+            <button onclick="mostrar('pronomes')">Estudar</button>
+        </div>
+
+        <div class="card">
+            <div class="icon"></div>
+            <h3>Verbos</h3>
+            <p>Tempos, modos e funções dos verbos.</p>
+            <button onclick="mostrar('verbos')">Estudar</button>
+        </div>
+
+        <div class="card">
+            <div class="icon"></div>
+            <h3>Semântica</h3>
+            <p>Significados, sinônimos, antônimos e polissemia.</p>
+            <button onclick="mostrar('semantica')">Estudar</button>
+        </div>
+
+        <div class="card">
+            <div class="icon"></div>
+            <h3>Coesão e coerência</h3>
+            <p>Como conectar ideias e manter o sentido do texto.</p>
+            <button onclick="mostrar('coesao')">Estudar</button>
+        </div>
+
+        <div class="card">
+            <div class="icon"></div>
+            <h3>Gêneros textuais</h3>
+            <p>Características e finalidades de diferentes tipos de texto.</p>
+            <button onclick="mostrar('generos')">Estudar</button>
+        </div>
+
+    </div>
+
+
+    <!-- GRAMÁTICA -->
+
+    <section class="study" id="gramatica">
+
+        <h2>Gramática</h2>
+
+        <p>
+            A gramática estuda as regras e o funcionamento da língua.
+            Ela ajuda a compreender como as palavras e frases são
+            construídas.
+        </p>
+
+        <h3>Classes gramaticais</h3>
+
+        <ul>
+            <li><strong>Substantivo:</strong> nomeia seres, objetos, lugares e sentimentos.</li>
+            <li><strong>Adjetivo:</strong> caracteriza o substantivo.</li>
+            <li><strong>Artigo:</strong> acompanha o substantivo.</li>
+            <li><strong>Pronome:</strong> substitui ou acompanha o substantivo.</li>
+            <li><strong>Verbo:</strong> indica ação, estado ou fenômeno.</li>
+            <li><strong>Advérbio:</strong> modifica principalmente o verbo.</li>
+            <li><strong>Preposição:</strong> liga palavras.</li>
+            <li><strong>Conjunção:</strong> liga orações ou termos.</li>
+            <li><strong>Interjeição:</strong> expressa emoções.</li>
+            <li><strong>Numeral:</strong> indica quantidade, ordem ou proporção.</li>
         </ul>
 
-    </aside>
+        <div class="example">
+            <strong>Exemplo:</strong><br>
+            "O aluno estudioso resolveu a questão rapidamente."
+            <br><br>
 
-    <main class="main">
-
-        <header id="inicio">
-
-            <div class="welcome">
-                <h2>Olá, estudante! </h2>
-            </div>
-
-            <button class="theme-btn" onclick="alternarTema()">
-                 Modo escuro
-            </button>
-
-            <link rel="icon" type="image/png" href="img/flavicon.png">
-            
-
-        </header>
-
-
-        <div class="search-box">
-            <input
-                type="text"
-                id="pesquisa"
-                placeholder="Procure o que deseja estudar"
-                onkeyup="pesquisar()"
-            >
+            <strong>aluno</strong> = substantivo<br>
+            <strong>estudioso</strong> = adjetivo<br>
+            <strong>resolveu</strong> = verbo<br>
+            <strong>rapidamente</strong> = advérbio
         </div>
 
-
-        <section class="transforme" id="transformar">
-
-            <div class="transforme-header">
-                <h2>Transforme meu estudo</h2>
-                <p>
-                    Envie um material ou cole um texto e escolha a forma que
-                    combina com você para estudar.
-                </p>
-            </div>
-
-            <div class="transforme-upload">
-                <strong>📎 Envie seu material</strong>
-                <p style="margin-top:8px;color:var(--muted);">
-                    Você pode enviar um PDF, Docx ou outro arquivo para consultar.
-                </p>
-                <input type="file" id="arquivoEstudo"
-                    accept=".pdf,.txt,.docx,.pptx">
-
-                <textarea id="textoEstudo" class="transforme-input"
-                    placeholder="Ou cole aqui o conteúdo que você quer transformar..."></textarea>
-            </div>
-
-            <h3 style="margin-top:20px;">Como você quer estudar?</h3>
-
-            <div class="transforme-options">
-                <button class="transforme-option" onclick="transformarEstudo('ouvir')">
-                    <strong> Quero ouvir</strong>
-                    <span>Leia o conteúdo enviado em voz alta.</span>
-                </button>
-
-                <button class="transforme-option" onclick="transformarEstudo('libras')">
-                    <strong> Quero traduzir para Libras</strong>
-                    <span>Traduza somente o conteúdo enviado e abra o avatar.</span>
-                </button>
-
-                <button class="transforme-option" onclick="transformarEstudo('mapa')">
-                    <strong> Quero um mapa mental</strong>
-                    <span>Organize as principais ideias do conteúdo.</span>
-                </button>
-
-                <button class="transforme-option" onclick="transformarEstudo('simples')">
-                    <strong> Quero uma explicação simples</strong>
-                    <span>Veja uma versão mais fácil de compreender.</span>
-                </button>
-
-                <button class="transforme-option" onclick="transformarEstudo('exercicios')">
-                    <strong> Quero exercícios</strong>
-                    <span>Crie sugestões de questões para praticar.</span>
-                </button>
-
-                <button class="transforme-option" onclick="transformarEstudo('resumo')">
-                    <strong> Quero um resumo</strong>
-                    <span>Veja uma síntese do conteúdo.</span>
-                </button>
-            </div>
-
-            <div id="resultadoTransforme" class="transforme-result"></div>
-
-        </section>
+    </section>
 
 
-        <h2 class="section-title" id="materias">
-             Conteúdos
-        </h2>
+    <!-- SINTAXE -->
 
-        <div class="cards" id="cards">
+    <section class="study" id="sintaxe">
 
-            <div class="card">
-                <div class="icon"></div>
-                <h3>Gramática</h3>
-                <p>Classes gramaticais, verbos, pronomes e muito mais.</p>
-                <button onclick="mostrar('gramatica')">Estudar</button>
-            </div>
+        <h2>Sintaxe</h2>
 
-            <div class="card">
-                <div class="icon"></div>
-                <h3>Sintaxe</h3>
-                <p>Aprenda sobre sujeito, predicado e termos da oração.</p>
-                <button onclick="mostrar('sintaxe')">Estudar</button>
-            </div>
+        <p>
+            Sintaxe é a parte da gramática que estuda a relação
+            entre as palavras dentro das frases e orações.
+        </p>
 
-            <div class="card">
-                <div class="icon"></div>
-                <h3>Ortografia</h3>
-                <p>Aprenda a escrever corretamente as palavras.</p>
-                <button onclick="mostrar('ortografia')">Estudar</button>
-            </div>
+        <h3>Sujeito</h3>
 
-            <div class="card">
-                <div class="icon"></div>
-                <h3>Acentuação</h3>
-                <p>Regras de acentuação e classificação das palavras.</p>
-                <button onclick="mostrar('acentuacao')">Estudar</button>
-            </div>
+        <p>
+            É o termo sobre o qual se declara alguma informação.
+        </p>
 
-            <div class="card">
-                <div class="icon"></div>
-                <h3>Literatura</h3>
-                <p>Conheça os principais movimentos literários.</p>
-                <button onclick="mostrar('literatura')">Estudar</button>
-            </div>
+        <div class="example">
+            <strong>Exemplo:</strong><br>
+            "Maria estudou Português."
+            <br><br>
 
-            <div class="card">
-                <div class="icon"></div>
-                <h3>Figuras de linguagem</h3>
-                <p>Metáfora, ironia, hipérbole, antítese e outras.</p>
-                <button onclick="mostrar('figuras')">Estudar</button>
-            </div>
+            Sujeito: <strong>Maria</strong><br>
+            Predicado: <strong>estudou Português</strong>
+        </div>
 
-            <div class="card">
-                <div class="icon"></div>
-                <h3>Interpretação</h3>
-                <p>Aprenda a compreender e interpretar textos.</p>
-                <button onclick="mostrar('interpretacao')">Estudar</button>
-            </div>
+        <h3>Tipos de sujeito</h3>
 
-            <div class="card">
-                <div class="icon"></div>
-                <h3>Redação</h3>
-                <p>Aprenda a construir textos claros e bem estruturados.</p>
-                <button onclick="mostrar('redacao')">Estudar</button>
-            </div>
+        <ul>
+            <li>Sujeito simples</li>
+            <li>Sujeito composto</li>
+            <li>Sujeito oculto</li>
+            <li>Sujeito indeterminado</li>
+            <li>Oração sem sujeito</li>
+        </ul>
+
+    </section>
+
+
+    <!-- ORTOGRAFIA -->
+
+    <section class="study" id="ortografia">
+
+        <h2>Ortografia</h2>
+
+        <p>
+            Ortografia é o conjunto de regras utilizadas para escrever
+            corretamente as palavras.
+        </p>
+
+        <h3>Por que / Porque / Por quê / Porquê</h3>
+
+        <div class="example">
+
+            <strong>Por que:</strong> usado geralmente em perguntas.<br>
+            "Por que você estudou?"
+
+            <br><br>
+
+            <strong>Porque:</strong> usado em respostas e explicações.<br>
+            "Estudei porque tenho prova."
+
+            <br><br>
+
+            <strong>Por quê:</strong> geralmente aparece no final da frase.<br>
+            "Você faltou por quê?"
+
+            <br><br>
+
+            <strong>Porquê:</strong> funciona como substantivo.<br>
+            "Não entendi o porquê da decisão."
 
         </div>
 
+    </section>
 
-       
 
+    <!-- ACENTUAÇÃO -->
 
-        <section class="study" id="gramatica">
+    <section class="study" id="acentuacao">
 
-            <h2> Gramática</h2>
+        <h2>Acentuação</h2>
 
-            <p>
-                A gramática estuda as regras e o funcionamento da língua.
-                Ela ajuda a compreender como as palavras e frases são
-                construídas.
-            </p>
+        <h3>Oxítonas</h3>
 
-            <h3>Classes gramaticais</h3>
+        <p>
+            A sílaba tônica é a última.
+        </p>
 
-            <ul>
-                <li><strong>Substantivo:</strong> nomeia seres, objetos, lugares e sentimentos.</li>
-                <li><strong>Adjetivo:</strong> caracteriza o substantivo.</li>
-                <li><strong>Artigo:</strong> acompanha o substantivo.</li>
-                <li><strong>Pronome:</strong> substitui ou acompanha o substantivo.</li>
-                <li><strong>Verbo:</strong> indica ação, estado ou fenômeno.</li>
-                <li><strong>Advérbio:</strong> modifica principalmente o verbo.</li>
-                <li><strong>Preposição:</strong> liga palavras.</li>
-                <li><strong>Conjunção:</strong> liga orações ou termos.</li>
-                <li><strong>Interjeição:</strong> expressa emoções.</li>
-                <li><strong>Numeral:</strong> indica quantidade, ordem ou proporção.</li>
-            </ul>
+        <div class="example">
+            café, sofá, cipó
+        </div>
 
-            <div class="example">
-                <strong>Exemplo:</strong><br>
-                "O aluno estudioso resolveu a questão rapidamente."
-                <br><br>
-                <strong>aluno</strong> = substantivo<br>
-                <strong>estudioso</strong> = adjetivo<br>
-                <strong>resolveu</strong> = verbo<br>
-                <strong>rapidamente</strong> = advérbio
-            </div>
+        <h3>Paroxítonas</h3>
 
-        </section>
+        <p>
+            A sílaba tônica é a penúltima.
+        </p>
 
+        <div class="example">
+            fácil, árvore, lápis
+        </div>
 
+        <h3>Proparoxítonas</h3>
 
-        <section class="study" id="sintaxe">
+        <p>
+            A sílaba tônica é a antepenúltima.
+        </p>
 
-            <h2> Sintaxe</h2>
+        <div class="tip">
+            Regra importante: todas as palavras proparoxítonas
+            são acentuadas.
+        </div>
 
-            <p>
-                Sintaxe é a parte da gramática que estuda a relação
-                entre as palavras dentro das frases e orações.
-            </p>
+        <div class="example">
+            médico, lâmpada, matemática
+        </div>
 
-            <h3>Sujeito</h3>
+    </section>
 
-            <p>
-                É o termo sobre o qual se declara alguma informação.
-            </p>
 
-            <div class="example">
-                <strong>Exemplo:</strong><br>
-                "Maria estudou Português."
-                <br><br>
-                Sujeito: <strong>Maria</strong><br>
-                Predicado: <strong>estudou Português</strong>
-            </div>
+    <!-- LITERATURA -->
 
-            <h3>Tipos de sujeito</h3>
+    <section class="study" id="literatura">
 
-            <ul>
-                <li>Sujeito simples</li>
-                <li>Sujeito composto</li>
-                <li>Sujeito oculto</li>
-                <li>Sujeito indeterminado</li>
-                <li>Oração sem sujeito</li>
-            </ul>
+        <h2>Literatura</h2>
 
-        </section>
+        <p>
+            A literatura é uma forma de expressão artística realizada
+            principalmente por meio da linguagem.
+        </p>
 
+        <h3>Principais escolas literárias</h3>
 
+        <ul>
+            <li>Trovadorismo</li>
+            <li>Humanismo</li>
+            <li>Classicismo</li>
+            <li>Barroco</li>
+            <li>Arcadismo</li>
+            <li>Romantismo</li>
+            <li>Realismo</li>
+            <li>Naturalismo</li>
+            <li>Parnasianismo</li>
+            <li>Simbolismo</li>
+            <li>Modernismo</li>
+            <li>Literatura contemporânea</li>
+        </ul>
 
-        <section class="study" id="ortografia">
+    </section>
 
-            <h2> Ortografia</h2>
 
-            <p>
-                Ortografia é o conjunto de regras utilizadas para escrever
-                corretamente as palavras.
-            </p>
+    <!-- FIGURAS DE LINGUAGEM -->
 
-            <h3>Por que / Porque / Por quê / Porquê</h3>
+    <section class="study" id="figuras">
 
-            <div class="example">
-                <strong>Por que:</strong> usado geralmente em perguntas.<br>
-                "Por que você estudou?"
-                <br><br>
+        <h2>Figuras de linguagem</h2>
 
-                <strong>Porque:</strong> usado em respostas e explicações.<br>
-                "Estudei porque tenho prova."
-                <br><br>
+        <h3>Metáfora</h3>
 
-                <strong>Por quê:</strong> geralmente aparece no final da frase.<br>
-                "Você faltou por quê?"
-                <br><br>
+        <p>
+            Estabelece uma comparação implícita.
+        </p>
 
-                <strong>Porquê:</strong> funciona como substantivo.<br>
-                "Não entendi o porquê da decisão."
-            </div>
+        <div class="example">
+            "Meu irmão é um leão."
+        </div>
 
-        </section>
+        <h3>Comparação</h3>
 
-        <section class="study" id="acentuacao">
+        <p>
+            Compara elementos utilizando palavras como "como".
+        </p>
 
-            <h2> Acentuação</h2>
+        <div class="example">
+            "Ele é forte como um leão."
+        </div>
 
-            <h3>Oxítonas</h3>
+        <h3>Hipérbole</h3>
 
-            <p>
-                A sílaba tônica é a última.
-            </p>
+        <p>
+            Exagera uma ideia.
+        </p>
 
-            <div class="example">
-                café, sofá, cipó
-            </div>
+        <div class="example">
+            "Estou morrendo de fome."
+        </div>
 
-            <h3>Paroxítonas</h3>
+        <h3>Personificação</h3>
 
-            <p>
-                A sílaba tônica é a penúltima.
-            </p>
+        <p>
+            Atribui características humanas a seres não humanos.
+        </p>
 
-            <div class="example">
-                fácil, árvore, lápis
-            </div>
+        <div class="example">
+            "O vento cantava pela janela."
+        </div>
 
-            <h3>Proparoxítonas</h3>
+        <h3>Ironia</h3>
 
-            <p>
-                A sílaba tônica é a antepenúltima.
-            </p>
+        <p>
+            Expressa uma ideia diferente daquela que as palavras
+            parecem indicar.
+        </p>
 
-            <div class="tip">
-                 Regra importante: todas as palavras proparoxítonas
-                são acentuadas.
-            </div>
+    </section>
 
-            <div class="example">
-                médico, lâmpada, matemática
-            </div>
 
-        </section>
+    <!-- INTERPRETAÇÃO -->
 
-        <section class="study" id="literatura">
+    <section class="study" id="interpretacao">
 
-            <h2> Literatura</h2>
+        <h2>Interpretação de texto</h2>
 
-            <p>
-                A literatura é uma forma de expressão artística realizada
-                principalmente por meio da linguagem.
-            </p>
+        <p>
+            Interpretar um texto significa compreender as informações
+            apresentadas e perceber as ideias que podem estar implícitas.
+        </p>
 
-            <h3>Principais escolas literárias</h3>
+        <h3>O que observar?</h3>
 
-            <ul>
-                <li>Trovadorismo</li>
-                <li>Humanismo</li>
-                <li>Classicismo</li>
-                <li>Barroco</li>
-                <li>Arcadismo</li>
-                <li>Romantismo</li>
-                <li>Realismo</li>
-                <li>Naturalismo</li>
-                <li>Parnasianismo</li>
-                <li>Simbolismo</li>
-                <li>Modernismo</li>
-                <li>Literatura contemporânea</li>
-            </ul>
+        <ul>
+            <li>Tema principal</li>
+            <li>Ideias secundárias</li>
+            <li>Informações explícitas</li>
+            <li>Informações implícitas</li>
+            <li>Objetivo do autor</li>
+            <li>Contexto</li>
+            <li>Ironia e sentido figurado</li>
+        </ul>
 
-        </section>
+        <div class="tip">
+            Dica: leia o texto inteiro antes de responder às
+            perguntas. Procure evidências no próprio texto.
+        </div>
 
-       
-        <section class="study" id="figuras">
+    </section>
 
-            <h2> Figuras de linguagem</h2>
 
-            <h3>Metáfora</h3>
+    <!-- REDAÇÃO -->
 
-            <p>
-                Estabelece uma comparação implícita.
-            </p>
+    <section class="study" id="redacao">
 
-            <div class="example">
-                "Meu irmão é um leão."
-            </div>
+        <h2>Redação</h2>
 
-            <h3>Comparação</h3>
+        <h3>1. Introdução</h3>
 
-            <p>
-                Compara elementos utilizando palavras como "como".
-            </p>
+        <p>
+            Apresente o tema e deixe clara a ideia principal
+            que será defendida.
+        </p>
 
-            <div class="example">
-                "Ele é forte como um leão."
-            </div>
+        <h3>2. Desenvolvimento</h3>
 
-            <h3>Hipérbole</h3>
+        <p>
+            Desenvolva os argumentos, apresentando explicações,
+            exemplos e informações relevantes.
+        </p>
 
-            <p>
-                Exagera uma ideia.
-            </p>
+        <h3>3. Conclusão</h3>
 
-            <div class="example">
-                "Estou morrendo de fome."
-            </div>
+        <p>
+            Retome a ideia principal e finalize o texto de maneira
+            coerente.
+        </p>
 
-            <h3>Personificação</h3>
+        <div class="example">
 
-            <p>
-                Atribui características humanas a seres não humanos.
-            </p>
+            <strong>Estrutura básica:</strong><br><br>
 
-            <div class="example">
-                "O vento cantava pela janela."
-            </div>
-
-            <h3>Ironia</h3>
-
-            <p>
-                Expressa uma ideia diferente daquela que as palavras
-                parecem indicar.
-            </p>
-
-        </section>
-
-    
-
-        <section class="study" id="interpretacao">
-
-            <h2> Interpretação de texto</h2>
-
-            <p>
-                Interpretar um texto significa compreender as informações
-                apresentadas e perceber as ideias que podem estar implícitas.
-            </p>
-
-            <h3>O que observar?</h3>
-
-            <ul>
-                <li>Tema principal</li>
-                <li>Ideias secundárias</li>
-                <li>Informações explícitas</li>
-                <li>Informações implícitas</li>
-                <li>Objetivo do autor</li>
-                <li>Contexto</li>
-                <li>Ironia e sentido figurado</li>
-            </ul>
-
-            <div class="tip">
-                 Dica: leia o texto inteiro antes de responder às
-                perguntas. Procure evidências no próprio texto.
-            </div>
-
-        </section>
-
-    
-
-        <section class="study" id="redacao">
-
-            <h2> Redação</h2>
-
-            <h3>1. Introdução</h3>
-
-            <p>
-                Apresente o tema e deixe clara a ideia principal
-                que será defendida.
-            </p>
-
-            <h3>2. Desenvolvimento</h3>
-
-            <p>
-                Desenvolva os argumentos, apresentando explicações,
-                exemplos e informações relevantes.
-            </p>
-
-            <h3>3. Conclusão</h3>
-
-            <p>
-                Retome a ideia principal e finalize o texto de maneira
-                coerente.
-            </p>
-
-            <div class="example">
-                <strong>Estrutura básica:</strong><br><br>
-                Introdução → Apresentação do tema<br>
-                Desenvolvimento → Argumentação<br>
-                Conclusão → Fechamento
-            </div>
-
-            <h3>Conectivos úteis</h3>
-
-            <ul>
-                <li>Além disso</li>
-                <li>Entretanto</li>
-                <li>Portanto</li>
-                <li>Consequentemente</li>
-                <li>Por outro lado</li>
-                <li>Dessa forma</li>
-                <li>Assim</li>
-                <li>Em primeiro lugar</li>
-            </ul>
-
-        </section>
-
-
-        <h2 class="section-title" id="quiz">
-             Quiz de Português
-        </h2>
-
-        <div class="quiz">
-
-            <div class="question">
-                <h3>1. Qual palavra é um verbo?</h3>
-
-                <label class="option">
-                    <input type="radio" name="q1" value="a">
-                    bonito
-                </label>
-
-                <label class="option">
-                    <input type="radio" name="q1" value="b">
-                    estudar
-                </label>
-
-                <label class="option">
-                    <input type="radio" name="q1" value="c">
-                    escola
-                </label>
-            </div>
-
-            <div class="question">
-                <h3>2. Qual é a palavra proparoxítona?</h3>
-
-                <label class="option">
-                    <input type="radio" name="q2" value="a">
-                    café
-                </label>
-
-                <label class="option">
-                    <input type="radio" name="q2" value="b">
-                    fácil
-                </label>
-
-                <label class="option">
-                    <input type="radio" name="q2" value="c">
-                    matemática
-                </label>
-            </div>
-
-            <div class="question">
-                <h3>3. Qual frase contém uma metáfora?</h3>
-
-                <label class="option">
-                    <input type="radio" name="q3" value="a">
-                    Ele corre como um raio.
-                </label>
-
-                <label class="option">
-                    <input type="radio" name="q3" value="b">
-                    Meu coração é uma pedra.
-                </label>
-
-                <label class="option">
-                    <input type="radio" name="q3" value="c">
-                    João comprou um livro.
-                </label>
-            </div>
-
-            <button onclick="corrigirQuiz()">
-                Corrigir quiz
-            </button>
-
-            <div id="resultado"></div>
+            Introdução → Apresentação do tema<br>
+            Desenvolvimento → Argumentação<br>
+            Conclusão → Fechamento
 
         </div>
 
+        <h3>Conectivos úteis</h3>
 
-        <footer>
-  <strong>Educaí</strong> — Aprender deve ser para todos. <br>
-  <span>Desenvolvido por Maria Eduarda, Livia Alves, Isabella Teixeira, Ketilyn Santos e Apolo Moreno</span>
-</footer>
+        <ul>
+            <li>Além disso</li>
+            <li>Entretanto</li>
+            <li>Portanto</li>
+            <li>Consequentemente</li>
+            <li>Por outro lado</li>
+            <li>Dessa forma</li>
+            <li>Assim</li>
+            <li>Em primeiro lugar</li>
+        </ul>
 
-    </main>
+    </section>
 
-    <script>
 
-      function voltarEducai(){
-        window.location.href= 'index.html'
-      }
+    <!-- CONTEÚDOS EXTRAS -->
 
-        function alternarTema() {
+    <section class="study" id="classes">
 
-            document.body.classList.toggle("dark");
+        <h2>Classes de palavras</h2>
 
-            const botao = document.querySelector(".theme-btn");
+        <p>
+            As classes de palavras organizam os termos da língua
+            conforme sua função.
+        </p>
 
-            if (document.body.classList.contains("dark")) {
-                botao.innerHTML = " Modo claro";
-            } else {
-                botao.innerHTML = " Modo escuro";
-            }
+        <ul>
+            <li><strong>Substantivo:</strong> nomeia seres, objetos, lugares e ideias.</li>
+            <li><strong>Adjetivo:</strong> caracteriza o substantivo.</li>
+            <li><strong>Verbo:</strong> indica ação, estado ou fenômeno.</li>
+            <li><strong>Advérbio:</strong> modifica o sentido de um verbo, adjetivo ou outro advérbio.</li>
+        </ul>
 
+    </section>
+
+
+    <section class="study" id="pronomes">
+
+        <h2>Pronomes</h2>
+
+        <p>
+            Pronomes podem substituir ou acompanhar substantivos.
+        </p>
+
+        <ul>
+            <li>Pessoais</li>
+            <li>Possessivos</li>
+            <li>Demonstrativos</li>
+            <li>Relativos</li>
+            <li>Indefinidos</li>
+        </ul>
+
+    </section>
+
+
+    <section class="study" id="verbos">
+
+        <h2>Verbos</h2>
+
+        <p>
+            Os verbos indicam ações, estados ou fenômenos e variam
+            em tempo, modo, pessoa e número.
+        </p>
+
+        <ul>
+            <li>Presente</li>
+            <li>Pretérito</li>
+            <li>Futuro</li>
+            <li>Indicativo</li>
+            <li>Subjuntivo</li>
+        </ul>
+
+    </section>
+
+
+    <section class="study" id="semantica">
+
+        <h2>Semântica</h2>
+
+        <p>
+            A semântica estuda os significados das palavras e expressões.
+        </p>
+
+        <ul>
+            <li><strong>Sinônimos:</strong> sentidos semelhantes.</li>
+            <li><strong>Antônimos:</strong> sentidos opostos.</li>
+            <li><strong>Polissemia:</strong> diferentes sentidos para uma mesma palavra.</li>
+        </ul>
+
+    </section>
+
+
+    <section class="study" id="coesao">
+
+        <h2>Coesão e coerência</h2>
+
+        <p>
+            A coesão conecta as partes do texto e a coerência organiza
+            as ideias para que tenham sentido.
+        </p>
+
+        <ul>
+            <li>Uso de conectivos</li>
+            <li>Organização das ideias</li>
+            <li>Relação entre frases e parágrafos</li>
+        </ul>
+
+    </section>
+
+
+    <section class="study" id="generos">
+
+        <h2>Gêneros textuais</h2>
+
+        <p>
+            São formas de texto usadas em diferentes situações
+            de comunicação.
+        </p>
+
+        <ul>
+            <li>Notícia</li>
+            <li>Crônica</li>
+            <li>Entrevista</li>
+            <li>Artigo de opinião</li>
+            <li>Poema</li>
+            <li>Resenha</li>
+        </ul>
+
+    </section>
+
+
+    <!-- QUIZ -->
+
+    <h2 class="section-title" id="quiz">
+        Quiz de Português
+    </h2>
+
+    <div class="quiz">
+
+        <!-- QUESTÃO 1 -->
+
+        <div class="question">
+            <h3>1. Qual palavra é um verbo?</h3>
+
+            <label class="option">
+                <input type="radio" name="q1" value="a">
+                Bonito
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q1" value="b">
+                Estudar
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q1" value="c">
+                Escola
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q1" value="d">
+                Caderno
+            </label>
+        </div>
+
+
+        <!-- QUESTÃO 2 -->
+
+        <div class="question">
+            <h3>2. Qual é a palavra proparoxítona?</h3>
+
+            <label class="option">
+                <input type="radio" name="q2" value="a">
+                Café
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q2" value="b">
+                Fácil
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q2" value="c">
+                Matemática
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q2" value="d">
+                Papel
+            </label>
+        </div>
+
+
+        <!-- QUESTÃO 3 -->
+
+        <div class="question">
+            <h3>3. Qual frase contém uma metáfora?</h3>
+
+            <label class="option">
+                <input type="radio" name="q3" value="a">
+                Ele corre como um raio.
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q3" value="b">
+                Meu coração é uma pedra.
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q3" value="c">
+                João comprou um livro.
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q3" value="d">
+                Maria chegou cedo.
+            </label>
+        </div>
+
+
+        <!-- QUESTÃO 4 -->
+
+        <div class="question">
+            <h3>4. Qual palavra é um adjetivo?</h3>
+
+            <label class="option">
+                <input type="radio" name="q4" value="a">
+                Correr
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q4" value="b">
+                Bonito
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q4" value="c">
+                Escola
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q4" value="d">
+                Rapidamente
+            </label>
+        </div>
+
+
+        <!-- QUESTÃO 5 -->
+
+        <div class="question">
+            <h3>5. Qual palavra é um pronome pessoal?</h3>
+
+            <label class="option">
+                <input type="radio" name="q5" value="a">
+                Casa
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q5" value="b">
+                Ela
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q5" value="c">
+                Bonito
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q5" value="d">
+                Estudar
+            </label>
+        </div>
+
+
+        <!-- QUESTÃO 6 -->
+
+        <div class="question">
+            <h3>6. Qual é um antônimo de "feliz"?</h3>
+
+            <label class="option">
+                <input type="radio" name="q6" value="a">
+                Alegre
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q6" value="b">
+                Contente
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q6" value="c">
+                Triste
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q6" value="d">
+                Animado
+            </label>
+        </div>
+
+
+        <!-- QUESTÃO 7 -->
+
+        <div class="question">
+            <h3>7. Qual palavra indica uma ação?</h3>
+
+            <label class="option">
+                <input type="radio" name="q7" value="a">
+                Correr
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q7" value="b">
+                Azul
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q7" value="c">
+                Escola
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q7" value="d">
+                Calmo
+            </label>
+        </div>
+
+
+        <!-- QUESTÃO 8 -->
+
+        <div class="question">
+            <h3>8. Qual gênero textual apresenta informações sobre acontecimentos?</h3>
+
+            <label class="option">
+                <input type="radio" name="q8" value="a">
+                Notícia
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q8" value="b">
+                Poema
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q8" value="c">
+                Receita
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q8" value="d">
+                Bilhete
+            </label>
+        </div>
+
+
+        <!-- QUESTÃO 9 -->
+
+        <div class="question">
+            <h3>9. Qual palavra pode funcionar como conectivo?</h3>
+
+            <label class="option">
+                <input type="radio" name="q9" value="a">
+                Porém
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q9" value="b">
+                Casa
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q9" value="c">
+                Bonito
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q9" value="d">
+                Correr
+            </label>
+        </div>
+
+
+        <!-- QUESTÃO 10 -->
+
+        <div class="question">
+            <h3>10. Em "Maria estudou Português", qual é o sujeito?</h3>
+
+            <label class="option">
+                <input type="radio" name="q10" value="a">
+                Estudou
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q10" value="b">
+                Português
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q10" value="c">
+                Maria
+            </label>
+
+            <label class="option">
+                <input type="radio" name="q10" value="d">
+                Estudou Português
+            </label>
+        </div>
+
+
+        <button class="quiz-button" onclick="corrigirQuiz()">
+            Corrigir quiz
+        </button>
+
+        <div id="resultado"></div>
+
+    </div>
+
+
+    <!-- RODAPÉ -->
+
+    <footer>
+
+        <strong>Educaí</strong> — Aprender deve ser para todos.
+
+        <br>
+
+        <span>
+            Desenvolvido por Maria Eduarda, Livia Alves,
+            Isabella Teixeira, Ketilyn Santos e Apolo Moreno
+        </span>
+
+    </footer>
+
+</main>
+
+
+<script>
+
+    function voltarEducai() {
+        window.location.href = "index.html";
+    }
+
+
+    function alternarTema() {
+
+        document.body.classList.toggle("dark");
+
+        const botao = document.querySelector(".theme-btn");
+
+        if (document.body.classList.contains("dark")) {
+            botao.innerHTML = "Modo claro";
+        } else {
+            botao.innerHTML = "Modo escuro";
         }
 
-    
-        function mostrar(id) {
+    }
 
-            const elemento = document.getElementById(id);
 
-            if (elemento) {
-                elemento.scrollIntoView({
-                    behavior: "smooth"
-                });
-            }
+    function mostrar(id) {
 
-        }
+        const elemento = document.getElementById(id);
 
-      
+        if (elemento) {
 
-        function pesquisar() {
-
-            const texto = document
-                .getElementById("pesquisa")
-                .value
-                .toLowerCase();
-
-            const cards = document.querySelectorAll(".card");
-
-            cards.forEach(card => {
-
-                const conteudo = card.innerText.toLowerCase();
-
-                if (conteudo.includes(texto)) {
-                    card.style.display = "";
-                } else {
-                    card.style.display = "none";
-                }
-
+            elemento.scrollIntoView({
+                behavior: "smooth"
             });
 
         }
 
-       
-        function corrigirQuiz() {
+    }
 
-            let pontos = 0;
 
-            const respostas = {
-                q1: "b",
-                q2: "c",
-                q3: "b"
-            };
+    function corrigirQuiz() {
 
-            for (let pergunta in respostas) {
+        let pontos = 0;
 
-                const resposta = document.querySelector(
-                    `input[name="${pergunta}"]:checked`
-                );
+        const respostas = {
+            q1: "b",
+            q2: "c",
+            q3: "b",
+            q4: "b",
+            q5: "b",
+            q6: "c",
+            q7: "a",
+            q8: "a",
+            q9: "a",
+            q10: "c"
+        };
 
-                if (resposta && resposta.value === respostas[pergunta]) {
-                    pontos++;
-                }
 
-            }
+        for (let pergunta in respostas) {
 
-            const resultado = document.getElementById("resultado");
+            const resposta = document.querySelector(
+                `input[name="${pergunta}"]:checked`
+            );
 
-            resultado.innerHTML =
-                `Você acertou <strong>${pontos}/3</strong> questões!`;
+            if (
+                resposta &&
+                resposta.value === respostas[pergunta]
+            ) {
 
-            if (pontos === 3) {
-                resultado.style.color = "#16a34a";
-                resultado.innerHTML += "<br> Excelente! Você mandou muito bem!";
-            }
-            else if (pontos === 2) {
-                resultado.style.color = "#ca8a04";
-                resultado.innerHTML += "<br> Muito bom! Continue estudando.";
-            }
-            else {
-                resultado.style.color = "#dc2626";
-                resultado.innerHTML += "<br> Continue estudando e tente novamente!";
+                pontos++;
+
             }
 
         }
 
-    
 
-        let progresso = 35;
+        const resultado = document.getElementById("resultado");
 
-        function aumentarProgresso() {
+        resultado.innerHTML =
+            `Você acertou <strong>${pontos}/10</strong> questões!`;
 
-            if (progresso < 100) {
-                progresso += 5;
-            }
 
-            document.getElementById("barra").style.width =
-                progresso + "%";
+        if (pontos === 10) {
 
-            document.getElementById("porcentagem").innerText =
-                progresso + "%";
+            resultado.style.color = "#16a34a";
+
+            resultado.innerHTML +=
+                "<br>Excelente! Você mandou muito bem!";
 
         }
 
-    </script>
+        else if (pontos >= 7) {
+
+            resultado.style.color = "#16a34a";
+
+            resultado.innerHTML +=
+                "<br>Muito bom! Você teve um ótimo resultado.";
+
+        }
+
+        else if (pontos >= 5) {
+
+            resultado.style.color = "#ca8a04";
+
+            resultado.innerHTML +=
+                "<br>Bom trabalho! Continue estudando.";
+
+        }
+
+        else {
+
+            resultado.style.color = "#dc2626";
+
+            resultado.innerHTML +=
+                "<br>Continue estudando e tente novamente!";
+
+        }
+
+    }
+
+
+    let progresso = 35;
+
+
+    function aumentarProgresso() {
+
+        if (progresso < 100) {
+
+            progresso += 5;
+
+        }
+
+        const barra = document.getElementById("barra");
+        const porcentagem = document.getElementById("porcentagem");
+
+        if (barra) {
+            barra.style.width = progresso + "%";
+        }
+
+        if (porcentagem) {
+            porcentagem.innerText = progresso + "%";
+        }
+
+    }
+
+</script>
+
+
+<script src="traduzirlibras.js"></script>
+```
 
 </body>
-
-    <script src="traduzirlibras.js"></script>
-
 
 </html>
