@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/inglês.css">
+    <link rel="icon" href="img/flavicon.png">
+
+    <title>Educação Física - Educaí</title>
+
+</head>
+
+<body>
+
+    <!-- MENU LATERAL -->
+    <aside class="sidebar">
+
+        <div class="logo-container">
+    <a href="index.html" class="logo-link">
+        <img src="img/logo/logo.png" alt="Logo Educaí" class="logo">
+        <span>Educaí</span>
+    </a>
+</div>
+
+        <nav class="menu">
+
+            <a href="#inicio">Início</a>
+            <a href="#transformar">Transforme meu estudo</a>
+            <a href="#materias">Conteúdos</a>
+            <a href="#capacidades">Capacidades Físicas</a>
+            <a href="#aquecimento">Aquecimento</a>
+            <a href="#historia">História do Esporte</a>
+            <a href="#treino">Planejamento de Treino</a>
+            <a href="#aerobicos">Exercícios Aeróbicos</a>
+            <a href="#coletivos">Esportes Coletivos</a>
+            <a href="#individuais">Esportes Individuais</a>
+            <a href="#ginastica">Ginástica</a>
+            <a href="#atletismo">Atletismo</a>
+            <a href="#regras">Regras Gerais</a>
+            <a href="#espacos">Espaços Esportivos</a>
+            <a href="#beneficios">Benefícios do Exercício</a>
+            <a href="#vocabulario">Vocabulário</a>
+            <a href="#interpretacao">Interpretação de Regras</a>
+
+            <a href="#quiz">Quiz</a>
+
+        </nav>
+
+        <button class="voltar" onclick="voltarEducai()">
+            Voltar para Educaí
+        </button>
+
+    </aside>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="main-content">
+
+        <!-- INÍCIO -->
+        <header id="inicio">
+
+            <div>
+                <p class="mini-title">EDUCAÍ • EDUCAÇÃO FÍSICA</p>
+
+                <h1>Olá, estudante!</h1>
+
+                <p class="subtitle">
+                    Aprenda Educação Física de forma simples, prática e interativa.
+                </p>
+            </div>
+
+            <button class="theme-button" onclick="alternarTema()">
+               Modo escuro
+            </button>
+
+        </header>
+
+
+        <!-- TRANSFORME MEU ESTUDO -->
+        <section id="transformar" class="transform-section">
+
+            <h2>Transforme meu estudo</h2>
+
+            <p>
+                Escolha uma forma de estudar o conteúdo de Educação Física.
+            </p>
+
+            <input type="file" id="arquivo" class="arquivo">
+
+            <textarea
+                id="textoEstudo"
+                placeholder="Digite ou cole aqui um conteúdo para estudar..."></textarea>
+
+            <div class="transform-options">
+
+                <button onclick="transformarEstudo('ouvir')">
+                    Ouvir conteúdo
+                </button>
+
+                <button onclick="transformarEstudo('libras')">
+                    Traduzir para Libras
+                </button>
+
+                <button onclick="transformarEstudo('mapa')">
+                    Criar mapa mental
+                </button>
+
+                <button onclick="transformarEstudo('simples')">
+                    Explicar de forma simples
+                </button>
+
+                <button onclick="transformarEstudo('exercicios')">
+                    Criar exercícios
+                </button>
+
+                <button onclick="transformarEstudo('resumo')">
+                    Fazer resumo
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTEÚDOS -->
+        <section id="materias">
+
+            <h2>Conteúdos de Educação Física</h2>
+
+            <p class="section-description">
+                Escolha um assunto para começar seus estudos.
+            </p>
+
+
+            <div class="cards-grid">
+
+                <a href="#capacidades" class="card">
+                    <h3>Capacidades Físicas</h3>
+                    <p>Conheça as principais capacidades físicas do corpo humano.</p>
+                     <button onclick="mostrar('capacidades')">Estudar</button>
+                </a>
+
+                <a href="#aquecimento" class="card">
+                    <h3>Aquecimento</h3>
+                    <p>Aprenda a importância do aquecimento antes dos exercícios.</p>
+                      <button onclick="mostrar('aquecimento')">Estudar</button>
+                </a>
+
+                <a href="#historia" class="card">
+                    <h3>História do Esporte</h3>
+                    <p>Entenda como surgiram os principais esportes.</p>
+                      <button onclick="mostrar('historia')">Estudar</button>
+                </a>
+
+                <a href="#treino" class="card">
+                    <h3>Planejamento de Treino</h3>
+                    <p>Aprenda a organizar um treino de forma segura.</p>
+                    <button onclick="mostrar('treino')">Estudar</button>
+                </a>
+
+                <a href="#aerobicos" class="card">
+                    <h3>Exercícios Aeróbicos</h3>
+                    <p>Aprenda sobre atividades que trabalham o sistema cardiorrespiratório.</p>
+                    <button onclick="mostrar('aerobicos')">Estudar</button>
+                </a>
+
+                <a href="#coletivos" class="card">
+                    <h3>Esportes Coletivos</h3>
+                    <p>Conheça os principais esportes praticados em equipe.</p>
+                     <button onclick="mostrar('coletivos')">Estudar</button>
+                </a>
+
+                <a href="#individuais" class="card">
+                    <h3>Esportes Individuais</h3>
+                    <p>Aprenda sobre esportes praticados individualmente.</p>
+                    <button onclick="mostrar('individuais')">Estudar</button>
+                </a>
+
+                <a href="#ginastica" class="card">
+                    <h3>Ginástica</h3>
+                    <p>Entenda os diferentes tipos de ginástica.</p>
+                    <button onclick="mostrar('ginastica')">Estudar</button>
+                </a>
+
+                <a href="#atletismo" class="card">
+                    <h3>Atletismo</h3>
+                    <p>Conheça as provas de corrida, salto e arremesso.</p>
+                    <button onclick="mostrar('atletismo')">Estudar</button>
+                </a>
+
+                <a href="#regras" class="card">
+                    <h3>Regras Gerais</h3>
+                    <p>Entenda regras básicas presentes em diversos esportes.</p>
+                     <button onclick="mostrar('regras')">Estudar</button>
+                    
+                </a>
+
+                <a href="#espacos" class="card">
+                    <h3>Espaços Esportivos</h3>
+                    <p>Conheça quadras, campos e pistas usados na prática esportiva.</p>
+                    <button onclick="mostrar('espacos')">Estudar</button>
+                </a>
+
+                <a href="#beneficios" class="card">
+                    <h3>Benefícios do Exercício</h3>
+                    <p>Descubra o que a atividade física pode e deve trazer para a saúde.</p>
+                     <button onclick="mostrar('beneficios')">Estudar</button>
+                </a>
+
+                <a href="#vocabulario" class="card">
+                    <h3>Vocabulário</h3>
+                    <p>Amplie seu vocabulário sobre Educação Física.</p>
+                     <button onclick="mostrar('vocabulario')">Estudar</button>
+                </a>
+
+                <a href="#interpretacao" class="card">
+                    <h3>Interpretação de Regras</h3>
+                    <p>Aprenda estratégias para compreender regras de jogos e esportes.</p>
+                    <button onclick="mostrar('interpretacao')">Estudar</button>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- CAPACIDADES FÍSICAS -->
+        <section id="capacidades" class="study-section">
+
+            <h2>Capacidades Físicas</h2>
+
+            <p>
+                As capacidades físicas são qualidades do corpo que permitem a realização
+                de movimentos e atividades físicas.
+            </p>
+
+            <div class="example">
+                <strong>Exemplos:</strong>
+
+                <p>Força = capacidade de vencer uma resistência</p>
+                <p>Velocidade = capacidade de realizar um movimento rapidamente</p>
+                <p>Resistência = capacidade de manter um esforço por tempo prolongado</p>
+                <p>Flexibilidade = capacidade de mover as articulações em amplitude</p>
+                <p>Agilidade = capacidade de mudar de direção rapidamente</p>
+                <p>Equilíbrio = capacidade de manter o corpo estável</p>
+            </div>
+
+        </section>
+
+
+        <!-- AQUECIMENTO -->
+        <section id="aquecimento" class="study-section">
+
+            <h2>Aquecimento</h2>
+
+            <p>
+                O aquecimento é utilizado principalmente para preparar o corpo,
+                aumentar a temperatura muscular e prevenir lesões antes do exercício.
+            </p>
+
+            <div class="example">
+
+                <strong>Exemplos:</strong>
+
+                <p>Fazer alongamentos leves antes do treino.</p>
+                <p>Caminhar ou trotar por alguns minutos.</p>
+                <p>Realizar movimentos articulares antes da atividade principal.</p>
+
+            </div>
+
+            <p>
+                O aquecimento deve durar entre 5 e 10 minutos, dependendo da atividade.
+            </p>
+
+        </section>
+
+
+        <!-- HISTÓRIA DO ESPORTE -->
+        <section id="historia" class="study-section">
+
+            <h2>História do Esporte</h2>
+
+            <p>
+                A história do esporte mostra como diversas atividades físicas
+                surgiram e se transformaram ao longo do tempo.
+            </p>
+
+            <div class="example">
+
+                <strong>Exemplos:</strong>
+
+                <p>Os Jogos Olímpicos surgiram na Grécia Antiga.</p>
+                <p>O futebol se popularizou na Inglaterra no século XIX.</p>
+                <p>O voleibol foi criado nos Estados Unidos em 1895.</p>
+
+            </div>
+
+            <p>
+                Muitos esportes praticados hoje têm origem em jogos antigos
+                que foram sendo modificados com regras próprias.
+            </p>
+
+        </section>
+
+
+        <!-- PLANEJAMENTO DE TREINO -->
+        <section id="treino" class="study-section">
+
+            <h2>Planejamento de Treino</h2>
+
+            <p>
+                O planejamento é utilizado para organizar as atividades físicas
+                que ainda serão realizadas, de forma progressiva e segura.
+            </p>
+
+            <div class="example">
+
+                <strong>Exemplos de planejamento:</strong>
+
+                <p>Vou treinar força três vezes por semana.</p>
+                <p>Ela vai correr cinco quilômetros no próximo mês.</p>
+                <p>Eles vão participar do torneio de vôlei.</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- EXERCÍCIOS AERÓBICOS -->
+        <section id="aerobicos" class="study-section">
+
+            <h2>Exercícios Aeróbicos</h2>
+
+            <p>
+                Os exercícios aeróbicos são usados para indicar atividades contínuas
+                que estão acontecendo durante um período, trabalhando o coração e os pulmões.
+            </p>
+
+            <div class="example">
+
+                <strong>Estrutura básica:</strong>
+
+                <p>Atividade + intensidade + duração</p>
+
+                <strong>Exemplos:</strong>
+
+                <p>Eu estou correndo há vinte minutos.</p>
+                <p>Ela está pedalando no parque.</p>
+                <p>Eles estão nadando na piscina.</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ESPORTES COLETIVOS -->
+        <section id="coletivos" class="study-section">
+
+            <h2>Esportes Coletivos</h2>
+
+            <p>
+                Os esportes coletivos são praticados em equipe e envolvem cooperação
+                entre os jogadores para alcançar um objetivo comum.
+            </p>
+
+            <div class="example">
+
+                <p>Futebol = jogado com os pés, em duas equipes de onze jogadores</p>
+                <p>Voleibol = jogado com as mãos, separado por uma rede</p>
+                <p>Basquete = jogado arremessando a bola na cesta</p>
+                <p>Handebol = jogado com as mãos, com gol como no futebol</p>
+                <p>Futsal = versão do futebol jogada em quadra</p>
+                <p>Vôlei de praia = jogado na areia, em duplas</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ESPORTES INDIVIDUAIS -->
+        <section id="individuais" class="study-section">
+
+            <h2>Esportes Individuais</h2>
+
+            <p>
+                Esportes individuais são praticados por uma única pessoa,
+                que depende do próprio desempenho para vencer.
+            </p>
+
+            <div class="example">
+
+                <p>Natação = ágil</p>
+                <p>Corrida = veloz</p>
+                <p>Ciclismo = resistente</p>
+                <p>Judô = técnico</p>
+                <p>Tênis = preciso</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- GINÁSTICA -->
+        <section id="ginastica" class="study-section">
+
+            <h2>Ginástica</h2>
+
+            <p>
+                A ginástica reúne diferentes modalidades que trabalham força,
+                equilíbrio e flexibilidade de formas variadas.
+            </p>
+
+            <div class="example">
+
+                <p>Ginástica artística = executada com aparelhos como trave e argolas</p>
+                <p>Ginástica rítmica = executada com fita, arco ou bola</p>
+                <p>Ginástica de solo = executada sem aparelhos</p>
+                <p>Ginástica acrobática = executada em duplas ou grupos</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ATLETISMO -->
+        <section id="atletismo" class="study-section">
+
+            <h2>Atletismo</h2>
+
+            <p>
+                O atletismo reúne provas de corrida, salto e arremesso, muitas vezes
+                relacionadas a posições na pista ou no campo.
+            </p>
+
+            <div class="example">
+
+                <p>Em = a prova acontece em pista</p>
+                <p>Sobre = o atleta salta sobre o sarrafo</p>
+                <p>Até = corre até a linha de chegada</p>
+                <p>Depois de = a largada acontece depois do sinal</p>
+                <p>Entre = as raias ficam entre as linhas da pista</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- REGRAS GERAIS -->
+        <section id="regras" class="study-section">
+
+            <h2>Regras Gerais</h2>
+
+            <p>
+                Toda modalidade esportiva possui um conjunto de regras que definem
+                como o jogo deve ser jogado.
+            </p>
+
+            <div class="example">
+
+                <p>Um jogo = uma partida com início e fim definidos</p>
+                <p>Uma falta = infração cometida durante o jogo</p>
+                <p>O árbitro = responsável por aplicar as regras</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ESPAÇOS ESPORTIVOS -->
+        <section id="espacos" class="study-section">
+
+            <h2>Espaços Esportivos</h2>
+
+            <p>
+                Essas estruturas indicam onde cada esporte pode ser praticado.
+            </p>
+
+            <div class="example">
+
+                <p>Há uma quadra perto da escola.</p>
+                <p>Há duas piscinas no clube.</p>
+
+                <strong>Regra básica:</strong>
+
+                <p>Há (singular) → um espaço</p>
+                <p>Há (plural) → vários espaços</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- BENEFÍCIOS DO EXERCÍCIO -->
+        <section id="beneficios" class="study-section">
+
+            <h2>Benefícios do Exercício</h2>
+
+            <p>
+                Existem expressões que indicam capacidade, obrigação, possibilidade
+                e recomendação relacionadas à prática de exercícios.
+            </p>
+
+            <div class="example">
+
+                <p>Pode = possibilidade de realizar a atividade</p>
+                <p>Deve = recomendação para manter a saúde</p>
+                <p>Precisa = necessidade, como hidratar-se</p>
+                <p>Consegue = habilidade desenvolvida com o treino</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- VOCABULÁRIO -->
+        <section id="vocabulario" class="study-section">
+
+            <h2>Vocabulário</h2>
+
+            <p>
+                Conhecer os termos da Educação Física ajuda a entender melhor
+                as aulas e a prática esportiva.
+            </p>
+
+            <div class="example">
+
+                <p>Bola = objeto usado em diversos esportes</p>
+                <p>Quadra = espaço para jogos como vôlei e basquete</p>
+                <p>Campo = espaço para futebol</p>
+                <p>Treino = prática regular de exercícios</p>
+                <p>Equipe = grupo de jogadores</p>
+                <p>Árbitro = quem aplica as regras do jogo</p>
+                <p>Gol = ponto marcado em alguns esportes</p>
+                <p>Resistência = capacidade de manter esforço</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- INTERPRETAÇÃO -->
+        <section id="interpretacao" class="study-section">
+
+            <h2>Interpretação de Regras</h2>
+
+            <p>
+                Para interpretar as regras de um esporte, procure primeiro identificar
+                o objetivo do jogo e os termos que você já conhece.
+            </p>
+
+            <div class="example">
+
+                <strong>Dicas:</strong>
+
+                <p>• Leia o regulamento e observe o objetivo do jogo.</p>
+                <p>• Procure termos-chave, como faltas e pontuação.</p>
+                <p>• Observe o número de jogadores e o tempo de partida.</p>
+                <p>• Tente entender o contexto da modalidade.</p>
+                <p>• Não é necessário decorar todas as regras para compreender
+                    a ideia principal do jogo.</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- QUIZ -->
+        <section id="quiz" class="quiz-section">
+
+            <h2>Quiz de Educação Física</h2>
+
+            <p>
+                Teste seus conhecimentos respondendo às 10 questões.
+            </p>
+
+
+            <!-- QUESTÃO 1 -->
+            <div class="question">
+
+                <h3>1. Qual capacidade física permite manter um esforço por tempo prolongado?</h3>
+
+                <label>
+                    <input type="radio" name="q1" value="a">
+                    a) Velocidade
+                </label>
+
+                <label>
+                    <input type="radio" name="q1" value="b">
+                    b) Resistência
+                </label>
+
+                <label>
+                    <input type="radio" name="q1" value="c">
+                    c) Agilidade
+                </label>
+
+                <label>
+                    <input type="radio" name="q1" value="d">
+                    d) Flexibilidade
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 2 -->
+            <div class="question">
+
+                <h3>2. Onde surgiram os Jogos Olímpicos?</h3>
+
+                <label>
+                    <input type="radio" name="q2" value="a">
+                    a) Roma Antiga
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="b">
+                    b) Egito Antigo
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="c">
+                    c) Grécia Antiga
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="d">
+                    d) Inglaterra
+
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 3 -->
+            <div class="question">
+
+                <h3>3. Qual frase descreve corretamente um exercício aeróbico em andamento?</h3>
+
+                <label>
+                    <input type="radio" name="q3" value="a">
+                    a) Eles estão nadando na piscina.
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="b">
+                    b) Eles nadaram ontem.
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="c">
+                    c) Eles vão nadar amanhã.
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="d">
+                    d) Eles nadam todo dia.
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 4 -->
+            <div class="question">
+
+                <h3>4. Qual é um esporte coletivo?</h3>
+
+                <label>
+                    <input type="radio" name="q4" value="a">
+                    a) Natação
+                </label>
+
+                <label>
+                    <input type="radio" name="q4" value="b">
+                    b) Handebol
+                </label>
+
+                <label>
+                    <input type="radio" name="q4" value="c">
+                    c) Judô
+                </label>
+
+                <label>
+                    <input type="radio" name="q4" value="d">
+                    d) Tênis
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 5 -->
+            <div class="question">
+
+                <h3>5. Qual modalidade de ginástica utiliza fita, arco ou bola?</h3>
+
+                <label>
+                    <input type="radio" name="q5" value="a">
+                    a) Ginástica artística
+                </label>
+
+                <label>
+                    <input type="radio" name="q5" value="b">
+                    b) Ginástica de solo
+                </label>
+
+                <label>
+                    <input type="radio" name="q5" value="c">
+                    c) Ginástica rítmica
+                </label>
+
+                <label>
+                    <input type="radio" name="q5" value="d">
+                    d) Ginástica acrobática
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 6 -->
+            <div class="question">
+
+                <h3>6. Complete a frase:</h3>
+
+                <p>
+                    ___ duas quadras perto da escola.
+                </p>
+
+                <label>
+                    <input type="radio" name="q6" value="a">
+                    a) Há
+                </label>
+
+                <label>
+                    <input type="radio" name="q6" value="b">
+                    b) É
+                </label>
+
+                <label>
+                    <input type="radio" name="q6" value="c">
+                    c) Foi
+                </label>
+
+                <label>
+                    <input type="radio" name="q6" value="d">
+                    d) Está
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 7 -->
+            <div class="question">
+
+                <h3>7. Qual palavra indica uma recomendação para manter a saúde?</h3>
+
+                <label>
+                    <input type="radio" name="q7" value="a">
+                    a) Pode
+                </label>
+
+                <label>
+                    <input type="radio" name="q7" value="b">
+                    b) Deve
+                </label>
+
+                <label>
+                    <input type="radio" name="q7" value="c">
+                    c) Consegue
+                </label>
+
+                <label>
+                    <input type="radio" name="q7" value="d">
+                    d) Quer
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 8 -->
+            <div class="question">
+
+                <h3>8. Qual é o espaço utilizado para a prática do futebol?</h3>
+
+                <label>
+                    <input type="radio" name="q8" value="a">
+                    a) Quadra
+                </label>
+
+                <label>
+                    <input type="radio" name="q8" value="b">
+                    b) Campo
+                </label>
+
+                <label>
+                    <input type="radio" name="q8" value="c">
+                    c) Pista
+                </label>
+
+                <label>
+                    <input type="radio" name="q8" value="d">
+                    d) Piscina
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 9 -->
+            <div class="question">
+
+                <h3>9. Quem é responsável por aplicar as regras durante o jogo?</h3>
+
+                <label>
+                    <input type="radio" name="q9" value="a">
+                    a) Técnico
+                </label>
+
+                <label>
+                    <input type="radio" name="q9" value="b">
+                    b) Árbitro
+                </label>
+
+                <label>
+                    <input type="radio" name="q9" value="c">
+                    c) Torcedor
+                </label>
+
+                <label>
+                    <input type="radio" name="q9" value="d">
+                    d) Jogador
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 10 -->
+            <div class="question">
+
+                <h3>10. Leia o trecho:</h3>
+
+                <p>
+                    A partida de vôlei tem cinco sets e vence a equipe que fizer 25 pontos primeiro em cada set.
+                </p>
+
+                <p>
+                    O que esse trecho informa?
+                </p>
+
+                <label>
+                    <input type="radio" name="q10" value="a">
+                    a) Explica a regra de pontuação do voleibol.
+                </label>
+
+                <label>
+                    <input type="radio" name="q10" value="b">
+                    b) Explica a história do voleibol.
+                </label>
+
+                <label>
+                    <input type="radio" name="q10" value="c">
+                    c) Explica os benefícios do voleibol.
+                </label>
+
+                <label>
+                    <input type="radio" name="q10" value="d">
+                    d) Explica o aquecimento antes do voleibol.
+                </label>
+
+            </div>
+
+
+            <button class="quiz-button" onclick="corrigirQuiz()">
+                Corrigir Quiz
+            </button>
+
+            <div id="resultado" class="resultado"></div>
+
+        </section>
+
+
+        <footer>
+            <p>Educaí • Aprender transforma.</p>
+        </footer>
+
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="traduzirlibras.js"></script>
+
+    <script>
+
+        function voltarEducai() {
+            window.location.href = "index.html";
+        }
+
+
+        function alternarTema() {
+
+            document.body.classList.toggle("dark-mode");
+
+        }
+
+
+        function mostrar(id) {
+
+            const elemento = document.getElementById(id);
+
+            if (elemento) {
+                elemento.scrollIntoView({
+                    behavior: "smooth"
+                });
+            }
+
+        }
+
+
+        function corrigirQuiz() {
+
+            const respostas = {
+
+                q1: "b",
+                q2: "c",
+                q3: "a",
+                q4: "b",
+                q5: "c",
+                q6: "a",
+                q7: "b",
+                q8: "b",
+                q9: "b",
+                q10: "a"
+
+            };
+
+            let acertos = 0;
+
+            for (let questao in respostas) {
+
+                const respostaSelecionada =
+                    document.querySelector(
+                        `input[name="${questao}"]:checked`
+                    );
+
+                if (
+                    respostaSelecionada &&
+                    respostaSelecionada.value === respostas[questao]
+                ) {
+
+                    acertos++;
+
+                }
+
+            }
+
+
+            const resultado = document.getElementById("resultado");
+
+            resultado.innerHTML =
+                `<strong>Você acertou ${acertos}/10 questões!</strong>`;
+
+
+            if (acertos === 10) {
+
+                resultado.innerHTML +=
+                    "<p>Excelente! Você domina muito bem esse conteúdo.</p>";
+
+            } else if (acertos >= 7) {
+
+                resultado.innerHTML +=
+                    "<p>Muito bom! Você já possui um ótimo conhecimento.</p>";
+
+            } else if (acertos >= 5) {
+
+                resultado.innerHTML +=
+                    "<p>Bom trabalho! Continue estudando para melhorar ainda mais.</p>";
+
+            } else {
+
+                resultado.innerHTML +=
+                    "<p>Continue estudando. Você pode tentar novamente!</p>";
+
+            }
+
+        }
+
+
+        function aumentarProgresso() {
+
+            const barra = document.getElementById("barra");
+            const porcentagem = document.getElementById("porcentagem");
+
+            if (barra && porcentagem) {
+
+                let valor = parseInt(barra.value);
+
+                if (valor < 100) {
+
+                    valor += 10;
+
+                    barra.value = valor;
+                    porcentagem.textContent = valor + "%";
+
+                }
+
+            }
+
+        }
+
+    </script>
+
+    <script src="traduzirlibras.js"></script>
+
+</body>
+
+</html>

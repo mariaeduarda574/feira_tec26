@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/biologia.css">
+    <link rel="icon" href="img/flavicon.png">
+
+    <title>Biologia - Educaí</title>
+
+</head>
+
+<body>
+
+    <!-- MENU LATERAL -->
+    <aside class="sidebar">
+
+        <div class="logo-container">
+    <a href="index.html" class="logo-link">
+        <img src="img/logo/logo.png" alt="Logo Educaí" class="logo">
+        <span>Educaí</span>
+    </a>
+</div>
+
+        <nav class="menu">
+
+            <a href="#inicio">Início</a>
+            <a href="#transformar">Transforme meu estudo</a>
+            <a href="#materias">Conteúdos</a>
+
+            <a href="#celula">Célula</a>
+            <a href="#tecidos">Tecidos</a>
+            <a href="#genetica">Genética</a>
+            <a href="#evolucao">Evolução</a>
+            <a href="#ecologia">Ecologia</a>
+            <a href="#reinos">Reinos dos Seres Vivos</a>
+            <a href="#sistemas">Sistemas do Corpo Humano</a>
+            <a href="#fotossintese">Fotossíntese</a>
+            <a href="#respiracao">Respiração Celular</a>
+            <a href="#reproducao">Reprodução</a>
+            <a href="#biomas">Biomas</a>
+            <a href="#virus-bacterias">Vírus e Bactérias</a>
+            <a href="#vocabulario">Vocabulário</a>
+            <a href="#interpretacao">Interpretação de Textos</a>
+
+            <a href="#quiz">Quiz</a>
+
+        </nav>
+
+        <button class="voltar" onclick="voltarEducai()">
+            Voltar para Educaí
+        </button>
+
+    </aside>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="main-content">
+
+        <!-- INÍCIO -->
+        <header id="inicio">
+
+            <div>
+                <p class="mini-title">EDUCAÍ • BIOLOGIA</p>
+
+                <h1>Olá, estudante!</h1>
+
+                <p class="subtitle">
+                    Aprenda Biologia de forma simples, prática e interativa.
+                </p>
+            </div>
+
+            <button class="theme-button" onclick="alternarTema()">
+               Modo escuro
+            </button>
+
+        </header>
+
+
+        <!-- TRANSFORME MEU ESTUDO -->
+        <section id="transformar" class="transform-section">
+
+            <h2>Transforme meu estudo</h2>
+
+            <p>
+                Escolha uma forma de estudar o conteúdo de Biologia.
+            </p>
+
+            <input type="file" id="arquivo" class="arquivo">
+
+            <textarea
+                id="textoEstudo"
+                placeholder="Digite ou cole aqui um conteúdo para estudar..."></textarea>
+
+            <div class="transform-options">
+
+                <button onclick="transformarEstudo('ouvir')">
+                    Ouvir conteúdo
+                </button>
+
+                <button onclick="transformarEstudo('libras')">
+                    Traduzir para Libras
+                </button>
+
+                <button onclick="transformarEstudo('mapa')">
+                    Criar mapa mental
+                </button>
+
+                <button onclick="transformarEstudo('simples')">
+                    Explicar de forma simples
+                </button>
+
+                <button onclick="transformarEstudo('exercicios')">
+                    Criar exercícios
+                </button>
+
+                <button onclick="transformarEstudo('resumo')">
+                    Fazer resumo
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTEÚDOS -->
+        <section id="materias">
+
+            <h2>Conteúdos de Biologia</h2>
+
+            <p class="section-description">
+                Escolha um assunto para começar seus estudos.
+            </p>
+
+
+            <div class="cards-grid">
+
+                <a href="#celula" class="card">
+                    <h3>Célula</h3>
+                    <p>Aprenda sobre a unidade básica de todos os seres vivos.</p>
+                     <button onclick="mostrar('celula')">Estudar</button>
+                </a>
+
+                <a href="#tecidos" class="card">
+                    <h3>Tecidos</h3>
+                    <p>Conheça os tecidos que formam os órgãos do corpo.</p>
+                      <button onclick="mostrar('tecidos')">Estudar</button>
+                </a>
+
+                <a href="#genetica" class="card">
+                    <h3>Genética</h3>
+                    <p>Entenda como as características são herdadas entre gerações.</p>
+                      <button onclick="mostrar('genetica')">Estudar</button>
+                </a>
+
+                <a href="#evolucao" class="card">
+                    <h3>Evolução</h3>
+                    <p>Aprenda como as espécies mudam ao longo do tempo.</p>
+                    <button onclick="mostrar('evolucao')">Estudar</button>
+                </a>
+
+                <a href="#ecologia" class="card">
+                    <h3>Ecologia</h3>
+                    <p>Aprenda sobre as relações entre os seres vivos e o ambiente.</p>
+                    <button onclick="mostrar('ecologia')">Estudar</button>
+                </a>
+
+                <a href="#reinos" class="card">
+                    <h3>Reinos dos Seres Vivos</h3>
+                    <p>Conheça os grupos em que os seres vivos são classificados.</p>
+                     <button onclick="mostrar('reinos')">Estudar</button>
+                </a>
+
+                <a href="#sistemas" class="card">
+                    <h3>Sistemas do Corpo Humano</h3>
+                    <p>Aprenda como os órgãos trabalham juntos no organismo.</p>
+                    <button onclick="mostrar('sistemas')">Estudar</button>
+                </a>
+
+                <a href="#fotossintese" class="card">
+                    <h3>Fotossíntese</h3>
+                    <p>Entenda como as plantas produzem seu próprio alimento.</p>
+                    <button onclick="mostrar('fotossintese')">Estudar</button>
+                </a>
+
+                <a href="#respiracao" class="card">
+                    <h3>Respiração Celular</h3>
+                    <p>Aprenda como as células produzem energia.</p>
+                    <button onclick="mostrar('respiracao')">Estudar</button>
+                </a>
+
+                <a href="#reproducao" class="card">
+                    <h3>Reprodução</h3>
+                    <p>Entenda os processos de reprodução dos seres vivos.</p>
+                     <button onclick="mostrar('reproducao')">Estudar</button>
+                    
+                </a>
+
+                <a href="#biomas" class="card">
+                    <h3>Biomas</h3>
+                    <p>Conheça os principais biomas do Brasil e do mundo.</p>
+                    <button onclick="mostrar('biomas')">Estudar</button>
+                </a>
+
+                <a href="#virus-bacterias" class="card">
+                    <h3>Vírus e Bactérias</h3>
+                    <p>Aprenda sobre esses microrganismos e sua relação com a saúde.</p>
+                     <button onclick="mostrar('virus-bacterias')">Estudar</button>
+                </a>
+
+                <a href="#vocabulario" class="card">
+                    <h3>Vocabulário</h3>
+                    <p>Amplie seu vocabulário científico em Biologia.</p>
+                     <button onclick="mostrar('vocabulario')">Estudar</button>
+                </a>
+
+                <a href="#interpretacao" class="card">
+                    <h3>Interpretação de Textos</h3>
+                    <p>Aprenda estratégias para compreender textos científicos.</p>
+                    <button onclick="mostrar('interpretacao')">Estudar</button>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- CÉLULA -->
+        <section id="celula" class="study-section">
+
+            <h2>Célula</h2>
+
+            <p>
+                A célula é a menor unidade estrutural e funcional dos seres vivos,
+                responsável por todas as atividades vitais do organismo.
+            </p>
+
+            <div class="example">
+                <strong>Exemplos:</strong>
+
+                <p>Núcleo = controla as atividades da célula</p>
+                <p>Membrana plasmática = envolve e protege a célula</p>
+                <p>Citoplasma = local onde ocorrem as reações celulares</p>
+                <p>Mitocôndria = responsável pela produção de energia</p>
+                <p>Ribossomo = produz proteínas</p>
+                <p>Célula procariota = não possui núcleo definido</p>
+            </div>
+
+        </section>
+
+
+        <!-- TECIDOS -->
+        <section id="tecidos" class="study-section">
+
+            <h2>Tecidos</h2>
+
+            <p>
+                Os tecidos são utilizados principalmente para formar os órgãos,
+                reunindo células com a mesma função e origem.
+            </p>
+
+            <div class="example">
+
+                <strong>Exemplos:</strong>
+
+                <p>Tecido epitelial recobre superfícies do corpo.</p>
+                <p>Tecido conjuntivo conecta e sustenta outros tecidos.</p>
+                <p>Tecido muscular permite os movimentos do corpo.</p>
+
+            </div>
+
+            <p>
+                O tecido nervoso é responsável por transmitir impulsos elétricos
+                pelo corpo.
+            </p>
+
+        </section>
+
+
+        <!-- GENÉTICA -->
+        <section id="genetica" class="study-section">
+
+            <h2>Genética</h2>
+
+            <p>
+                A genética estuda como as características são transmitidas
+                dos pais para os filhos através dos genes.
+            </p>
+
+            <div class="example">
+
+                <strong>Exemplos:</strong>
+
+                <p>Gene dominante prevalece sobre o gene recessivo.</p>
+                <p>O DNA carrega as informações genéticas do indivíduo.</p>
+                <p>Cromossomos são estruturas formadas por DNA.</p>
+
+            </div>
+
+            <p>
+                Cada célula humana possui 46 cromossomos, organizados em 23 pares.
+            </p>
+
+        </section>
+
+
+        <!-- EVOLUÇÃO -->
+        <section id="evolucao" class="study-section">
+
+            <h2>Evolução</h2>
+
+            <p>
+                A evolução explica como as espécies foram se transformando
+                ao longo de milhões de anos.
+            </p>
+
+            <div class="example">
+
+                <strong>Exemplos:</strong>
+
+                <p>A seleção natural favorece indivíduos mais adaptados.</p>
+                <p>As espécies mudam ao longo de gerações.</p>
+                <p>Fósseis ajudam a entender a evolução dos seres vivos.</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ECOLOGIA -->
+        <section id="ecologia" class="study-section">
+
+            <h2>Ecologia</h2>
+
+            <p>
+                A ecologia é usada para indicar as relações entre os seres vivos
+                e o ambiente em que vivem.
+            </p>
+
+            <div class="example">
+
+                <strong>Estrutura básica:</strong>
+
+                <p>Ser vivo + ambiente + relação</p>
+
+                <strong>Exemplos:</strong>
+
+                <p>O leão caça a zebra na savana.</p>
+                <p>As abelhas polinizam as flores.</p>
+                <p>Os fungos decompõem a matéria orgânica.</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- REINOS DOS SERES VIVOS -->
+        <section id="reinos" class="study-section">
+
+            <h2>Reinos dos Seres Vivos</h2>
+
+            <p>
+                Os seres vivos são classificados em reinos de acordo com suas
+                características em comum.
+            </p>
+
+            <div class="example">
+
+                <p>Monera = bactérias</p>
+                <p>Protista = protozoários e algas</p>
+                <p>Fungi = fungos e cogumelos</p>
+                <p>Plantae = plantas</p>
+                <p>Animalia = animais</p>
+                <p>Vírus = não pertencem a nenhum reino</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- SISTEMAS DO CORPO HUMANO -->
+        <section id="sistemas" class="study-section">
+
+            <h2>Sistemas do Corpo Humano</h2>
+
+            <p>
+                O corpo humano é formado por sistemas que trabalham juntos
+                para manter o organismo em funcionamento.
+            </p>
+
+            <div class="example">
+
+                <p>Sistema digestório = transforma o alimento em nutrientes</p>
+                <p>Sistema respiratório = realiza as trocas gasosas</p>
+                <p>Sistema circulatório = transporta sangue pelo corpo</p>
+                <p>Sistema nervoso = controla as funções do corpo</p>
+                <p>Sistema locomotor = permite o movimento do corpo</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOTOSSÍNTESE -->
+        <section id="fotossintese" class="study-section">
+
+            <h2>Fotossíntese</h2>
+
+            <p>
+                A fotossíntese estabelece a relação entre luz, água e dióxido de carbono
+                para a produção de energia pelas plantas.
+            </p>
+
+            <div class="example">
+
+                <p>Luz solar = fonte de energia do processo</p>
+                <p>Água = absorvida pelas raízes</p>
+                <p>Gás carbônico = absorvido pelas folhas</p>
+                <p>Glicose = alimento produzido pela planta</p>
+                <p>Oxigênio = liberado como subproduto</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- RESPIRAÇÃO CELULAR -->
+        <section id="respiracao" class="study-section">
+
+            <h2>Respiração Celular</h2>
+
+            <p>
+                A respiração celular é o processo pelo qual as células liberam
+                energia a partir da glicose.
+            </p>
+
+            <div class="example">
+
+                <p>Glicose + oxigênio = energia + gás carbônico + água</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- REPRODUÇÃO -->
+        <section id="reproducao" class="study-section">
+
+            <h2>Reprodução</h2>
+
+            <p>
+                Essas estruturas são utilizadas para indicar como os seres vivos
+                geram novos indivíduos.
+            </p>
+
+            <div class="example">
+
+                <p>Reprodução sexuada envolve dois indivíduos e gametas.</p>
+                <p>Reprodução assexuada envolve apenas um indivíduo.</p>
+
+                <strong>Regra básica:</strong>
+
+                <p>Reprodução sexuada → maior variabilidade genética</p>
+                <p>Reprodução assexuada → indivíduos geneticamente iguais</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- BIOMAS -->
+        <section id="biomas" class="study-section">
+
+            <h2>Biomas</h2>
+
+            <p>
+                Os biomas são grandes regiões com clima, solo, fauna e flora
+                característicos.
+            </p>
+
+            <div class="example">
+
+                <p>Amazônia = maior floresta tropical do mundo</p>
+                <p>Cerrado = vegetação com árvores retorcidas e clima seco</p>
+                <p>Caatinga = bioma adaptado a longos períodos de seca</p>
+                <p>Mata Atlântica = floresta próxima ao litoral brasileiro</p>
+                <p>Pantanal = maior planície alagável do planeta</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- VÍRUS E BACTÉRIAS -->
+        <section id="virus-bacterias" class="study-section">
+
+            <h2>Vírus e Bactérias</h2>
+
+            <p>
+                Vírus e bactérias são microrganismos que podem estar relacionados
+                a doenças, mas também desempenham papéis importantes na natureza.
+            </p>
+
+            <div class="example">
+
+                <p>Vírus = precisa de uma célula hospedeira para se reproduzir</p>
+                <p>Bactéria = organismo unicelular sem núcleo definido</p>
+                <p>Vacina = estimula o corpo a produzir defesa contra doenças</p>
+                <p>Antibiótico = combate infecções causadas por bactérias</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- VOCABULÁRIO -->
+        <section id="vocabulario" class="study-section">
+
+            <h2>Vocabulário</h2>
+
+            <p>
+                Aprender os termos científicos é importante para compreender
+                melhor os conteúdos de Biologia.
+            </p>
+
+            <div class="example">
+
+                <p>Célula = unidade básica dos seres vivos</p>
+                <p>DNA = molécula que carrega as informações genéticas</p>
+                <p>Organismo = ser vivo</p>
+                <p>Espécie = grupo de seres vivos com características em comum</p>
+                <p>Habitat = local onde um ser vivo vive</p>
+                <p>Nutriente = substância que fornece energia ao corpo</p>
+                <p>Ecossistema = conjunto formado por seres vivos e o ambiente</p>
+                <p>Metabolismo = conjunto de reações químicas do organismo</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- INTERPRETAÇÃO -->
+        <section id="interpretacao" class="study-section">
+
+            <h2>Interpretação de Textos</h2>
+
+            <p>
+                Para interpretar um texto de Biologia, procure primeiro identificar
+                o assunto principal e os termos científicos que você já conhece.
+            </p>
+
+            <div class="example">
+
+                <strong>Dicas:</strong>
+
+                <p>• Leia o título e observe o assunto.</p>
+                <p>• Procure palavras-chave e termos científicos.</p>
+                <p>• Observe processos, causas e consequências citados.</p>
+                <p>• Tente relacionar o texto com exemplos do dia a dia.</p>
+                <p>• Não é necessário conhecer todos os termos para compreender
+                    a ideia principal.</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- QUIZ -->
+        <section id="quiz" class="quiz-section">
+
+            <h2>Quiz de Biologia</h2>
+
+            <p>
+                Teste seus conhecimentos respondendo às 10 questões.
+            </p>
+
+
+            <!-- QUESTÃO 1 -->
+            <div class="question">
+
+                <h3>1. Qual estrutura é responsável por controlar as atividades da célula?</h3>
+
+                <label>
+                    <input type="radio" name="q1" value="a">
+                    a) Membrana plasmática
+                </label>
+
+                <label>
+                    <input type="radio" name="q1" value="b">
+                    b) Núcleo
+                </label>
+
+                <label>
+                    <input type="radio" name="q1" value="c">
+                    c) Mitocôndria
+                </label>
+
+                <label>
+                    <input type="radio" name="q1" value="d">
+                    d) Ribossomo
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 2 -->
+            <div class="question">
+
+                <h3>2. Quantos cromossomos possui uma célula humana?</h3>
+
+                <label>
+                    <input type="radio" name="q2" value="a">
+                    a) 23
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="b">
+                    b) 44
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="c">
+                    c) 46
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="d">
+                    d) 48
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 3 -->
+            <div class="question">
+
+                <h3>3. O que a seleção natural favorece, segundo a teoria da evolução?</h3>
+
+                <label>
+                    <input type="radio" name="q3" value="a">
+                    a) Indivíduos mais adaptados ao ambiente
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="b">
+                    b) Indivíduos mais antigos da espécie
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="c">
+                    c) Indivíduos maiores, independentemente do ambiente
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="d">
+                    d) Todos os indivíduos igualmente
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 4 -->
+            <div class="question">
+
+                <h3>4. Qual reino inclui as bactérias?</h3>
+
+                <label>
+                    <input type="radio" name="q4" value="a">
+                    a) Fungi
+                </label>
+
+                <label>
+                    <input type="radio" name="q4" value="b">
+                    b) Monera
+                </label>
+
+                <label>
+                    <input type="radio" name="q4" value="c">
+                    c) Plantae
+                </label>
+
+                <label>
+                    <input type="radio" name="q4" value="d">
+                    d) Animalia
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 5 -->
+            <div class="question">
+
+                <h3>5. Qual sistema do corpo humano é responsável pelas trocas gasosas?</h3>
+
+                <label>
+                    <input type="radio" name="q5" value="a">
+                    a) Sistema digestório
+                </label>
+
+                <label>
+                    <input type="radio" name="q5" value="b">
+                    b) Sistema circulatório
+                </label>
+
+                <label>
+                    <input type="radio" name="q5" value="c">
+                    c) Sistema respiratório
+                </label>
+
+                <label>
+                    <input type="radio" name="q5" value="d">
+                    d) Sistema nervoso
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 6 -->
+            <div class="question">
+
+                <h3>6. Complete a frase:</h3>
+
+                <p>
+                    Na fotossíntese, a planta absorve gás carbônico e água e libera ___.
+                </p>
+
+                <label>
+                    <input type="radio" name="q6" value="a">
+                    a) gás carbônico
+                </label>
+
+                <label>
+                    <input type="radio" name="q6" value="b">
+                    b) oxigênio
+                </label>
+
+                <label>
+                    <input type="radio" name="q6" value="c">
+                    c) nitrogênio
+                </label>
+
+                <label>
+                    <input type="radio" name="q6" value="d">
+                    d) hidrogênio
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 7 -->
+            <div class="question">
+
+                <h3>7. Qual tipo de reprodução gera indivíduos geneticamente iguais?</h3>
+
+                <label>
+                    <input type="radio" name="q7" value="a">
+                    a) Reprodução sexuada
+                </label>
+
+                <label>
+                    <input type="radio" name="q7" value="b">
+                    b) Reprodução assexuada
+                </label>
+
+                <label>
+                    <input type="radio" name="q7" value="c">
+                    c) Fecundação externa
+                </label>
+
+                <label>
+                    <input type="radio" name="q7" value="d">
+                    d) Fecundação interna
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 8 -->
+            <div class="question">
+
+                <h3>8. Qual bioma é conhecido por longos períodos de seca?</h3>
+
+                <label>
+                    <input type="radio" name="q8" value="a">
+                    a) Amazônia
+                </label>
+
+                <label>
+                    <input type="radio" name="q8" value="b">
+                    b) Pantanal
+                </label>
+
+                <label>
+                    <input type="radio" name="q8" value="c">
+                    c) Caatinga
+                </label>
+
+                <label>
+                    <input type="radio" name="q8" value="d">
+                    d) Mata Atlântica
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 9 -->
+            <div class="question">
+
+                <h3>9. O que um vírus precisa para se reproduzir?</h3>
+
+                <label>
+                    <input type="radio" name="q9" value="a">
+                    a) Água
+                </label>
+
+                <label>
+                    <input type="radio" name="q9" value="b">
+                    b) Luz solar
+                </label>
+
+                <label>
+                    <input type="radio" name="q9" value="c">
+                    c) Uma célula hospedeira
+                </label>
+
+                <label>
+                    <input type="radio" name="q9" value="d">
+                    d) Oxigênio
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 10 -->
+            <div class="question">
+
+                <h3>10. Leia o trecho:</h3>
+
+                <p>
+                    As abelhas visitam as flores em busca de néctar e, nesse processo,
+                    transportam o pólen de uma flor para outra.
+                </p>
+
+                <p>
+                    O que esse trecho descreve?
+                </p>
+
+                <label>
+                    <input type="radio" name="q10" value="a">
+                    a) O processo de polinização.
+                </label>
+
+                <label>
+                    <input type="radio" name="q10" value="b">
+                    b) O processo de fotossíntese.
+                </label>
+
+                <label>
+                    <input type="radio" name="q10" value="c">
+                    c) O processo de respiração celular.
+                </label>
+
+                <label>
+                    <input type="radio" name="q10" value="d">
+                    d) O processo de reprodução assexuada.
+                </label>
+
+            </div>
+
+
+            <button class="quiz-button" onclick="corrigirQuiz()">
+                Corrigir Quiz
+            </button>
+
+            <div id="resultado" class="resultado"></div>
+
+        </section>
+
+
+        <footer>
+            <p>Educaí • Aprender transforma.</p>
+        </footer>
+
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="traduzirlibras.js"></script>
+
+    <script>
+
+        function voltarEducai() {
+            window.location.href = "index.html";
+        }
+
+
+        function alternarTema() {
+
+            document.body.classList.toggle("dark-mode");
+
+        }
+
+
+        function mostrar(id) {
+
+            const elemento = document.getElementById(id);
+
+            if (elemento) {
+                elemento.scrollIntoView({
+                    behavior: "smooth"
+                });
+            }
+
+        }
+
+
+        function corrigirQuiz() {
+
+            const respostas = {
+
+                q1: "b",
+                q2: "c",
+                q3: "a",
+                q4: "b",
+                q5: "c",
+                q6: "b",
+                q7: "b",
+                q8: "c",
+                q9: "c",
+                q10: "a"
+
+            };
+
+            let acertos = 0;
+
+            for (let questao in respostas) {
+
+                const respostaSelecionada =
+                    document.querySelector(
+                        `input[name="${questao}"]:checked`
+                    );
+
+                if (
+                    respostaSelecionada &&
+                    respostaSelecionada.value === respostas[questao]
+                ) {
+
+                    acertos++;
+
+                }
+
+            }
+
+
+            const resultado = document.getElementById("resultado");
+
+            resultado.innerHTML =
+                `<strong>Você acertou ${acertos}/10 questões!</strong>`;
+
+
+            if (acertos === 10) {
+
+                resultado.innerHTML +=
+                    "<p>Excelente! Você domina muito bem esse conteúdo.</p>";
+
+            } else if (acertos >= 7) {
+
+                resultado.innerHTML +=
+                    "<p>Muito bom! Você já possui um ótimo conhecimento.</p>";
+
+            } else if (acertos >= 5) {
+
+                resultado.innerHTML +=
+                    "<p>Bom trabalho! Continue estudando para melhorar ainda mais.</p>";
+
+            } else {
+
+                resultado.innerHTML +=
+                    "<p>Continue estudando. Você pode tentar novamente!</p>";
+
+            }
+
+        }
+
+
+        function aumentarProgresso() {
+
+            const barra = document.getElementById("barra");
+            const porcentagem = document.getElementById("porcentagem");
+
+            if (barra && porcentagem) {
+
+                let valor = parseInt(barra.value);
+
+                if (valor < 100) {
+
+                    valor += 10;
+
+                    barra.value = valor;
+                    porcentagem.textContent = valor + "%";
+
+                }
+
+            }
+
+        }
+
+    </script>
+
+    <script src="traduzirlibras.js"></script>
+
+</body>
+
+</html>
