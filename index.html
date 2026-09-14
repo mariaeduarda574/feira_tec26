@@ -42,7 +42,44 @@
         <span> Voz</span>
         <span> Libras</span>
         <span> Audiodescrição</span>
-        <span> Filtro para daltonismo</span>
+        <button id="btnDaltonismo" onclick="opcoesFiltros()">Filtro para Daltonismo</button>
+
+
+        <div id="fundoDaltonismo" class="fundo-daltonismo">
+          <div id="opcoesDaltonismo" class="opcoes-daltonismo">
+
+              <h3>Filtro para Daltonismo</h3>
+
+              <button onclick="ativarFiltro('protanopia')">
+                  Protanopia (vermelho)
+              </button>
+
+              <button onclick="ativarFiltro('deuteranopia')">
+                  Deuteranopia (verde)
+              </button>
+
+              <button onclick="ativarFiltro('tritanopia')">
+                  Tritanopia (azul)
+              </button>
+
+              <button onclick="ativarFiltro('acromatopsia')">
+                  Acromatopsia (preto e branco)
+              </button>
+
+              <button onclick="ativarFiltro('normal')">
+                  ✕ Desativar filtro
+              </button>
+
+              <button onclick="fecharOpcoesDaltonismo()" class="btn-fechar">
+                  Fechar
+              </button>
+
+          </div>
+      </div>
+
+
+
+
       </div>
     </div>
   </section>
@@ -198,6 +235,7 @@
 
 
 <script src="pesquisa.js"></script>
+<script src="JavaScript/daltonismo.js"></script>
 
 </body>
 </html>

@@ -10,6 +10,7 @@
 <title>Português - Educaí</title>
 
 <link rel="stylesheet" href="css/português.css">
+<link rel="stylesheet" href="css/TransformeEstudos.css">
 <link rel="icon" type="image/png" href="img/flavicon.png">
 ```
 
@@ -69,8 +70,6 @@
     </header>
 
 
-    <!-- TRANSFORME MEU ESTUDO -->
-
     <section class="transforme" id="transformar">
 
         <div class="transforme-header">
@@ -84,23 +83,29 @@
 
         <div class="transforme-upload">
 
-            <strong>📎 Envie seu material</strong>
+            <strong>Envie seu material</strong>
 
             <p>
-                Você pode enviar um PDF, Docx ou outro arquivo para consultar.
+                Você pode enviar um PDF, Docx ou arquivos PowerPoint.
             </p>
 
             <input
                 type="file"
+                accept=".pdf, .docx, .pptx"
                 id="arquivoEstudo"
-                accept=".pdf,.txt,.docx,.pptx"
+                onchange="atualizarBotaoLimpar(); arquivoSelecionado()"
             >
 
             <textarea
                 id="textoEstudo"
                 class="transforme-input"
                 placeholder="Ou cole aqui o conteúdo que você quer transformar..."
+                oninput="textoDigitado()"
             ></textarea>
+
+            <button id="btnLimparMaterial" onclick="btnLimparMaterial()">
+                Limpar conteúdo
+            </button>
 
         </div>
 
@@ -1027,7 +1032,6 @@
 
 
 <script>
-
     function voltarEducai() {
         window.location.href = "index.html";
     }
@@ -1171,8 +1175,9 @@
 </script>
 
 
-<script src="traduzirlibras.js"></script>
-```
+<script src="JavaScript/traduzirlibras.js"></script>
+
+<script src="JavaScript/TransformeEstudos.js"></script>
 
 </body>
 

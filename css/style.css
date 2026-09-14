@@ -381,7 +381,7 @@ footer{
 .hero-card h2{font-size:clamp(24px,3vw,28px);color:#fff}
 .hero-card p{margin:10px 0 25px;opacity:.9}
 .mini-recursos{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.mini-recursos span{background:rgba(255,255,255,.15);padding:10px;border-radius:8px}
+.mini-recursos span, .mini-recursos button {background:rgba(255,255,255,.15);padding:10px;border-radius:8px; color:white;}
 
 .pesquisa{
   width:min(1150px,calc(100% - 32px));
@@ -641,4 +641,54 @@ footer{
     border-radius: 10px;
     background: var(--surface);
     color: var(--ink-soft);
+}
+
+
+.fundo-daltonismo {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.788);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+}
+
+.fundo-daltonismo.ativo {
+    display: flex;
+}
+
+.opcoes-daltonismo {
+    width: 90%;
+    max-width: 450px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.opcoes-daltonismo h3 {
+    margin-bottom: 20px;
+    color: var(--text);
+}
+
+.opcoes-daltonismo button {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--card);
+    color: var(--text);
+    cursor: pointer;
+}
+
+.opcoes-daltonismo button:hover {
+    border-color: var(--primary);
+}
+
+.opcoes-daltonismo .btn-fechar {
+    margin-top: 5px;
 }
