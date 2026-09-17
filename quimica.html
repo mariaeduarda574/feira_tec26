@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/quimica.css">
+    <link rel="icon" href="img/flavicon.png">
+
+    <title>Química - Educaí</title>
+
+</head>
+
+<body>
+
+    <!-- MENU LATERAL -->
+    <aside class="sidebar">
+
+        <div class="logo-container">
+    <a href="index.html" class="logo-link">
+        <img src="img/logo/logo.png" alt="Logo Educaí" class="logo">
+        <span>Educaí</span>
+    </a>
+</div>
+
+        <nav class="menu">
+
+            <a href="#inicio">Início</a>
+            <a href="#transformar">Transforme meu estudo</a>
+            <a href="#materias">Conteúdos</a>
+            <a href="#materia">Matéria e Substâncias</a>
+            <a href="#atomo">Átomo</a>
+            <a href="#tabela">Tabela Periódica</a>
+            <a href="#ligacoes">Ligações Químicas</a>
+            <a href="#funcoes">Funções Inorgânicas</a>
+            <a href="#reacoes">Reações Químicas</a>
+            <a href="#estados">Estados Físicos</a>
+            <a href="#misturas">Misturas e Separação</a>
+            <a href="#solucoes">Soluções</a>
+            <a href="#estequiometria">Estequiometria</a>
+            <a href="#organica">Química Orgânica</a>
+            <a href="#ambiente">Química e Meio Ambiente</a>
+            <a href="#vocabulario">Vocabulário</a>
+            <a href="#interpretacao">Interpretação de Textos</a>
+
+            <a href="#quiz">Quiz</a>
+
+        </nav>
+
+        <button class="voltar" onclick="voltarEducai()">
+            Voltar para Educaí
+        </button>
+
+    </aside>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="main-content">
+
+        <!-- INÍCIO -->
+        <header id="inicio">
+
+            <div>
+                <p class="mini-title">EDUCAÍ • QUÍMICA</p>
+
+                <h1>Olá, estudante!</h1>
+
+                <p class="subtitle">
+                    Aprenda Química de forma simples, prática e interativa.
+                </p>
+            </div>
+
+            <button class="theme-button" onclick="alternarTema()">
+               Modo escuro
+            </button>
+
+        </header>
+
+
+        <!-- TRANSFORME MEU ESTUDO -->
+        <section id="transformar" class="transform-section">
+
+            <h2>Transforme meu estudo</h2>
+
+            <p>
+                Escolha uma forma de estudar o conteúdo de Química.
+            </p>
+
+            <input type="file" id="arquivo" class="arquivo">
+
+            <textarea
+                id="textoEstudo"
+                placeholder="Digite ou cole aqui um conteúdo para estudar..."></textarea>
+
+            <div class="transform-options">
+
+                <button onclick="transformarEstudo('ouvir')">
+                    Ouvir conteúdo
+                </button>
+
+                <button onclick="transformarEstudo('libras')">
+                    Traduzir para Libras
+                </button>
+
+                <button onclick="transformarEstudo('mapa')">
+                    Criar mapa mental
+                </button>
+
+                <button onclick="transformarEstudo('simples')">
+                    Explicar de forma simples
+                </button>
+
+                <button onclick="transformarEstudo('exercicios')">
+                    Criar exercícios
+                </button>
+
+                <button onclick="transformarEstudo('resumo')">
+                    Fazer resumo
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTEÚDOS -->
+        <section id="materias">
+
+            <h2>Conteúdos de Química</h2>
+
+            <p class="section-description">
+                Escolha um assunto para começar seus estudos.
+            </p>
+
+
+            <div class="cards-grid">
+
+                <a href="#materia" class="card">
+                    <h3>Matéria e Substâncias</h3>
+                    <p>Entenda o que é matéria e como ela se apresenta.</p>
+                     <button onclick="mostrar('materia')">Estudar</button>
+                </a>
+
+                <a href="#atomo" class="card">
+                    <h3>Átomo</h3>
+                    <p>Conheça a estrutura e as partículas do átomo.</p>
+                      <button onclick="mostrar('atomo')">Estudar</button>
+                </a>
+
+                <a href="#tabela" class="card">
+                    <h3>Tabela Periódica</h3>
+                    <p>Aprenda como os elementos químicos são organizados.</p>
+                      <button onclick="mostrar('tabela')">Estudar</button>
+                </a>
+
+                <a href="#ligacoes" class="card">
+                    <h3>Ligações Químicas</h3>
+                    <p>Entenda como os átomos se unem para formar substâncias.</p>
+                    <button onclick="mostrar('ligacoes')">Estudar</button>
+                </a>
+
+                <a href="#funcoes" class="card">
+                    <h3>Funções Inorgânicas</h3>
+                    <p>Conheça ácidos, bases, sais e óxidos.</p>
+                    <button onclick="mostrar('funcoes')">Estudar</button>
+                </a>
+
+                <a href="#reacoes" class="card">
+                    <h3>Reações Químicas</h3>
+                    <p>Aprenda como as substâncias se transformam.</p>
+                     <button onclick="mostrar('reacoes')">Estudar</button>
+                </a>
+
+                <a href="#estados" class="card">
+                    <h3>Estados Físicos</h3>
+                    <p>Entenda as mudanças entre sólido, líquido e gasoso.</p>
+                    <button onclick="mostrar('estados')">Estudar</button>
+                </a>
+
+                <a href="#misturas" class="card">
+                    <h3>Misturas e Separação</h3>
+                    <p>Conheça os tipos de mistura e como separá-las.</p>
+                    <button onclick="mostrar('misturas')">Estudar</button>
+                </a>
+
+                <a href="#solucoes" class="card">
+                    <h3>Soluções</h3>
+                    <p>Aprenda sobre soluto, solvente e concentração.</p>
+                    <button onclick="mostrar('solucoes')">Estudar</button>
+                </a>
+
+                <a href="#estequiometria" class="card">
+                    <h3>Estequiometria</h3>
+                    <p>Entenda os cálculos das quantidades nas reações.</p>
+                     <button onclick="mostrar('estequiometria')">Estudar</button>
+                    
+                </a>
+
+                <a href="#organica" class="card">
+                    <h3>Química Orgânica</h3>
+                    <p>Conheça os compostos formados por carbono.</p>
+                    <button onclick="mostrar('organica')">Estudar</button>
+                </a>
+
+                <a href="#ambiente" class="card">
+                    <h3>Química e Meio Ambiente</h3>
+                    <p>Descubra a relação entre química, poluição e sustentabilidade.</p>
+                     <button onclick="mostrar('ambiente')">Estudar</button>
+                </a>
+
+                <a href="#vocabulario" class="card">
+                    <h3>Vocabulário</h3>
+                    <p>Amplie seu vocabulário com os principais termos químicos.</p>
+                     <button onclick="mostrar('vocabulario')">Estudar</button>
+                </a>
+
+                <a href="#interpretacao" class="card">
+                    <h3>Interpretação de Textos</h3>
+                    <p>Aprenda estratégias para compreender textos e gráficos de Química.</p>
+                    <button onclick="mostrar('interpretacao')">Estudar</button>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- MATÉRIA E SUBSTÂNCIAS -->
+        <section id="materia" class="study-section">
+
+            <h2>Matéria e Substâncias</h2>
+
+            <p>
+                Matéria é tudo aquilo que possui massa e ocupa lugar no espaço,
+                sendo o objeto de estudo da Química.
+            </p>
+
+            <div class="example">
+                <strong>Exemplos:</strong>
+
+                <p>Substância pura = formada por um único tipo de molécula</p>
+                <p>Substância simples = formada por um único elemento (O₂)</p>
+                <p>Substância composta = formada por elementos diferentes (H₂O)</p>
+                <p>Mistura = união de duas ou mais substâncias</p>
+                <p>Propriedade física = densidade, ponto de fusão, cor</p>
+                <p>Propriedade química = capacidade de reagir com outras substâncias</p>
+            </div>
+
+        </section>
+
+
+        <!-- ÁTOMO -->
+        <section id="atomo" class="study-section">
+
+            <h2>Átomo</h2>
+
+            <p>
+                O átomo é a menor partícula que mantém as características
+                de um elemento químico.
+            </p>
+
+            <div class="example">
+
+                <strong>Exemplos:</strong>
+
+                <p>Prótons têm carga positiva e ficam no núcleo.</p>
+                <p>Nêutrons não possuem carga e também ficam no núcleo.</p>
+                <p>Elétrons têm carga negativa e giram na eletrosfera.</p>
+
+            </div>
+
+            <p>
+                O número atômico corresponde ao número de prótons do átomo.
+            </p>
+
+        </section>
+
+
+        <!-- TABELA PERIÓDICA -->
+        <section id="tabela" class="study-section">
+
+            <h2>Tabela Periódica</h2>
+
+            <p>
+                A Tabela Periódica organiza os elementos químicos em ordem crescente
+                de número atômico, agrupando-os por propriedades semelhantes.
+            </p>
+
+            <div class="example">
+
+                <strong>Exemplos:</strong>
+
+                <p>Períodos são as linhas horizontais da tabela.</p>
+                <p>Famílias ou grupos são as colunas verticais.</p>
+                <p>Metais, ametais e gases nobres formam grandes categorias.</p>
+
+            </div>
+
+            <p>
+                Elementos de uma mesma família apresentam comportamento químico parecido.
+            </p>
+
+        </section>
+
+
+        <!-- LIGAÇÕES QUÍMICAS -->
+        <section id="ligacoes" class="study-section">
+
+            <h2>Ligações Químicas</h2>
+
+            <p>
+                As ligações químicas explicam como os átomos se unem
+                para formar substâncias estáveis.
+            </p>
+
+            <div class="example">
+
+                <strong>Exemplos:</strong>
+
+                <p>Ligação iônica ocorre com transferência de elétrons (NaCl).</p>
+                <p>Ligação covalente ocorre com compartilhamento de elétrons (H₂O).</p>
+                <p>Ligação metálica ocorre entre átomos de metais.</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- FUNÇÕES INORGÂNICAS -->
+        <section id="funcoes" class="study-section">
+
+            <h2>Funções Inorgânicas</h2>
+
+            <p>
+                As funções inorgânicas reúnem substâncias com propriedades semelhantes,
+                classificadas conforme seu comportamento em água.
+            </p>
+
+            <div class="example">
+
+                <strong>Estrutura básica:</strong>
+
+                <p>Função + característica + exemplo</p>
+
+                <strong>Exemplos:</strong>
+
+                <p>Ácido libera íons H⁺ em água (HCl).</p>
+                <p>Base libera íons OH⁻ em água (NaOH).</p>
+                <p>Sal é formado na reação entre ácido e base (NaCl).</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- REAÇÕES QUÍMICAS -->
+        <section id="reacoes" class="study-section">
+
+            <h2>Reações Químicas</h2>
+
+            <p>
+                Nas reações químicas, as substâncias iniciais se transformam
+                em novas substâncias com propriedades diferentes.
+            </p>
+
+            <div class="example">
+
+                <p>Reagentes = substâncias que entram na reação</p>
+                <p>Produtos = substâncias formadas na reação</p>
+                <p>Síntese = duas substâncias formam uma só</p>
+                <p>Decomposição = uma substância origina outras</p>
+                <p>Combustão = reação com oxigênio e liberação de energia</p>
+                <p>Neutralização = reação entre ácido e base</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ESTADOS FÍSICOS -->
+        <section id="estados" class="study-section">
+
+            <h2>Estados Físicos</h2>
+
+            <p>
+                A matéria pode se apresentar em diferentes estados físicos,
+                que mudam conforme a temperatura e a pressão.
+            </p>
+
+            <div class="example">
+
+                <p>Fusão = sólido para líquido</p>
+                <p>Solidificação = líquido para sólido</p>
+                <p>Vaporização = líquido para gasoso</p>
+                <p>Condensação = gasoso para líquido</p>
+                <p>Sublimação = sólido direto para gasoso</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- MISTURAS E SEPARAÇÃO -->
+        <section id="misturas" class="study-section">
+
+            <h2>Misturas e Separação</h2>
+
+            <p>
+                As misturas podem ser separadas por métodos que aproveitam
+                as diferenças entre as substâncias que as formam.
+            </p>
+
+            <div class="example">
+
+                <p>Mistura homogênea = uma única fase visível</p>
+                <p>Mistura heterogênea = duas ou mais fases visíveis</p>
+                <p>Filtração = separa sólido de líquido</p>
+                <p>Decantação = separa líquidos imiscíveis ou sólidos depositados</p>
+                <p>Destilação = separa líquidos com pontos de ebulição diferentes</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- SOLUÇÕES -->
+        <section id="solucoes" class="study-section">
+
+            <h2>Soluções</h2>
+
+            <p>
+                Soluções são misturas homogêneas formadas por um soluto
+                dissolvido em um solvente.
+            </p>
+
+            <div class="example">
+
+                <p>Soluto = substância que é dissolvida</p>
+                <p>Solvente = substância que dissolve</p>
+                <p>Solução diluída = pouca quantidade de soluto</p>
+                <p>Solução concentrada = muita quantidade de soluto</p>
+                <p>Água = solvente universal</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ESTEQUIOMETRIA -->
+        <section id="estequiometria" class="study-section">
+
+            <h2>Estequiometria</h2>
+
+            <p>
+                A estequiometria calcula as quantidades de reagentes e produtos
+                envolvidos em uma reação química.
+            </p>
+
+            <div class="example">
+
+                <p>Mol = quantidade de matéria</p>
+                <p>Massa molar = massa de um mol da substância, em g/mol</p>
+                <p>Balanceamento = igualar os átomos nos dois lados da equação</p>
+
+                <strong>Regra básica:</strong>
+
+                <p>Lei de Lavoisier → a massa se conserva na reação</p>
+                <p>Lei de Proust → as proporções são constantes</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- QUÍMICA ORGÂNICA -->
+        <section id="organica" class="study-section">
+
+            <h2>Química Orgânica</h2>
+
+            <p>
+                A Química Orgânica estuda os compostos formados principalmente
+                por carbono e hidrogênio.
+            </p>
+
+            <div class="example">
+
+                <p>Hidrocarbonetos = formados apenas por carbono e hidrogênio</p>
+                <p>Álcool = possui o grupo OH ligado ao carbono</p>
+                <p>Ácido carboxílico = possui o grupo COOH</p>
+                <p>Cadeia carbônica = sequência de átomos de carbono ligados</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- QUÍMICA E MEIO AMBIENTE -->
+        <section id="ambiente" class="study-section">
+
+            <h2>Química e Meio Ambiente</h2>
+
+            <p>
+                A Química ajuda a compreender problemas ambientais e também
+                a desenvolver soluções sustentáveis.
+            </p>
+
+            <div class="example">
+
+                <p>Chuva ácida = causada por óxidos de enxofre e nitrogênio</p>
+                <p>Efeito estufa = intensificado pelo excesso de CO₂</p>
+                <p>Poluição da água = provocada por resíduos e metais pesados</p>
+                <p>Química verde = busca processos menos poluentes</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- VOCABULÁRIO -->
+        <section id="vocabulario" class="study-section">
+
+            <h2>Vocabulário</h2>
+
+            <p>
+                Conhecer os termos químicos é importante para compreender melhor
+                os textos, as fórmulas e os experimentos.
+            </p>
+
+            <div class="example">
+
+                <p>Átomo = menor partícula de um elemento</p>
+                <p>Molécula = união de dois ou mais átomos</p>
+                <p>Elemento químico = conjunto de átomos de mesmo número atômico</p>
+                <p>Íon = átomo que ganhou ou perdeu elétrons</p>
+                <p>Cátion = íon de carga positiva</p>
+                <p>Ânion = íon de carga negativa</p>
+                <p>pH = medida de acidez ou basicidade</p>
+                <p>Densidade = relação entre massa e volume</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- INTERPRETAÇÃO -->
+        <section id="interpretacao" class="study-section">
+
+            <h2>Interpretação de Textos</h2>
+
+            <p>
+                Para interpretar um texto de Química, procure primeiro identificar
+                o fenômeno descrito e os termos que você já conhece.
+            </p>
+
+            <div class="example">
+
+                <strong>Dicas:</strong>
+
+                <p>• Leia o título e observe o assunto tratado.</p>
+                <p>• Procure fórmulas, símbolos e unidades de medida.</p>
+                <p>• Identifique reagentes, produtos e transformações citadas.</p>
+                <p>• Observe tabelas e gráficos com atenção aos eixos.</p>
+                <p>• Não é necessário conhecer todas as fórmulas para compreender
+                    a ideia principal.</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- QUIZ -->
+        <section id="quiz" class="quiz-section">
+
+            <h2>Quiz de Química</h2>
+
+            <p>
+                Teste seus conhecimentos respondendo às 10 questões.
+            </p>
+
+
+            <!-- QUESTÃO 1 -->
+            <div class="question">
+
+                <h3>1. Qual partícula do átomo possui carga negativa?</h3>
+
+                <label>
+                    <input type="radio" name="q1" value="a">
+                    a) Próton
+                </label>
+
+                <label>
+                    <input type="radio" name="q1" value="b">
+                    b) Elétron
+                </label>
+
+                <label>
+                    <input type="radio" name="q1" value="c">
+                    c) Nêutron
+                </label>
+
+                <label>
+                    <input type="radio" name="q1" value="d">
+                    d) Núcleo
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 2 -->
+            <div class="question">
+
+                <h3>2. O número atômico corresponde ao número de qual partícula?</h3>
+
+                <label>
+                    <input type="radio" name="q2" value="a">
+                    a) Elétrons livres
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="b">
+                    b) Nêutrons
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="c">
+                    c) Prótons
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="d">
+                    d) Moléculas
+
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 3 -->
+            <div class="question">
+
+                <h3>3. Qual alternativa descreve corretamente a ligação iônica?</h3>
+
+                <label>
+                    <input type="radio" name="q3" value="a">
+                    a) Ocorre com transferência de elétrons entre os átomos.
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="b">
+                    b) Ocorre com compartilhamento de elétrons.
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="c">
+                    c) Ocorre apenas entre gases nobres.
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="d">
+                    d) Ocorre sem participação de elétrons.
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 4 -->
+            <div class="question">
+
+                <h3>4. Qual substância é uma base?</h3>
+
+                <label>
+                    <input type="radio" name="q4" value="a">
+                    a) HCl
+                </label>
+
+                <label>
+                    <input type="radio" name="q4" value="b">
+                    b) NaOH
+                </label>
+
+                <label>
+                    <input type="radio" name="q4" value="c">
+                    c) NaCl
+                </label>
+
+                <label>
+                    <input type="radio" name="q4" value="d">
+                    d) CO₂
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 5 -->
+            <div class="question">
+
+                <h3>5. Como se chama a passagem do estado sólido para o líquido?</h3>
+
+                <label>
+                    <input type="radio" name="q5" value="a">
+                    a) Condensação
+                </label>
+
+                <label>
+                    <input type="radio" name="q5" value="b">
+                    b) Sublimação
+                </label>
+
+                <label>
+                    <input type="radio" name="q5" value="c">
+                    c) Fusão
+                </label>
+
+                <label>
+                    <input type="radio" name="q5" value="d">
+                    d) Solidificação
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 6 -->
+            <div class="question">
+
+                <h3>6. Complete a frase:</h3>
+
+                <p>
+                    Em uma solução, a substância que é dissolvida recebe o nome de ___.
+                </p>
+
+                <label>
+                    <input type="radio" name="q6" value="a">
+                    a) solvente
+                </label>
+
+                <label>
+                    <input type="radio" name="q6" value="b">
+                    b) soluto
+                </label>
+
+                <label>
+                    <input type="radio" name="q6" value="c">
+                    c) produto
+                </label>
+
+                <label>
+                    <input type="radio" name="q6" value="d">
+                    d) reagente
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 7 -->
+            <div class="question">
+
+                <h3>7. Qual método é usado para separar um sólido de um líquido?</h3>
+
+                <label>
+                    <input type="radio" name="q7" value="a">
+                    a) Combustão
+                </label>
+
+                <label>
+                    <input type="radio" name="q7" value="b">
+                    b) Filtração
+                </label>
+
+                <label>
+                    <input type="radio" name="q7" value="c">
+                    c) Neutralização
+                </label>
+
+                <label>
+                    <input type="radio" name="q7" value="d">
+                    d) Sublimação
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 8 -->
+            <div class="question">
+
+                <h3>8. Qual lei afirma que a massa se conserva em uma reação química?</h3>
+
+                <label>
+                    <input type="radio" name="q8" value="a">
+                    a) Lei de Proust
+                </label>
+
+                <label>
+                    <input type="radio" name="q8" value="b">
+                    b) Lei de Lavoisier
+                </label>
+
+                <label>
+                    <input type="radio" name="q8" value="c">
+                    c) Lei de Dalton
+                </label>
+
+                <label>
+                    <input type="radio" name="q8" value="d">
+                    d) Lei de Boyle
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 9 -->
+            <div class="question">
+
+                <h3>9. Qual elemento é a base dos compostos da Química Orgânica?</h3>
+
+                <label>
+                    <input type="radio" name="q9" value="a">
+                    a) Oxigênio
+                </label>
+
+                <label>
+                    <input type="radio" name="q9" value="b">
+                    b) Carbono
+                </label>
+
+                <label>
+                    <input type="radio" name="q9" value="c">
+                    c) Nitrogênio
+                </label>
+
+                <label>
+                    <input type="radio" name="q9" value="d">
+                    d) Enxofre
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 10 -->
+            <div class="question">
+
+                <h3>10. Leia o trecho:</h3>
+
+                <p>
+                    A queima de combustíveis libera óxidos de enxofre e de nitrogênio, que reagem com a água da atmosfera e tornam a chuva mais ácida.
+                </p>
+
+                <p>
+                    O que esse trecho informa?
+                </p>
+
+                <label>
+                    <input type="radio" name="q10" value="a">
+                    a) Explica a formação da chuva ácida.
+                </label>
+
+                <label>
+                    <input type="radio" name="q10" value="b">
+                    b) Explica o processo de destilação.
+                </label>
+
+                <label>
+                    <input type="radio" name="q10" value="c">
+                    c) Explica a estrutura do átomo.
+                </label>
+
+                <label>
+                    <input type="radio" name="q10" value="d">
+                    d) Explica a organização da Tabela Periódica.
+                </label>
+
+            </div>
+
+
+            <button class="quiz-button" onclick="corrigirQuiz()">
+                Corrigir Quiz
+            </button>
+
+            <div id="resultado" class="resultado"></div>
+
+        </section>
+
+
+        <footer>
+            <p>Educaí • Aprender transforma.</p>
+        </footer>
+
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="traduzirlibras.js"></script>
+
+    <script>
+
+        function voltarEducai() {
+            window.location.href = "index.html";
+        }
+
+
+        function alternarTema() {
+
+            document.body.classList.toggle("dark-mode");
+
+        }
+
+
+        function mostrar(id) {
+
+            const elemento = document.getElementById(id);
+
+            if (elemento) {
+                elemento.scrollIntoView({
+                    behavior: "smooth"
+                });
+            }
+
+        }
+
+
+        function corrigirQuiz() {
+
+            const respostas = {
+
+                q1: "b",
+                q2: "c",
+                q3: "a",
+                q4: "b",
+                q5: "c",
+                q6: "b",
+                q7: "b",
+                q8: "b",
+                q9: "b",
+                q10: "a"
+
+            };
+
+            let acertos = 0;
+
+            for (let questao in respostas) {
+
+                const respostaSelecionada =
+                    document.querySelector(
+                        `input[name="${questao}"]:checked`
+                    );
+
+                if (
+                    respostaSelecionada &&
+                    respostaSelecionada.value === respostas[questao]
+                ) {
+
+                    acertos++;
+
+                }
+
+            }
+
+
+            const resultado = document.getElementById("resultado");
+
+            resultado.innerHTML =
+                `<strong>Você acertou ${acertos}/10 questões!</strong>`;
+
+
+            if (acertos === 10) {
+
+                resultado.innerHTML +=
+                    "<p>Excelente! Você domina muito bem esse conteúdo.</p>";
+
+            } else if (acertos >= 7) {
+
+                resultado.innerHTML +=
+                    "<p>Muito bom! Você já possui um ótimo conhecimento.</p>";
+
+            } else if (acertos >= 5) {
+
+                resultado.innerHTML +=
+                    "<p>Bom trabalho! Continue estudando para melhorar ainda mais.</p>";
+
+            } else {
+
+                resultado.innerHTML +=
+                    "<p>Continue estudando. Você pode tentar novamente!</p>";
+
+            }
+
+        }
+
+
+        function aumentarProgresso() {
+
+            const barra = document.getElementById("barra");
+            const porcentagem = document.getElementById("porcentagem");
+
+            if (barra && porcentagem) {
+
+                let valor = parseInt(barra.value);
+
+                if (valor < 100) {
+
+                    valor += 10;
+
+                    barra.value = valor;
+                    porcentagem.textContent = valor + "%";
+
+                }
+
+            }
+
+        }
+
+    </script>
+
+    <script src="traduzirlibras.js"></script>
+
+</body>
+
+</html>

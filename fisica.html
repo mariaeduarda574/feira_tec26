@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/fisica.css">
+    <link rel="icon" href="img/flavicon.png">
+
+    <title>Física - Educaí</title>
+
+</head>
+
+<body>
+
+    <!-- MENU LATERAL -->
+    <aside class="sidebar">
+
+        <div class="logo-container">
+    <a href="index.html" class="logo-link">
+        <img src="img/logo/logo.png" alt="Logo Educaí" class="logo">
+        <span>Educaí</span>
+    </a>
+</div>
+
+        <nav class="menu">
+
+            <a href="#inicio">Início</a>
+            <a href="#transformar">Transforme meu estudo</a>
+            <a href="#materias">Conteúdos</a>
+            <a href="#grandezas">Grandezas e Unidades</a>
+            <a href="#cinematica">Cinemática</a>
+            <a href="#leis-newton">Leis de Newton</a>
+            <a href="#forcas">Tipos de Força</a>
+            <a href="#trabalho">Trabalho e Energia</a>
+            <a href="#gravitacao">Gravitação</a>
+            <a href="#hidrostatica">Hidrostática</a>
+            <a href="#termologia">Termologia</a>
+            <a href="#optica">Óptica</a>
+            <a href="#ondas">Ondas e Som</a>
+            <a href="#eletricidade">Eletricidade</a>
+            <a href="#vocabulario">Vocabulário</a>
+            <a href="#interpretacao">Interpretação de Textos</a>
+
+            <a href="#quiz">Quiz</a>
+
+        </nav>
+
+        <button class="voltar" onclick="voltarEducai()">
+            Voltar para Educaí
+        </button>
+
+    </aside>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="main-content">
+
+        <!-- INÍCIO -->
+        <header id="inicio">
+
+            <div>
+                <p class="mini-title">EDUCAÍ • FÍSICA</p>
+
+                <h1>Olá, estudante!</h1>
+
+                <p class="subtitle">
+                    Aprenda Física de forma simples, prática e interativa.
+                </p>
+            </div>
+
+            <button class="theme-button" onclick="alternarTema()">
+               Modo escuro
+            </button>
+
+        </header>
+
+
+        <!-- TRANSFORME MEU ESTUDO -->
+        <section id="transformar" class="transform-section">
+
+            <h2>Transforme meu estudo</h2>
+
+            <p>
+                Escolha uma forma de estudar o conteúdo de Física.
+            </p>
+
+            <input type="file" id="arquivo" class="arquivo">
+
+            <textarea
+                id="textoEstudo"
+                placeholder="Digite ou cole aqui um conteúdo para estudar..."></textarea>
+
+            <div class="transform-options">
+
+                <button onclick="transformarEstudo('ouvir')">
+                    Ouvir conteúdo
+                </button>
+
+                <button onclick="transformarEstudo('libras')">
+                    Traduzir para Libras
+                </button>
+
+                <button onclick="transformarEstudo('mapa')">
+                    Criar mapa mental
+                </button>
+
+                <button onclick="transformarEstudo('simples')">
+                    Explicar de forma simples
+                </button>
+
+                <button onclick="transformarEstudo('exercicios')">
+                    Criar exercícios
+                </button>
+
+                <button onclick="transformarEstudo('resumo')">
+                    Fazer resumo
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTEÚDOS -->
+        <section id="materias">
+
+            <h2>Conteúdos de Física</h2>
+
+            <p class="section-description">
+                Escolha um assunto para começar seus estudos.
+            </p>
+
+
+            <div class="cards-grid">
+
+                <a href="#grandezas" class="card">
+                    <h3>Grandezas e Unidades</h3>
+                    <p>Conheça as principais grandezas e suas unidades de medida.</p>
+                     <button onclick="mostrar('grandezas')">Estudar</button>
+                </a>
+
+                <a href="#cinematica" class="card">
+                    <h3>Cinemática</h3>
+                    <p>Aprenda a descrever os movimentos dos corpos.</p>
+                      <button onclick="mostrar('cinematica')">Estudar</button>
+                </a>
+
+                <a href="#leis-newton" class="card">
+                    <h3>Leis de Newton</h3>
+                    <p>Entenda as três leis que explicam o movimento.</p>
+                      <button onclick="mostrar('leis-newton')">Estudar</button>
+                </a>
+
+                <a href="#forcas" class="card">
+                    <h3>Tipos de Força</h3>
+                    <p>Conheça peso, normal, atrito e força elástica.</p>
+                    <button onclick="mostrar('forcas')">Estudar</button>
+                </a>
+
+                <a href="#trabalho" class="card">
+                    <h3>Trabalho e Energia</h3>
+                    <p>Aprenda sobre energia cinética, potencial e sua conservação.</p>
+                    <button onclick="mostrar('trabalho')">Estudar</button>
+                </a>
+
+                <a href="#gravitacao" class="card">
+                    <h3>Gravitação</h3>
+                    <p>Entenda a atração entre os corpos e o movimento dos planetas.</p>
+                     <button onclick="mostrar('gravitacao')">Estudar</button>
+                </a>
+
+                <a href="#hidrostatica" class="card">
+                    <h3>Hidrostática</h3>
+                    <p>Aprenda sobre pressão, densidade e empuxo.</p>
+                    <button onclick="mostrar('hidrostatica')">Estudar</button>
+                </a>
+
+                <a href="#termologia" class="card">
+                    <h3>Termologia</h3>
+                    <p>Entenda calor, temperatura e dilatação.</p>
+                    <button onclick="mostrar('termologia')">Estudar</button>
+                </a>
+
+                <a href="#optica" class="card">
+                    <h3>Óptica</h3>
+                    <p>Conheça a reflexão, a refração e as lentes.</p>
+                    <button onclick="mostrar('optica')">Estudar</button>
+                </a>
+
+                <a href="#ondas" class="card">
+                    <h3>Ondas e Som</h3>
+                    <p>Entenda como as ondas se propagam e transportam energia.</p>
+                     <button onclick="mostrar('ondas')">Estudar</button>
+                    
+                </a>
+
+                <a href="#eletricidade" class="card">
+                    <h3>Eletricidade</h3>
+                    <p>Conheça corrente, tensão, resistência e circuitos.</p>
+                    <button onclick="mostrar('eletricidade')">Estudar</button>
+                </a>
+
+                <a href="#vocabulario" class="card">
+                    <h3>Vocabulário</h3>
+                    <p>Amplie seu vocabulário com os principais termos da Física.</p>
+                     <button onclick="mostrar('vocabulario')">Estudar</button>
+                </a>
+
+                <a href="#interpretacao" class="card">
+                    <h3>Interpretação de Textos</h3>
+                    <p>Aprenda estratégias para compreender enunciados e gráficos.</p>
+                    <button onclick="mostrar('interpretacao')">Estudar</button>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- GRANDEZAS E UNIDADES -->
+        <section id="grandezas" class="study-section">
+
+            <h2>Grandezas e Unidades</h2>
+
+            <p>
+                As grandezas físicas são tudo aquilo que pode ser medido,
+                sempre acompanhado de uma unidade de medida.
+            </p>
+
+            <div class="example">
+                <strong>Exemplos:</strong>
+
+                <p>Comprimento = metro (m)</p>
+                <p>Massa = quilograma (kg)</p>
+                <p>Tempo = segundo (s)</p>
+                <p>Força = newton (N)</p>
+                <p>Energia e trabalho = joule (J)</p>
+                <p>Potência = watt (W)</p>
+            </div>
+
+        </section>
+
+
+        <!-- CINEMÁTICA -->
+        <section id="cinematica" class="study-section">
+
+            <h2>Cinemática</h2>
+
+            <p>
+                A cinemática é utilizada principalmente para descrever os movimentos
+                dos corpos, sem analisar suas causas.
+            </p>
+
+            <div class="example">
+
+                <strong>Exemplos:</strong>
+
+                <p>Velocidade média = distância dividida pelo tempo.</p>
+                <p>Movimento uniforme tem velocidade constante.</p>
+                <p>Movimento uniformemente variado tem aceleração constante.</p>
+
+            </div>
+
+            <p>
+                A aceleração indica a variação da velocidade ao longo do tempo.
+            </p>
+
+        </section>
+
+
+        <!-- LEIS DE NEWTON -->
+        <section id="leis-newton" class="study-section">
+
+            <h2>Leis de Newton</h2>
+
+            <p>
+                As Leis de Newton explicam as causas dos movimentos e a relação
+                entre força, massa e aceleração.
+            </p>
+
+            <div class="example">
+
+                <strong>Exemplos:</strong>
+
+                <p>1ª lei (inércia): um corpo mantém seu estado se nenhuma força age sobre ele.</p>
+                <p>2ª lei: força é igual a massa vezes aceleração (F = m · a).</p>
+                <p>3ª lei (ação e reação): toda ação gera uma reação de mesma intensidade.</p>
+
+            </div>
+
+            <p>
+                Essas leis são a base da mecânica clássica.
+            </p>
+
+        </section>
+
+
+        <!-- TIPOS DE FORÇA -->
+        <section id="forcas" class="study-section">
+
+            <h2>Tipos de Força</h2>
+
+            <p>
+                As forças podem empurrar, puxar ou deformar os corpos,
+                modificando o seu movimento.
+            </p>
+
+            <div class="example">
+
+                <strong>Exemplos:</strong>
+
+                <p>Peso = força da gravidade sobre o corpo (P = m · g).</p>
+                <p>Normal = força da superfície sobre o corpo apoiado.</p>
+                <p>Atrito = força que se opõe ao movimento.</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- TRABALHO E ENERGIA -->
+        <section id="trabalho" class="study-section">
+
+            <h2>Trabalho e Energia</h2>
+
+            <p>
+                O trabalho é usado para indicar a transferência de energia
+                quando uma força desloca um corpo.
+            </p>
+
+            <div class="example">
+
+                <strong>Estrutura básica:</strong>
+
+                <p>Trabalho = força × deslocamento</p>
+
+                <strong>Exemplos:</strong>
+
+                <p>Energia cinética está ligada à velocidade do corpo.</p>
+                <p>Energia potencial gravitacional está ligada à altura.</p>
+                <p>A energia se conserva, apenas mudando de forma.</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- GRAVITAÇÃO -->
+        <section id="gravitacao" class="study-section">
+
+            <h2>Gravitação</h2>
+
+            <p>
+                A gravitação explica a atração entre corpos com massa e
+                o movimento dos astros no espaço.
+            </p>
+
+            <div class="example">
+
+                <p>Gravidade = força de atração entre os corpos</p>
+                <p>Aceleração da gravidade na Terra ≈ 9,8 m/s²</p>
+                <p>Peso = depende da massa e da gravidade local</p>
+                <p>Órbita = trajetória de um corpo ao redor de outro</p>
+                <p>Satélite = corpo que orbita um planeta</p>
+                <p>Queda livre = movimento sob ação apenas da gravidade</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- HIDROSTÁTICA -->
+        <section id="hidrostatica" class="study-section">
+
+            <h2>Hidrostática</h2>
+
+            <p>
+                A hidrostática estuda os líquidos em repouso e os efeitos
+                que eles provocam sobre os corpos.
+            </p>
+
+            <div class="example">
+
+                <p>Densidade = massa dividida pelo volume</p>
+                <p>Pressão = força dividida pela área</p>
+                <p>Empuxo = força vertical para cima exercida pelo líquido</p>
+                <p>Princípio de Arquimedes = explica por que os corpos flutuam</p>
+                <p>Pressão hidrostática = aumenta com a profundidade</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- TERMOLOGIA -->
+        <section id="termologia" class="study-section">
+
+            <h2>Termologia</h2>
+
+            <p>
+                A termologia estuda o calor, a temperatura e os efeitos
+                das trocas de energia térmica.
+            </p>
+
+            <div class="example">
+
+                <p>Temperatura = medida da agitação das partículas</p>
+                <p>Calor = energia térmica em trânsito</p>
+                <p>Condução = calor transmitido por contato</p>
+                <p>Convecção = calor transmitido por correntes em fluidos</p>
+                <p>Irradiação = calor transmitido por ondas</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ÓPTICA -->
+        <section id="optica" class="study-section">
+
+            <h2>Óptica</h2>
+
+            <p>
+                A óptica estuda a luz, sua propagação e os fenômenos
+                que ocorrem quando ela encontra diferentes materiais.
+            </p>
+
+            <div class="example">
+
+                <p>Reflexão = a luz retorna ao meio de origem</p>
+                <p>Refração = a luz muda de direção ao mudar de meio</p>
+                <p>Espelho plano = forma imagem virtual do mesmo tamanho</p>
+                <p>Lente convergente = concentra os raios de luz</p>
+                <p>Lente divergente = espalha os raios de luz</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ONDAS E SOM -->
+        <section id="ondas" class="study-section">
+
+            <h2>Ondas e Som</h2>
+
+            <p>
+                As ondas transportam energia sem transportar matéria,
+                e o som é um exemplo de onda mecânica.
+            </p>
+
+            <div class="example">
+
+                <p>Frequência = número de oscilações por segundo (Hz)</p>
+                <p>Comprimento de onda = distância entre duas cristas</p>
+                <p>Amplitude = relacionada à intensidade da onda</p>
+
+                <strong>Regra básica:</strong>
+
+                <p>Onda mecânica → precisa de um meio material</p>
+                <p>Onda eletromagnética → propaga-se até no vácuo</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ELETRICIDADE -->
+        <section id="eletricidade" class="study-section">
+
+            <h2>Eletricidade</h2>
+
+            <p>
+                A eletricidade estuda as cargas elétricas, seu movimento
+                e os circuitos formados por elas.
+            </p>
+
+            <div class="example">
+
+                <p>Corrente elétrica = movimento ordenado de cargas (A)</p>
+                <p>Tensão elétrica = diferença de potencial (V)</p>
+                <p>Resistência elétrica = oposição à passagem da corrente (Ω)</p>
+                <p>Lei de Ohm = U = R · i</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- VOCABULÁRIO -->
+        <section id="vocabulario" class="study-section">
+
+            <h2>Vocabulário</h2>
+
+            <p>
+                Conhecer os termos da Física ajuda a entender melhor
+                os enunciados, as fórmulas e os experimentos.
+            </p>
+
+            <div class="example">
+
+                <p>Massa = quantidade de matéria de um corpo</p>
+                <p>Peso = força com que a Terra atrai o corpo</p>
+                <p>Velocidade = variação da posição no tempo</p>
+                <p>Aceleração = variação da velocidade no tempo</p>
+                <p>Força = ação capaz de alterar o movimento</p>
+                <p>Energia = capacidade de realizar trabalho</p>
+                <p>Potência = trabalho realizado por unidade de tempo</p>
+                <p>Inércia = tendência do corpo de manter seu estado</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- INTERPRETAÇÃO -->
+        <section id="interpretacao" class="study-section">
+
+            <h2>Interpretação de Textos</h2>
+
+            <p>
+                Para interpretar um enunciado de Física, procure primeiro identificar
+                o fenômeno descrito e os dados fornecidos.
+            </p>
+
+            <div class="example">
+
+                <strong>Dicas:</strong>
+
+                <p>• Leia o enunciado e observe o que está sendo pedido.</p>
+                <p>• Anote os dados e suas unidades de medida.</p>
+                <p>• Identifique a fórmula que relaciona as grandezas.</p>
+                <p>• Observe gráficos com atenção aos eixos e às escalas.</p>
+                <p>• Não é necessário decorar todas as fórmulas para compreender
+                    a ideia principal.</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- QUIZ -->
+        <section id="quiz" class="quiz-section">
+
+            <h2>Quiz de Física</h2>
+
+            <p>
+                Teste seus conhecimentos respondendo às 10 questões.
+            </p>
+
+
+            <!-- QUESTÃO 1 -->
+            <div class="question">
+
+                <h3>1. Qual é a unidade de medida da força no Sistema Internacional?</h3>
+
+                <label>
+                    <input type="radio" name="q1" value="a">
+                    a) Joule
+                </label>
+
+                <label>
+                    <input type="radio" name="q1" value="b">
+                    b) Newton
+                </label>
+
+                <label>
+                    <input type="radio" name="q1" value="c">
+                    c) Watt
+                </label>
+
+                <label>
+                    <input type="radio" name="q1" value="d">
+                    d) Pascal
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 2 -->
+            <div class="question">
+
+                <h3>2. Qual lei de Newton é conhecida como lei da inércia?</h3>
+
+                <label>
+                    <input type="radio" name="q2" value="a">
+                    a) Terceira lei
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="b">
+                    b) Segunda lei
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="c">
+                    c) Primeira lei
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="d">
+                    d) Lei da gravitação
+
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 3 -->
+            <div class="question">
+
+                <h3>3. Qual alternativa expressa corretamente a segunda lei de Newton?</h3>
+
+                <label>
+                    <input type="radio" name="q3" value="a">
+                    a) F = m · a
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="b">
+                    b) F = m / a
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="c">
+                    c) F = a / m
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="d">
+                    d) F = m + a
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 4 -->
+            <div class="question">
+
+                <h3>4. Qual força se opõe ao movimento entre duas superfícies?</h3>
+
+                <label>
+                    <input type="radio" name="q4" value="a">
+                    a) Peso
+                </label>
+
+                <label>
+                    <input type="radio" name="q4" value="b">
+                    b) Atrito
+                </label>
+
+                <label>
+                    <input type="radio" name="q4" value="c">
+                    c) Normal
+                </label>
+
+                <label>
+                    <input type="radio" name="q4" value="d">
+                    d) Empuxo
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 5 -->
+            <div class="question">
+
+                <h3>5. A energia associada à velocidade de um corpo é chamada de:</h3>
+
+                <label>
+                    <input type="radio" name="q5" value="a">
+                    a) Energia potencial gravitacional
+                </label>
+
+                <label>
+                    <input type="radio" name="q5" value="b">
+                    b) Energia elástica
+                </label>
+
+                <label>
+                    <input type="radio" name="q5" value="c">
+                    c) Energia cinética
+                </label>
+
+                <label>
+                    <input type="radio" name="q5" value="d">
+                    d) Energia térmica
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 6 -->
+            <div class="question">
+
+                <h3>6. Complete a frase:</h3>
+
+                <p>
+                    A força vertical para cima que um líquido exerce sobre um corpo nele mergulhado chama-se ___.
+                </p>
+
+                <label>
+                    <input type="radio" name="q6" value="a">
+                    a) atrito
+                </label>
+
+                <label>
+                    <input type="radio" name="q6" value="b">
+                    b) empuxo
+                </label>
+
+                <label>
+                    <input type="radio" name="q6" value="c">
+                    c) peso
+                </label>
+
+                <label>
+                    <input type="radio" name="q6" value="d">
+                    d) inércia
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 7 -->
+            <div class="question">
+
+                <h3>7. Como se chama a transmissão de calor por contato direto?</h3>
+
+                <label>
+                    <input type="radio" name="q7" value="a">
+                    a) Convecção
+                </label>
+
+                <label>
+                    <input type="radio" name="q7" value="b">
+                    b) Condução
+                </label>
+
+                <label>
+                    <input type="radio" name="q7" value="c">
+                    c) Irradiação
+                </label>
+
+                <label>
+                    <input type="radio" name="q7" value="d">
+                    d) Refração
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 8 -->
+            <div class="question">
+
+                <h3>8. Qual fenômeno ocorre quando a luz muda de direção ao passar de um meio para outro?</h3>
+
+                <label>
+                    <input type="radio" name="q8" value="a">
+                    a) Reflexão
+                </label>
+
+                <label>
+                    <input type="radio" name="q8" value="b">
+                    b) Refração
+                </label>
+
+                <label>
+                    <input type="radio" name="q8" value="c">
+                    c) Condução
+                </label>
+
+                <label>
+                    <input type="radio" name="q8" value="d">
+                    d) Dilatação
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 9 -->
+            <div class="question">
+
+                <h3>9. Qual é a fórmula da Lei de Ohm?</h3>
+
+                <label>
+                    <input type="radio" name="q9" value="a">
+                    a) U = R + i
+                </label>
+
+                <label>
+                    <input type="radio" name="q9" value="b">
+                    b) U = R · i
+                </label>
+
+                <label>
+                    <input type="radio" name="q9" value="c">
+                    c) U = i / R
+                </label>
+
+                <label>
+                    <input type="radio" name="q9" value="d">
+                    d) U = R / i
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 10 -->
+            <div class="question">
+
+                <h3>10. Leia o trecho:</h3>
+
+                <p>
+                    Um carro percorre 100 metros em 10 segundos, mantendo sempre a mesma velocidade durante o trajeto.
+                </p>
+
+                <p>
+                    O que esse trecho informa?
+                </p>
+
+                <label>
+                    <input type="radio" name="q10" value="a">
+                    a) O carro está em movimento uniforme, com velocidade de 10 m/s.
+                </label>
+
+                <label>
+                    <input type="radio" name="q10" value="b">
+                    b) O carro está acelerando durante o trajeto.
+                </label>
+
+                <label>
+                    <input type="radio" name="q10" value="c">
+                    c) O carro está parado durante os 10 segundos.
+                </label>
+
+                <label>
+                    <input type="radio" name="q10" value="d">
+                    d) O carro está em queda livre.
+                </label>
+
+            </div>
+
+
+            <button class="quiz-button" onclick="corrigirQuiz()">
+                Corrigir Quiz
+            </button>
+
+            <div id="resultado" class="resultado"></div>
+
+        </section>
+
+
+        <footer>
+            <p>Educaí • Aprender transforma.</p>
+        </footer>
+
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="traduzirlibras.js"></script>
+
+    <script>
+
+        function voltarEducai() {
+            window.location.href = "index.html";
+        }
+
+
+        function alternarTema() {
+
+            document.body.classList.toggle("dark-mode");
+
+        }
+
+
+        function mostrar(id) {
+
+            const elemento = document.getElementById(id);
+
+            if (elemento) {
+                elemento.scrollIntoView({
+                    behavior: "smooth"
+                });
+            }
+
+        }
+
+
+        function corrigirQuiz() {
+
+            const respostas = {
+
+                q1: "b",
+                q2: "c",
+                q3: "a",
+                q4: "b",
+                q5: "c",
+                q6: "b",
+                q7: "b",
+                q8: "b",
+                q9: "b",
+                q10: "a"
+
+            };
+
+            let acertos = 0;
+
+            for (let questao in respostas) {
+
+                const respostaSelecionada =
+                    document.querySelector(
+                        `input[name="${questao}"]:checked`
+                    );
+
+                if (
+                    respostaSelecionada &&
+                    respostaSelecionada.value === respostas[questao]
+                ) {
+
+                    acertos++;
+
+                }
+
+            }
+
+
+            const resultado = document.getElementById("resultado");
+
+            resultado.innerHTML =
+                `<strong>Você acertou ${acertos}/10 questões!</strong>`;
+
+
+            if (acertos === 10) {
+
+                resultado.innerHTML +=
+                    "<p>Excelente! Você domina muito bem esse conteúdo.</p>";
+
+            } else if (acertos >= 7) {
+
+                resultado.innerHTML +=
+                    "<p>Muito bom! Você já possui um ótimo conhecimento.</p>";
+
+            } else if (acertos >= 5) {
+
+                resultado.innerHTML +=
+                    "<p>Bom trabalho! Continue estudando para melhorar ainda mais.</p>";
+
+            } else {
+
+                resultado.innerHTML +=
+                    "<p>Continue estudando. Você pode tentar novamente!</p>";
+
+            }
+
+        }
+
+
+        function aumentarProgresso() {
+
+            const barra = document.getElementById("barra");
+            const porcentagem = document.getElementById("porcentagem");
+
+            if (barra && porcentagem) {
+
+                let valor = parseInt(barra.value);
+
+                if (valor < 100) {
+
+                    valor += 10;
+
+                    barra.value = valor;
+                    porcentagem.textContent = valor + "%";
+
+                }
+
+            }
+
+        }
+
+    </script>
+
+    <script src="traduzirlibras.js"></script>
+
+</body>
+
+</html>

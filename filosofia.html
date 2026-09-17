@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/filosofia.css">
+    <link rel="icon" href="img/flavicon.png">
+
+    <title>Filosofia - Educaí</title>
+
+</head>
+
+<body>
+
+    <!-- MENU LATERAL -->
+    <aside class="sidebar">
+
+        <div class="logo-container">
+            <a href="index.html" class="logo-link">
+                <img src="img/logo/logo.png" alt="Logo Educaí" class="logo">
+                <span>Educaí</span>
+            </a>
+        </div>
+
+        <nav class="menu">
+
+            <a href="#inicio">Início</a>
+            <a href="#transformar">Transforme meu estudo</a>
+            <a href="#materias">Conteúdos</a>
+            <a href="#introducao">Introdução à Filosofia</a>
+            <a href="#mitovslogos">Mito x Lógos</a>
+            <a href="#presocraticos">Pré-Socráticos</a>
+            <a href="#socrates">Sócrates</a>
+            <a href="#platao">Platão</a>
+            <a href="#aristoteles">Aristóteles</a>
+            <a href="#patristica">Filosofia Medieval</a>
+            <a href="#racionalismo">Racionalismo</a>
+            <a href="#empirismo">Empirismo</a>
+            <a href="#iluminismo">Iluminismo</a>
+            <a href="#etica">Ética e Moral</a>
+            <a href="#politica">Filosofia Política</a>
+            <a href="#vocabulario">Vocabulário</a>
+            <a href="#interpretacao">Interpretação de Textos</a>
+
+            <a href="#quiz">Quiz</a>
+
+        </nav>
+
+        <button class="voltar" onclick="voltarEducai()">
+            Voltar para Educaí
+        </button>
+
+    </aside>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="main-content">
+
+        <!-- INÍCIO -->
+        <header id="inicio">
+
+            <div>
+                <p class="mini-title">EDUCAÍ • FILOSOFIA</p>
+
+                <h1>Olá, estudante!</h1>
+
+                <p class="subtitle">
+                    Aprenda Filosofia de forma simples, prática e interativa.
+                </p>
+            </div>
+
+            <button class="theme-button" onclick="alternarTema()">
+               Modo escuro
+            </button>
+
+        </header>
+
+
+        <!-- TRANSFORME MEU ESTUDO -->
+        <section id="transformar" class="transform-section">
+
+            <h2>Transforme meu estudo</h2>
+
+            <p>
+                Escolha uma forma de estudar o conteúdo de Filosofia.
+            </p>
+
+            <input type="file" id="arquivo" class="arquivo">
+
+            <textarea
+                id="textoEstudo"
+                placeholder="Digite ou cole aqui um conteúdo para estudar..."></textarea>
+
+            <div class="transform-options">
+
+                <button onclick="transformarEstudo('ouvir')">
+                    Ouvir conteúdo
+                </button>
+
+                <button onclick="transformarEstudo('libras')">
+                    Traduzir para Libras
+                </button>
+
+                <button onclick="transformarEstudo('mapa')">
+                    Criar mapa mental
+                </button>
+
+                <button onclick="transformarEstudo('simples')">
+                    Explicar de forma simples
+                </button>
+
+                <button onclick="transformarEstudo('exercicios')">
+                    Criar exercícios
+                </button>
+
+                <button onclick="transformarEstudo('resumo')">
+                    Fazer resumo
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTEÚDOS -->
+        <section id="materias">
+
+            <h2>Conteúdos de Filosofia</h2>
+
+            <p class="section-description">
+                Escolha um assunto para começar seus estudos.
+            </p>
+
+
+            <div class="cards-grid">
+
+                <a href="#introducao" class="card">
+                    <h3>Introdução à Filosofia</h3>
+                    <p>Compreenda o conceito e o amor pelo conhecimento.</p>
+                     <button onclick="mostrar('introducao')">Estudar</button>
+                </a>
+
+                <a href="#mitovslogos" class="card">
+                    <h3>Mito x Lógos</h3>
+                    <p>Entenda a transição do pensamento mítico para a razão.</p>
+                      <button onclick="mostrar('mitovslogos')">Estudar</button>
+                </a>
+
+                <a href="#presocraticos" class="card">
+                    <h3>Pré-Socráticos</h3>
+                    <p>Conheça os primeiros filósofos e a busca pela arché.</p>
+                      <button onclick="mostrar('presocraticos')">Estudar</button>
+                </a>
+
+                <a href="#socrates" class="card">
+                    <h3>Sócrates</h3>
+                    <p>Aprenda sobre o método socrático e o diálogo crítico.</p>
+                    <button onclick="mostrar('socrates')">Estudar</button>
+                </a>
+
+                <a href="#platao" class="card">
+                    <h3>Platão</h3>
+                    <p>Explore o Mundo das Ideias e o Mito da Caverna.</p>
+                    <button onclick="mostrar('platao')">Estudar</button>
+                </a>
+
+                <a href="#aristoteles" class="card">
+                    <h3>Aristóteles</h3>
+                    <p>Entenda a lógica, a justa medida e a busca pela felicidade.</p>
+                     <button onclick="mostrar('aristoteles')">Estudar</button>
+                </a>
+
+                <a href="#patristica" class="card">
+                    <h3>Filosofia Medieval</h3>
+                    <p>Descubra a relação entre fé e razão no pensamento medieval.</p>
+                    <button onclick="mostrar('patristica')">Estudar</button>
+                </a>
+
+                <a href="#racionalismo" class="card">
+                    <h3>Racionalismo</h3>
+                    <p>Aprenda sobre a razão como fonte primária do conhecimento.</p>
+                    <button onclick="mostrar('racionalismo')">Estudar</button>
+                </a>
+
+                <a href="#empirismo" class="card">
+                    <h3>Empirismo</h3>
+                    <p>Compreenda o papel da experiência sensível na aprendizagem.</p>
+                    <button onclick="mostrar('empirismo')">Estudar</button>
+                </a>
+
+                <a href="#iluminismo" class="card">
+                    <h3>Iluminismo</h3>
+                    <p>Entenda o uso autônomo da razão e a emancipação humana.</p>
+                     <button onclick="mostrar('iluminismo')">Estudar</button>
+                    
+                </a>
+
+                <a href="#etica" class="card">
+                    <h3>Ética e Moral</h3>
+                    <p>Diferencie costumes morais de reflexão ética crítica.</p>
+                    <button onclick="mostrar('etica')">Estudar</button>
+                </a>
+
+                <a href="#politica" class="card">
+                    <h3>Filosofia Política</h3>
+                    <p>Analise a formação do Estado e as teorias contratualistas.</p>
+                     <button onclick="mostrar('politica')">Estudar</button>
+                </a>
+
+                <a href="#vocabulario" class="card">
+                    <h3>Vocabulário</h3>
+                    <p>Amplie seu vocabulário sobre termos filosóficos.</p>
+                     <button onclick="mostrar('vocabulario')">Estudar</button>
+                </a>
+
+                <a href="#interpretacao" class="card">
+                    <h3>Interpretação de Textos</h3>
+                    <p>Aprenda estratégias para analisar textos filosóficos.</p>
+                    <button onclick="mostrar('interpretacao')">Estudar</button>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- INTRODUÇÃO À FILOSOFIA -->
+        <section id="introducao" class="study-section">
+
+            <h2>Introdução à Filosofia</h2>
+
+            <p>
+                A Filosofia é a busca racional e constante pelo conhecimento, questionando
+                as certezas estabelecidas e refletindo sobre a existência humana.
+            </p>
+
+            <div class="example">
+                <strong>Exemplos de questionamentos:</strong>
+
+                <p>O que é a verdade?</p>
+                <p>Como devemos agir corretamente na sociedade?</p>
+                <p>O que nos faz humanos?</p>
+                <p>Qual é a origem das nossas ideias?</p>
+            </div>
+
+        </section>
+
+
+        <!-- MITO X LÓGOS -->
+        <section id="mitovslogos" class="study-section">
+
+            <h2>Mito x Lógos</h2>
+
+            <p>
+                O surgimento da Filosofia ocorre no momento em que as explicações míticas
+                são gradualmente substituídas por explicações racionais (Lógos).
+            </p>
+
+            <div class="example">
+
+                <strong>Exemplos:</strong>
+
+                <p>Mito = explicação fundamentada em histórias de deuses e forças sobrenaturais.</p>
+                <p>Lógos = explicação baseada na razão, na observação e na argumentação lógica.</p>
+
+            </div>
+
+            <p>
+                Essa transição permitiu o nascimento do pensamento científico e filosófico ocidental.
+            </p>
+
+        </section>
+
+
+        <!-- PRÉ-SOCRÁTICOS -->
+        <section id="presocraticos" class="study-section">
+
+            <h2>Pré-Socráticos</h2>
+
+            <p>
+                Os primeiros filósofos focaram em explicar a origem do universo (Cosmologia)
+                buscando o elemento primordial (Arché) de todas as coisas.
+            </p>
+
+            <div class="example">
+
+                <strong>Exemplos:</strong>
+
+                <p>Tales de Mileto = afirmava que a água é o elemento principal.</p>
+                <p>Heráclito = defendia o movimento e a transformação contínua das coisas.</p>
+                <p>Parmênides = sustentava que a essência da realidade é imutável.</p>
+
+            </div>
+
+            <p>
+                Suas investigações inauguraram a observação crítica da natureza (Physis).
+            </p>
+
+        </section>
+
+
+        <!-- SÓCRATES -->
+        <section id="socrates" class="study-section">
+
+            <h2>Sócrates</h2>
+
+            <p>
+                Sócrates redirecionou a Filosofia para as questões humanas e morais através do
+                diálogo e da busca pela verdade interior.
+            </p>
+
+            <div class="example">
+
+                <strong>Exemplos e conceitos:</strong>
+
+                <p>"Só sei que nada sei" = reconhecimento da própria ignorância.</p>
+                <p>Ironia socrática = questionar para revelar contradições no discurso do outro.</p>
+                <p>Maiêutica = método de ajudar o interlocutor a "dar à luz" às suas próprias ideias.</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- PLATÃO -->
+        <section id="platao" class="study-section">
+
+            <h2>Platão</h2>
+
+            <p>
+                Discípulo de Sócrates, Platão desenvolveu a Teoria das Ideias para explicar a diferença
+                entre a realidade física e o conhecimento perfeito.
+            </p>
+
+            <div class="example">
+
+                <strong>Estrutura básica do pensamento:</strong>
+
+                <p>Mundo Sensível = percebido pelos sentidos, imperfeito e mutável.</p>
+
+                <p>Mundo Inteligível = alcançado pela razão, contendo ideias perfeitas e eternas.</p>
+
+                <p>Mito da Caverna = alegoria sobre o processo de libertação da ignorância em direção ao conhecimento.</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ARISTÓTELES -->
+        <section id="aristoteles" class="study-section">
+
+            <h2>Aristóteles</h2>
+
+            <p>
+                Discípulo de Platão que valorizou a experiência sensível, organizou as regras do pensamento
+                lógico e defendeu a busca pela felicidade (Eudaimonia).
+            </p>
+
+            <div class="example">
+
+                <p>Justa medida = o comportamento ético está no equilíbrio entre o excesso e a falta.</p>
+                <p>Lógica = ferramenta usada para construir raciocínios válidos e organizados.</p>
+                <p>Animal político = o ser humano realiza sua essência vivendo em comunidade.</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- FILOSOFIA MEDIEVAL -->
+        <section id="patristica" class="study-section">
+
+            <h2>Filosofia Medieval</h2>
+
+            <p>
+                Durante a Idade Média, os filósofos buscaram conciliar a fé cristã com a razão
+                filosófica herdada da Antiguidade.
+            </p>
+
+            <div class="example">
+
+                <p>Santo Agostinho = uniu a fé cristã às ideias de Platão (Patrística).</p>
+                <p>São Tomás de Aquino = utilizou a filosofia de Aristóteles para fundamentar a teologia (Escolástica).</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- RACIONALISMO -->
+        <section id="racionalismo" class="study-section">
+
+            <h2>Racionalismo</h2>
+
+            <p>
+                Corrente filosófica moderna que defende que a razão pura é a principal fonte para a
+                obtenção do conhecimento verdadeiro.
+            </p>
+
+            <div class="example">
+
+                <p>René Descartes = criador da dúvida metódica.</p>
+                <p>"Penso, logo existo" = primeira certeza indubitável encontrada pelo pensamento racional.</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- EMPIRISMO -->
+        <section id="empirismo" class="study-section">
+
+            <h2>Empirismo</h2>
+
+            <p>
+                Corrente que sustenta que todo o conhecimento provém das experiências sensíveis e das percepções.
+            </p>
+
+            <div class="example">
+
+                <p>John Locke = a mente humana nasce como uma "tábula rasa" (folha em branco).</p>
+                <p>David Hume = questionava o conceito de causa e efeito absoluto.</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ILUMINISMO -->
+        <section id="iluminismo" class="study-section">
+
+            <h2>Iluminismo</h2>
+
+            <p>
+                Movimento que promoveu a liberdade individual, a ciência e o uso autônomo da razão contra o dogmatismo.
+            </p>
+
+            <div class="example">
+
+                <p>Immanuel Kant = definiu o Iluminismo como a saída da menoridade intelectual.</p>
+                <p>Sapere Aude = ousar saber por conta própria usando a razão.</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ÉTICA E MORAL -->
+        <section id="etica" class="study-section">
+
+            <h2>Ética e Moral</h2>
+
+            <p>
+                Embora usadas como sinônimos, a moral refere-se aos costumes de um grupo e a ética à reflexão
+                crítica sobre essas regras.
+            </p>
+
+            <div class="example">
+
+                <p>Moral = regras e costumes específicos estabelecidos por uma cultura.</p>
+                <p>Ética = análise teórica sobre o fundamentação dos valores e condutas humanas.</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- FILOSOFIA POLÍTICA -->
+        <section id="politica" class="study-section">
+
+            <h2>Filosofia Política</h2>
+
+            <p>
+                Investiga as formas de poder, a organização da sociedade e os contratos sociais que fundamentam o Estado.
+            </p>
+
+            <div class="example">
+
+                <p>Thomas Hobbes = o Estado é necessário para conter o conflito natural entre as pessoas.</p>
+                <p>John Locke = o governo deve garantir os direitos naturais como vida e liberdade.</p>
+                <p>Rousseau = a soberania pertence à vontade geral do povo.</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- VOCABULÁRIO -->
+        <section id="vocabulario" class="study-section">
+
+            <h2>Vocabulário</h2>
+
+            <p>
+                Conhecer os conceitos básicos ajuda a compreender melhor a leitura de textos filosóficos.
+            </p>
+
+            <div class="example">
+
+                <p>Epistemologia = estudo sobre as origens e limites do conhecimento.</p>
+                <p>Ontologia = reflexão sobre a natureza do ser e da realidade.</p>
+                <p>Axiologia = estudo filosófico sobre os valores estéticos e morais.</p>
+                <p>Dialética = arte da argumentação fundamentada na oposição e superação de ideias.</p>
+                <p>Dogma = verdade considerada indiscutível e sem necessidade de prova.</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- INTERPRETAÇÃO -->
+        <section id="interpretacao" class="study-section">
+
+            <h2>Interpretação de Textos</h2>
+
+            <p>
+                Para interpretar textos filosóficos, procure identificar a tese central defendida pelo autor
+                e os argumentos utilizados.
+            </p>
+
+            <div class="example">
+
+                <strong>Dicas:</strong>
+
+                <p>• Identifique qual problema filosófico o autor deseja resolver.</p>
+                <p>• Procure a tese ou afirmação principal do texto.</p>
+                <p>• Anote as premissas e conclusões que estruturam o argumento.</p>
+                <p>• Relacione o texto ao contexto histórico do filósofo.</p>
+                <p>• Analise o significado específico dos termos conceituais utilizados.</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- QUIZ -->
+        <section id="quiz" class="quiz-section">
+
+            <h2>Quiz de Filosofia</h2>
+
+            <p>
+                Teste seus conhecimentos respondendo às 10 questões.
+            </p>
+
+
+            <!-- QUESTÃO 1 -->
+            <div class="question">
+
+                <h3>1. Qual é o significado etimológico da palavra "Filosofia"?</h3>
+
+                <label>
+                    <input type="radio" name="q1" value="a">
+                    a) Busca pela riqueza
+                </label>
+
+                <label>
+                    <input type="radio" name="q1" value="b">
+                    b) Amor à sabedoria
+                </label>
+
+                <label>
+                    <input type="radio" name="q1" value="c">
+                    c) Estudo da natureza
+                </label>
+
+                <label>
+                    <input type="radio" name="q1" value="d">
+                    d) Defesa de dogmas
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 2 -->
+            <div class="question">
+
+                <h3>2. Quem é o filósofo famoso pela frase "Só sei que nada sei"?</h3>
+
+                <label>
+                    <input type="radio" name="q2" value="a">
+                    a) Platão
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="b">
+                    b) Aristóteles
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="c">
+                    c) Sócrates
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="d">
+                    d) René Descartes
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 3 -->
+            <div class="question">
+
+                <h3>3. O Mito da Caverna, uma alegoria sobre o conhecimento e a ilusão sensível, foi escrito por:</h3>
+
+                <label>
+                    <input type="radio" name="q3" value="a">
+                    a) Platão
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="b">
+                    b) Sócrates
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="c">
+                    c) Heráclito
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="d">
+                    d) Epicuro
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 4 -->
+            <div class="question">
+
+                <h3>4. Qual corrente filosófica defende que a razão é a principal fonte do conhecimento verdadeiro?</h3>
+
+                <label>
+                    <input type="radio" name="q4" value="a">
+                    a) Empirismo
+                </label>
+
+                <label>
+                    <input type="radio" name="q4" value="b">
+                    b) Racionalismo
+                </label>
+
+                <label>
+                    <input type="radio" name="q4" value="c">
+                    c) Ceticismo
+                </label>
+
+                <label>
+                    <input type="radio" name="q4" value="d">
+                    d) Misticismo
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 5 -->
+            <div class="question">
+
+                <h3>5. Para John Locke e a corrente empirista, a mente humana ao nascer é comparada a:</h3>
+
+                <label>
+                    <input type="radio" name="q5" value="a">
+                    a) Um livro já impresso
+                </label>
+
+                <label>
+                    <input type="radio" name="q5" value="b">
+                    b) Uma chama eterna
+                </label>
+
+                <label>
+                    <input type="radio" name="q5" value="c">
+                    c) Uma tábula rasa (folha em branco)
+                </label>
+
+                <label>
+                    <input type="radio" name="q5" value="d">
+                    d) Um conjunto de ideias inatas
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 6 -->
+            <div class="question">
+
+                <h3>6. Complete a frase de René Descartes:</h3>
+
+                <p>
+                    Penso, ___ existo.
+                </p>
+
+                <label>
+                    <input type="radio" name="q6" value="a">
+                    a) logo
+                </label>
+
+                <label>
+                    <input type="radio" name="q6" value="b">
+                    b) se
+                </label>
+
+                <label>
+                    <input type="radio" name="q6" value="c">
+                    c) nunca
+                </label>
+
+                <label>
+                    <input type="radio" name="q6" value="d">
+                    d) talvez
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 7 -->
+            <div class="question">
+
+                <h3>7. Na ética de Aristóteles, qual conceito refere-se ao equilíbrio entre o excesso e a falta?</h3>
+
+                <label>
+                    <input type="radio" name="q7" value="a">
+                    a) Dúvida metódica
+                </label>
+
+                <label>
+                    <input type="radio" name="q7" value="b">
+                    b) Justa medida
+                </label>
+
+                <label>
+                    <input type="radio" name="q7" value="c">
+                    c) Imperativo categórico
+                </label>
+
+                <label>
+                    <input type="radio" name="q7" value="d">
+                    d) Estado de natureza
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 8 -->
+            <div class="question">
+
+                <h3>8. A área da Filosofia que investiga a origem, a natureza e os limites do conhecimento é a:</h3>
+
+                <label>
+                    <input type="radio" name="q8" value="a">
+                    a) Estética
+                </label>
+
+                <label>
+                    <input type="radio" name="q8" value="b">
+                    b) Epistemologia
+                </label>
+
+                <label>
+                    <input type="radio" name="q8" value="c">
+                    c) Lógica formal
+                </label>
+
+                <label>
+                    <input type="radio" name="q8" value="d">
+                    d) Ontologia
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 9 -->
+            <div class="question">
+
+                <h3>9. Qual filósofo contratualista defendia que no estado de natureza "o homem é o lobo do homem"?</h3>
+
+                <label>
+                    <input type="radio" name="q9" value="a">
+                    a) Jean-Jacques Rousseau
+                </label>
+
+                <label>
+                    <input type="radio" name="q9" value="b">
+                    b) Thomas Hobbes
+                </label>
+
+                <label>
+                    <input type="radio" name="q9" value="c">
+                    c) Immanuel Kant
+                </label>
+
+                <label>
+                    <input type="radio" name="q9" value="d">
+                    d) Karl Marx
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 10 -->
+            <div class="question">
+
+                <h3>10. Leia o trecho:</h3>
+
+                <p>
+                    A moral é o conjunto de regras e costumes praticados por um grupo, enquanto a ética reflete criticamente sobre esses costumes.
+                </p>
+
+                <p>
+                    O que esse trecho informa?
+                </p>
+
+                <label>
+                    <input type="radio" name="q10" value="a">
+                    a) Diferencia os conceitos de ética e moral.
+                </label>
+
+                <label>
+                    <input type="radio" name="q10" value="b">
+                    b) Explica a origem do universo pré-socrático.
+                </label>
+
+                <label>
+                    <input type="radio" name="q10" value="c">
+                    c) Apresenta a biografia de Santo Agostinho.
+                </label>
+
+                <label>
+                    <input type="radio" name="q10" value="d">
+                    d) Define as regras do diálogo socrático.
+                </label>
+
+            </div>
+
+
+            <button class="quiz-button" onclick="corrigirQuiz()">
+                Corrigir Quiz
+            </button>
+
+            <div id="resultado" class="resultado"></div>
+
+        </section>
+
+
+        <footer>
+            <p>Educaí • Aprender transforma.</p>
+        </footer>
+
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="traduzirlibras.js"></script>
+
+    <script>
+
+        function voltarEducai() {
+            window.location.href = "index.html";
+        }
+
+
+        function alternarTema() {
+
+            document.body.classList.toggle("dark-mode");
+
+        }
+
+
+        function mostrar(id) {
+
+            const elemento = document.getElementById(id);
+
+            if (elemento) {
+                elemento.scrollIntoView({
+                    behavior: "smooth"
+                });
+            }
+
+        }
+
+
+        function corrigirQuiz() {
+
+            const respostas = {
+
+                q1: "b",
+                q2: "c",
+                q3: "a",
+                q4: "b",
+                q5: "c",
+                q6: "a",
+                q7: "b",
+                q8: "b",
+                q9: "b",
+                q10: "a"
+
+            };
+
+            let acertos = 0;
+
+            for (let questao in respostas) {
+
+                const respostaSelecionada =
+                    document.querySelector(
+                        `input[name="${questao}"]:checked`
+                    );
+
+                if (
+                    respostaSelecionada &&
+                    respostaSelecionada.value === respostas[questao]
+                ) {
+
+                    acertos++;
+
+                }
+
+            }
+
+
+            const resultado = document.getElementById("resultado");
+
+            resultado.innerHTML =
+                `<strong>Você acertou ${acertos}/10 questões!</strong>`;
+
+
+            if (acertos === 10) {
+
+                resultado.innerHTML +=
+                    "<p>Excelente! Você domina muito bem esse conteúdo.</p>";
+
+            } else if (acertos >= 7) {
+
+                resultado.innerHTML +=
+                    "<p>Muito bom! Você já possui um ótimo conhecimento.</p>";
+
+            } else if (acertos >= 5) {
+
+                resultado.innerHTML +=
+                    "<p>Bom trabalho! Continue estudando para melhorar ainda mais.</p>";
+
+            } else {
+
+                resultado.innerHTML +=
+                    "<p>Continue estudando. Você pode tentar novamente!</p>";
+
+            }
+
+        }
+
+
+        function aumentarProgresso() {
+
+            const barra = document.getElementById("barra");
+            const porcentagem = document.getElementById("porcentagem");
+
+            if (barra && porcentagem) {
+
+                let valor = parseInt(barra.value);
+
+                if (valor < 100) {
+
+                    valor += 10;
+
+                    barra.value = valor;
+                    porcentagem.textContent = valor + "%";
+
+                }
+
+            }
+
+        }
+
+    </script>
+
+    <script src="traduzirlibras.js"></script>
+
+</body>
+
+</html>

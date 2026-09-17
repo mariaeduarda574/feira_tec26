@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/sociologia.css">
+    <link rel="icon" href="img/flavicon.png">
+
+    <title>Sociologia - Educaí</title>
+
+</head>
+
+<body>
+
+    <!-- MENU LATERAL -->
+    <aside class="sidebar">
+
+        <div class="logo-container">
+    <a href="index.html" class="logo-link">
+        <img src="img/logo/logo.png" alt="Logo Educaí" class="logo">
+        <span>Educaí</span>
+    </a>
+</div>
+
+        <nav class="menu">
+
+            <a href="#inicio">Início</a>
+            <a href="#transformar">Transforme meu estudo</a>
+            <a href="#materias">Conteúdos</a>
+            <a href="#o-que-e">O que é Sociologia</a>
+            <a href="#classicos">Pensadores Clássicos</a>
+            <a href="#socializacao">Socialização</a>
+            <a href="#cultura">Cultura</a>
+            <a href="#instituicoes">Instituições Sociais</a>
+            <a href="#trabalho">Trabalho</a>
+            <a href="#desigualdade">Desigualdade Social</a>
+            <a href="#movimentos">Movimentos Sociais</a>
+            <a href="#cidadania">Cidadania e Direitos</a>
+            <a href="#poder">Poder e Política</a>
+            <a href="#globalizacao">Globalização</a>
+            <a href="#midia">Mídia e Sociedade</a>
+            <a href="#vocabulario">Vocabulário</a>
+            <a href="#interpretacao">Interpretação de Textos</a>
+
+            <a href="#quiz">Quiz</a>
+
+        </nav>
+
+        <button class="voltar" onclick="voltarEducai()">
+            Voltar para Educaí
+        </button>
+
+    </aside>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="main-content">
+
+        <!-- INÍCIO -->
+        <header id="inicio">
+
+            <div>
+                <p class="mini-title">EDUCAÍ • SOCIOLOGIA</p>
+
+                <h1>Olá, estudante!</h1>
+
+                <p class="subtitle">
+                    Aprenda Sociologia de forma simples, prática e interativa.
+                </p>
+            </div>
+
+            <button class="theme-button" onclick="alternarTema()">
+               Modo escuro
+            </button>
+
+        </header>
+
+
+        <!-- TRANSFORME MEU ESTUDO -->
+        <section id="transformar" class="transform-section">
+
+            <h2>Transforme meu estudo</h2>
+
+            <p>
+                Escolha uma forma de estudar o conteúdo de Sociologia.
+            </p>
+
+            <input type="file" id="arquivo" class="arquivo">
+
+            <textarea
+                id="textoEstudo"
+                placeholder="Digite ou cole aqui um conteúdo para estudar..."></textarea>
+
+            <div class="transform-options">
+
+                <button onclick="transformarEstudo('ouvir')">
+                    Ouvir conteúdo
+                </button>
+
+                <button onclick="transformarEstudo('libras')">
+                    Traduzir para Libras
+                </button>
+
+                <button onclick="transformarEstudo('mapa')">
+                    Criar mapa mental
+                </button>
+
+                <button onclick="transformarEstudo('simples')">
+                    Explicar de forma simples
+                </button>
+
+                <button onclick="transformarEstudo('exercicios')">
+                    Criar exercícios
+                </button>
+
+                <button onclick="transformarEstudo('resumo')">
+                    Fazer resumo
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTEÚDOS -->
+        <section id="materias">
+
+            <h2>Conteúdos de Sociologia</h2>
+
+            <p class="section-description">
+                Escolha um assunto para começar seus estudos.
+            </p>
+
+
+            <div class="cards-grid">
+
+                <a href="#o-que-e" class="card">
+                    <h3>O que é Sociologia</h3>
+                    <p>Entenda o que a Sociologia estuda e para que ela serve.</p>
+                     <button onclick="mostrar('o-que-e')">Estudar</button>
+                </a>
+
+                <a href="#classicos" class="card">
+                    <h3>Pensadores Clássicos</h3>
+                    <p>Conheça Durkheim, Weber e Marx e suas principais ideias.</p>
+                      <button onclick="mostrar('classicos')">Estudar</button>
+                </a>
+
+                <a href="#socializacao" class="card">
+                    <h3>Socialização</h3>
+                    <p>Aprenda como aprendemos a viver em sociedade.</p>
+                      <button onclick="mostrar('socializacao')">Estudar</button>
+                </a>
+
+                <a href="#cultura" class="card">
+                    <h3>Cultura</h3>
+                    <p>Entenda o que é cultura e como ela se manifesta.</p>
+                    <button onclick="mostrar('cultura')">Estudar</button>
+                </a>
+
+                <a href="#instituicoes" class="card">
+                    <h3>Instituições Sociais</h3>
+                    <p>Conheça família, escola, religião e Estado.</p>
+                    <button onclick="mostrar('instituicoes')">Estudar</button>
+                </a>
+
+                <a href="#trabalho" class="card">
+                    <h3>Trabalho</h3>
+                    <p>Aprenda sobre as transformações do mundo do trabalho.</p>
+                     <button onclick="mostrar('trabalho')">Estudar</button>
+                </a>
+
+                <a href="#desigualdade" class="card">
+                    <h3>Desigualdade Social</h3>
+                    <p>Entenda as diferenças de renda, acesso e oportunidades.</p>
+                    <button onclick="mostrar('desigualdade')">Estudar</button>
+                </a>
+
+                <a href="#movimentos" class="card">
+                    <h3>Movimentos Sociais</h3>
+                    <p>Conheça grupos que lutam por mudanças na sociedade.</p>
+                    <button onclick="mostrar('movimentos')">Estudar</button>
+                </a>
+
+                <a href="#cidadania" class="card">
+                    <h3>Cidadania e Direitos</h3>
+                    <p>Aprenda sobre direitos, deveres e participação social.</p>
+                    <button onclick="mostrar('cidadania')">Estudar</button>
+                </a>
+
+                <a href="#poder" class="card">
+                    <h3>Poder e Política</h3>
+                    <p>Entenda como o poder é organizado na sociedade.</p>
+                     <button onclick="mostrar('poder')">Estudar</button>
+                    
+                </a>
+
+                <a href="#globalizacao" class="card">
+                    <h3>Globalização</h3>
+                    <p>Conheça os efeitos da integração mundial.</p>
+                    <button onclick="mostrar('globalizacao')">Estudar</button>
+                </a>
+
+                <a href="#midia" class="card">
+                    <h3>Mídia e Sociedade</h3>
+                    <p>Descubra como a mídia influencia comportamentos e opiniões.</p>
+                     <button onclick="mostrar('midia')">Estudar</button>
+                </a>
+
+                <a href="#vocabulario" class="card">
+                    <h3>Vocabulário</h3>
+                    <p>Amplie seu vocabulário com os principais conceitos sociológicos.</p>
+                     <button onclick="mostrar('vocabulario')">Estudar</button>
+                </a>
+
+                <a href="#interpretacao" class="card">
+                    <h3>Interpretação de Textos</h3>
+                    <p>Aprenda estratégias para compreender textos sociológicos.</p>
+                    <button onclick="mostrar('interpretacao')">Estudar</button>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- O QUE É SOCIOLOGIA -->
+        <section id="o-que-e" class="study-section">
+
+            <h2>O que é Sociologia</h2>
+
+            <p>
+                A Sociologia é a ciência que estuda a vida em sociedade, as relações
+                entre as pessoas e a forma como os grupos se organizam.
+            </p>
+
+            <div class="example">
+                <strong>Exemplos:</strong>
+
+                <p>Sociedade = conjunto de pessoas que vivem organizadas</p>
+                <p>Grupo social = pessoas que compartilham interesses ou objetivos</p>
+                <p>Fato social = comportamento coletivo que influencia o indivíduo</p>
+                <p>Norma social = regra de conduta aceita pelo grupo</p>
+                <p>Interação social = relação entre duas ou mais pessoas</p>
+                <p>Senso comum = conhecimento baseado na experiência do dia a dia</p>
+            </div>
+
+        </section>
+
+
+        <!-- PENSADORES CLÁSSICOS -->
+        <section id="classicos" class="study-section">
+
+            <h2>Pensadores Clássicos</h2>
+
+            <p>
+                Os pensadores clássicos são considerados os fundadores da Sociologia
+                e ajudaram a explicar como a sociedade funciona.
+            </p>
+
+            <div class="example">
+
+                <strong>Exemplos:</strong>
+
+                <p>Émile Durkheim estudou o fato social e a coesão social.</p>
+                <p>Max Weber estudou a ação social e os tipos de dominação.</p>
+                <p>Karl Marx estudou as classes sociais e a luta de classes.</p>
+
+            </div>
+
+            <p>
+                Cada autor observou a sociedade a partir de um ponto de vista diferente.
+            </p>
+
+        </section>
+
+
+        <!-- SOCIALIZAÇÃO -->
+        <section id="socializacao" class="study-section">
+
+            <h2>Socialização</h2>
+
+            <p>
+                A socialização é o processo pelo qual aprendemos as regras, os valores
+                e os costumes do grupo em que vivemos.
+            </p>
+
+            <div class="example">
+
+                <strong>Exemplos:</strong>
+
+                <p>A família ensina os primeiros valores da criança.</p>
+                <p>A escola transmite conhecimentos e regras de convivência.</p>
+                <p>Os amigos influenciam gostos e comportamentos.</p>
+
+            </div>
+
+            <p>
+                A socialização primária ocorre na infância; a secundária acontece
+                ao longo da vida, em outros grupos.
+            </p>
+
+        </section>
+
+
+        <!-- CULTURA -->
+        <section id="cultura" class="study-section">
+
+            <h2>Cultura</h2>
+
+            <p>
+                A cultura reúne os costumes, crenças, valores, linguagens e práticas
+                construídos e transmitidos por um grupo social.
+            </p>
+
+            <div class="example">
+
+                <strong>Exemplos:</strong>
+
+                <p>Festas populares fazem parte da cultura de um povo.</p>
+                <p>A língua é um elemento cultural transmitido entre gerações.</p>
+                <p>A culinária revela hábitos e tradições de uma região.</p>
+
+            </div>
+
+            <p>
+                O etnocentrismo julga outras culturas a partir da própria; o relativismo
+                cultural busca compreendê-las em seu contexto.
+            </p>
+
+        </section>
+
+
+        <!-- INSTITUIÇÕES SOCIAIS -->
+        <section id="instituicoes" class="study-section">
+
+            <h2>Instituições Sociais</h2>
+
+            <p>
+                As instituições sociais são estruturas que organizam a vida em sociedade
+                e orientam o comportamento das pessoas.
+            </p>
+
+            <div class="example">
+
+                <strong>Estrutura básica:</strong>
+
+                <p>Instituição + função social + influência sobre o indivíduo</p>
+
+                <strong>Exemplos:</strong>
+
+                <p>A família cuida e educa seus membros.</p>
+                <p>A escola forma e prepara para a convivência.</p>
+                <p>O Estado organiza as leis e os serviços públicos.</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- TRABALHO -->
+        <section id="trabalho" class="study-section">
+
+            <h2>Trabalho</h2>
+
+            <p>
+                O trabalho é uma atividade central na sociedade e passou por grandes
+                transformações ao longo da história.
+            </p>
+
+            <div class="example">
+
+                <p>Trabalho escravo = pessoa tratada como propriedade</p>
+                <p>Trabalho servil = ligado à terra no feudalismo</p>
+                <p>Trabalho assalariado = troca de força de trabalho por salário</p>
+                <p>Taylorismo = divisão rígida de tarefas e controle do tempo</p>
+                <p>Fordismo = produção em série na linha de montagem</p>
+                <p>Toyotismo = produção flexível, conforme a demanda</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- DESIGUALDADE SOCIAL -->
+        <section id="desigualdade" class="study-section">
+
+            <h2>Desigualdade Social</h2>
+
+            <p>
+                A desigualdade social é a distribuição desigual de renda, bens,
+                direitos e oportunidades entre as pessoas.
+            </p>
+
+            <div class="example">
+
+                <p>Desigualdade de renda = diferença nos salários e ganhos</p>
+                <p>Desigualdade educacional = acesso desigual ao estudo</p>
+                <p>Desigualdade racial = diferenças ligadas ao preconceito racial</p>
+                <p>Desigualdade de gênero = diferenças entre homens e mulheres</p>
+                <p>Exclusão social = falta de acesso a direitos básicos</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- MOVIMENTOS SOCIAIS -->
+        <section id="movimentos" class="study-section">
+
+            <h2>Movimentos Sociais</h2>
+
+            <p>
+                Os movimentos sociais reúnem grupos organizados que lutam por mudanças
+                e pela conquista ou garantia de direitos.
+            </p>
+
+            <div class="example">
+
+                <p>Movimento operário = luta por direitos trabalhistas</p>
+                <p>Movimento feminista = luta por igualdade de gênero</p>
+                <p>Movimento negro = luta contra o racismo</p>
+                <p>Movimento ambientalista = luta pela preservação do meio ambiente</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- CIDADANIA E DIREITOS -->
+        <section id="cidadania" class="study-section">
+
+            <h2>Cidadania e Direitos</h2>
+
+            <p>
+                A cidadania envolve o conjunto de direitos e deveres que permitem
+                a participação das pessoas na vida social e política.
+            </p>
+
+            <div class="example">
+
+                <p>Direitos civis = liberdade, igualdade perante a lei</p>
+                <p>Direitos políticos = votar e ser votado</p>
+                <p>Direitos sociais = saúde, educação, moradia e trabalho</p>
+                <p>Deveres = respeitar as leis e os direitos dos outros</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- PODER E POLÍTICA -->
+        <section id="poder" class="study-section">
+
+            <h2>Poder e Política</h2>
+
+            <p>
+                A política trata da organização do poder na sociedade e das decisões
+                que afetam a vida coletiva.
+            </p>
+
+            <div class="example">
+
+                <p>Estado = instituição que organiza o poder político</p>
+                <p>Democracia = governo baseado na participação popular</p>
+                <p>Autoritarismo = concentração do poder e restrição de liberdades</p>
+
+                <strong>Regra básica:</strong>
+
+                <p>Poder legítimo → reconhecido pela sociedade</p>
+                <p>Poder imposto → exercido pela força</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- GLOBALIZAÇÃO -->
+        <section id="globalizacao" class="study-section">
+
+            <h2>Globalização</h2>
+
+            <p>
+                A globalização é o processo de integração econômica, cultural e
+                tecnológica entre países do mundo todo.
+            </p>
+
+            <div class="example">
+
+                <p>Economia = circulação mundial de produtos e capitais</p>
+                <p>Cultura = troca e mistura de costumes entre povos</p>
+                <p>Tecnologia = comunicação rápida entre diferentes países</p>
+                <p>Críticas = aumento das desigualdades entre nações</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- MÍDIA E SOCIEDADE -->
+        <section id="midia" class="study-section">
+
+            <h2>Mídia e Sociedade</h2>
+
+            <p>
+                A mídia influencia a forma como as pessoas pensam, consomem
+                e compreendem os acontecimentos do mundo.
+            </p>
+
+            <div class="example">
+
+                <p>Indústria cultural = produção de cultura em larga escala</p>
+                <p>Opinião pública = ideias predominantes na sociedade</p>
+                <p>Redes sociais = novos espaços de comunicação e debate</p>
+                <p>Fake news = informações falsas divulgadas como verdadeiras</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- VOCABULÁRIO -->
+        <section id="vocabulario" class="study-section">
+
+            <h2>Vocabulário</h2>
+
+            <p>
+                Conhecer os conceitos sociológicos ajuda a compreender melhor
+                os textos e as discussões da matéria.
+            </p>
+
+            <div class="example">
+
+                <p>Sociedade = conjunto organizado de pessoas</p>
+                <p>Fato social = comportamento coletivo e externo ao indivíduo</p>
+                <p>Classe social = grupo definido por sua posição econômica</p>
+                <p>Ideologia = conjunto de ideias que justifica uma visão de mundo</p>
+                <p>Estratificação = divisão da sociedade em camadas</p>
+                <p>Mobilidade social = mudança de posição social</p>
+                <p>Alienação = perda de consciência sobre a própria condição</p>
+                <p>Anomia = ausência ou enfraquecimento das normas sociais</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- INTERPRETAÇÃO -->
+        <section id="interpretacao" class="study-section">
+
+            <h2>Interpretação de Textos</h2>
+
+            <p>
+                Para interpretar um texto de Sociologia, procure primeiro identificar
+                o tema social discutido e os conceitos que você já conhece.
+            </p>
+
+            <div class="example">
+
+                <strong>Dicas:</strong>
+
+                <p>• Leia o título e observe o assunto social tratado.</p>
+                <p>• Procure conceitos-chave, como classe, cultura e poder.</p>
+                <p>• Identifique o ponto de vista defendido pelo autor.</p>
+                <p>• Relacione o texto com exemplos da realidade.</p>
+                <p>• Não é necessário conhecer todos os conceitos para compreender
+                    a ideia principal.</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- QUIZ -->
+        <section id="quiz" class="quiz-section">
+
+            <h2>Quiz de Sociologia</h2>
+
+            <p>
+                Teste seus conhecimentos respondendo às 10 questões.
+            </p>
+
+
+            <!-- QUESTÃO 1 -->
+            <div class="question">
+
+                <h3>1. O que a Sociologia estuda?</h3>
+
+                <label>
+                    <input type="radio" name="q1" value="a">
+                    a) O corpo humano e suas funções
+                </label>
+
+                <label>
+                    <input type="radio" name="q1" value="b">
+                    b) A vida em sociedade e as relações entre as pessoas
+                </label>
+
+                <label>
+                    <input type="radio" name="q1" value="c">
+                    c) Os fenômenos da natureza
+                </label>
+
+                <label>
+                    <input type="radio" name="q1" value="d">
+                    d) Os cálculos e as operações matemáticas
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 2 -->
+            <div class="question">
+
+                <h3>2. Qual pensador desenvolveu o conceito de fato social?</h3>
+
+                <label>
+                    <input type="radio" name="q2" value="a">
+                    a) Karl Marx
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="b">
+                    b) Max Weber
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="c">
+                    c) Émile Durkheim
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="d">
+                    d) Auguste Comte
+
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 3 -->
+            <div class="question">
+
+                <h3>3. Qual frase descreve corretamente o processo de socialização?</h3>
+
+                <label>
+                    <input type="radio" name="q3" value="a">
+                    a) A criança aprende valores e regras com a família e a escola.
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="b">
+                    b) O indivíduo nasce sabendo todas as normas da sociedade.
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="c">
+                    c) A socialização acontece apenas no ambiente de trabalho.
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="d">
+                    d) A socialização depende somente da herança biológica.
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 4 -->
+            <div class="question">
+
+                <h3>4. Qual alternativa apresenta uma instituição social?</h3>
+
+                <label>
+                    <input type="radio" name="q4" value="a">
+                    a) Paisagem
+                </label>
+
+                <label>
+                    <input type="radio" name="q4" value="b">
+                    b) Família
+                </label>
+
+                <label>
+                    <input type="radio" name="q4" value="c">
+                    c) Clima
+                </label>
+
+                <label>
+                    <input type="radio" name="q4" value="d">
+                    d) Relevo
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 5 -->
+            <div class="question">
+
+                <h3>5. O que significa etnocentrismo?</h3>
+
+                <label>
+                    <input type="radio" name="q5" value="a">
+                    a) Compreender cada cultura em seu próprio contexto
+                </label>
+
+                <label>
+                    <input type="radio" name="q5" value="b">
+                    b) Estudar a origem das línguas
+                </label>
+
+                <label>
+                    <input type="radio" name="q5" value="c">
+                    c) Julgar outras culturas a partir dos valores da própria cultura
+                </label>
+
+                <label>
+                    <input type="radio" name="q5" value="d">
+                    d) Preservar tradições antigas de um povo
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 6 -->
+            <div class="question">
+
+                <h3>6. Complete a frase:</h3>
+
+                <p>
+                    O modelo de produção em série na linha de montagem é chamado de ___.
+                </p>
+
+                <label>
+                    <input type="radio" name="q6" value="a">
+                    a) taylorismo
+                </label>
+
+                <label>
+                    <input type="radio" name="q6" value="b">
+                    b) fordismo
+                </label>
+
+                <label>
+                    <input type="radio" name="q6" value="c">
+                    c) toyotismo
+                </label>
+
+                <label>
+                    <input type="radio" name="q6" value="d">
+                    d) feudalismo
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 7 -->
+            <div class="question">
+
+                <h3>7. Qual é um exemplo de direito político?</h3>
+
+                <label>
+                    <input type="radio" name="q7" value="a">
+                    a) Ter acesso à saúde
+                </label>
+
+                <label>
+                    <input type="radio" name="q7" value="b">
+                    b) Votar e ser votado
+                </label>
+
+                <label>
+                    <input type="radio" name="q7" value="c">
+                    c) Ter moradia
+                </label>
+
+                <label>
+                    <input type="radio" name="q7" value="d">
+                    d) Receber educação
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 8 -->
+            <div class="question">
+
+                <h3>8. Qual movimento social luta pela igualdade de gênero?</h3>
+
+                <label>
+                    <input type="radio" name="q8" value="a">
+                    a) Movimento operário
+                </label>
+
+                <label>
+                    <input type="radio" name="q8" value="b">
+                    b) Movimento feminista
+                </label>
+
+                <label>
+                    <input type="radio" name="q8" value="c">
+                    c) Movimento ambientalista
+                </label>
+
+                <label>
+                    <input type="radio" name="q8" value="d">
+                    d) Movimento estudantil
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 9 -->
+            <div class="question">
+
+                <h3>9. O que é mobilidade social?</h3>
+
+                <label>
+                    <input type="radio" name="q9" value="a">
+                    a) A mudança de país de uma população
+                </label>
+
+                <label>
+                    <input type="radio" name="q9" value="b">
+                    b) A mudança de posição social de uma pessoa ou grupo
+                </label>
+
+                <label>
+                    <input type="radio" name="q9" value="c">
+                    c) O deslocamento diário entre casa e trabalho
+                </label>
+
+                <label>
+                    <input type="radio" name="q9" value="d">
+                    d) A troca de profissão dentro da mesma empresa
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 10 -->
+            <div class="question">
+
+                <h3>10. Leia o trecho:</h3>
+
+                <p>
+                    Uma notícia falsa é compartilhada milhares de vezes nas redes sociais e passa a ser tratada como verdade por muitas pessoas.
+                </p>
+
+                <p>
+                    O que esse trecho informa?
+                </p>
+
+                <label>
+                    <input type="radio" name="q10" value="a">
+                    a) Mostra a influência da mídia e das fake news na opinião pública.
+                </label>
+
+                <label>
+                    <input type="radio" name="q10" value="b">
+                    b) Explica a origem dos movimentos sociais.
+                </label>
+
+                <label>
+                    <input type="radio" name="q10" value="c">
+                    c) Descreve o processo de socialização primária.
+                </label>
+
+                <label>
+                    <input type="radio" name="q10" value="d">
+                    d) Apresenta os tipos de trabalho na sociedade.
+                </label>
+
+            </div>
+
+
+            <button class="quiz-button" onclick="corrigirQuiz()">
+                Corrigir Quiz
+            </button>
+
+            <div id="resultado" class="resultado"></div>
+
+        </section>
+
+
+        <footer>
+            <p>Educaí • Aprender transforma.</p>
+        </footer>
+
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="traduzirlibras.js"></script>
+
+    <script>
+
+        function voltarEducai() {
+            window.location.href = "index.html";
+        }
+
+
+        function alternarTema() {
+
+            document.body.classList.toggle("dark-mode");
+
+        }
+
+
+        function mostrar(id) {
+
+            const elemento = document.getElementById(id);
+
+            if (elemento) {
+                elemento.scrollIntoView({
+                    behavior: "smooth"
+                });
+            }
+
+        }
+
+
+        function corrigirQuiz() {
+
+            const respostas = {
+
+                q1: "b",
+                q2: "c",
+                q3: "a",
+                q4: "b",
+                q5: "c",
+                q6: "b",
+                q7: "b",
+                q8: "b",
+                q9: "b",
+                q10: "a"
+
+            };
+
+            let acertos = 0;
+
+            for (let questao in respostas) {
+
+                const respostaSelecionada =
+                    document.querySelector(
+                        `input[name="${questao}"]:checked`
+                    );
+
+                if (
+                    respostaSelecionada &&
+                    respostaSelecionada.value === respostas[questao]
+                ) {
+
+                    acertos++;
+
+                }
+
+            }
+
+
+            const resultado = document.getElementById("resultado");
+
+            resultado.innerHTML =
+                `<strong>Você acertou ${acertos}/10 questões!</strong>`;
+
+
+            if (acertos === 10) {
+
+                resultado.innerHTML +=
+                    "<p>Excelente! Você domina muito bem esse conteúdo.</p>";
+
+            } else if (acertos >= 7) {
+
+                resultado.innerHTML +=
+                    "<p>Muito bom! Você já possui um ótimo conhecimento.</p>";
+
+            } else if (acertos >= 5) {
+
+                resultado.innerHTML +=
+                    "<p>Bom trabalho! Continue estudando para melhorar ainda mais.</p>";
+
+            } else {
+
+                resultado.innerHTML +=
+                    "<p>Continue estudando. Você pode tentar novamente!</p>";
+
+            }
+
+        }
+
+
+        function aumentarProgresso() {
+
+            const barra = document.getElementById("barra");
+            const porcentagem = document.getElementById("porcentagem");
+
+            if (barra && porcentagem) {
+
+                let valor = parseInt(barra.value);
+
+                if (valor < 100) {
+
+                    valor += 10;
+
+                    barra.value = valor;
+                    porcentagem.textContent = valor + "%";
+
+                }
+
+            }
+
+        }
+
+    </script>
+
+    <script src="traduzirlibras.js"></script>
+
+</body>
+
+</html>
