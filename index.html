@@ -8,6 +8,39 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="inicio">
+
+  <svg width="0" height="0" style="position:absolute">
+    <filter id="filtro-protanopia">
+        <feColorMatrix
+            type="matrix"
+            values="
+            0.567 0.433 0     0 0
+            0.558 0.442 0     0 0
+            0     0.242 0.758 0 0
+            0     0     0     1 0">
+        </feColorMatrix>
+    </filter>
+  </svg>
+
+  <svg width="0" height="0" style="position:absolute">
+    <filter id="filtro-deuteranopia">
+        <feColorMatrix type="matrix" values="0.625 0.375 0     0 0
+                                         0.700 0.300 0     0 0
+                                         0     0.300 0.700 0 0
+                                         0     0     0     1 0" />
+    </filter>
+  </svg>
+
+  <svg width="0" height="0" style="position:absolute">
+    <filter id="filtro-tritanopia">
+        <feColorMatrix type="matrix" values="0.950  0.050  0.000  0  0
+      0.000  0.433  0.567  0  0
+      0.000  0.475  0.525  0  0
+      0.000  0.000  0.000  1  0" />
+    </filter>
+  </svg>
+
+
 <header class="top">
   <a class="logo" href="index.html" aria-label="Educaí - Início">
     <div class="logo-mark" aria-hidden="true"><img src="img/logo/logo.png" alt=""></div>
@@ -45,40 +78,6 @@
         <button id="btnDaltonismo" onclick="opcoesFiltros()">Filtro para Daltonismo</button>
 
 
-        <div id="fundoDaltonismo" class="fundo-daltonismo">
-          <div id="opcoesDaltonismo" class="opcoes-daltonismo">
-
-              <h3>Filtro para Daltonismo</h3>
-
-              <button onclick="ativarFiltro('protanopia')">
-                  Protanopia (vermelho)
-              </button>
-
-              <button onclick="ativarFiltro('deuteranopia')">
-                  Deuteranopia (verde)
-              </button>
-
-              <button onclick="ativarFiltro('tritanopia')">
-                  Tritanopia (azul)
-              </button>
-
-              <button onclick="ativarFiltro('acromatopsia')">
-                  Acromatopsia (preto e branco)
-              </button>
-
-              <button onclick="ativarFiltro('normal')">
-                  ✕ Desativar filtro
-              </button>
-
-              <button onclick="fecharOpcoesDaltonismo()" class="btn-fechar">
-                  Fechar
-              </button>
-
-          </div>
-      </div>
-
-
-
 
       </div>
     </div>
@@ -104,7 +103,7 @@
     </div>
 
     <div class="cards-materias">
-      <a href="inglês.html" class="materia">
+      <a href="ingles.html" class="materia">
         <h3>Inglês</h3>
         <p>Vocabulário do dia a dia, tempos verbais (como o Verb To Be), conversação básica, leitura e tradução de textos.</p>
         <span>Estudar →</span>
@@ -227,6 +226,39 @@
     </div>
   </section>
 </main>
+
+
+  <div id="fundoDaltonismo" class="fundo-daltonismo">
+          <div id="opcoesDaltonismo" class="opcoes-daltonismo">
+
+              <h3>Filtro para Daltonismo</h3>
+
+              <button onclick="ativarFiltro('protanopia')">
+                  Protanopia (vermelho)
+              </button>
+
+              <button onclick="ativarFiltro('deuteranopia')">
+                  Deuteranopia (verde)
+              </button>
+
+              <button onclick="ativarFiltro('tritanopia')">
+                  Tritanopia (azul)
+              </button>
+
+              <button onclick="ativarFiltro('acromatopsia')">
+                  Acromatopsia (preto e branco)
+              </button>
+
+              <button onclick="ativarFiltro('normal')" class="btn-desativar">
+                  Desativar filtro
+              </button>
+
+              <button onclick="fecharOpcoesDaltonismo()" class="btn btn-primary">
+                  Fechar
+              </button>
+
+          </div>
+    </div>
 
 <footer>
   <strong>Educaí</strong> — Aprender deve ser para todos. <br>

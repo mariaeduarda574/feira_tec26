@@ -538,3 +538,20 @@ footer .nomes {
         font-size: 18px;
     }
 }
+
+
+body.protanopia #conteudo-principal {
+    filter: url("#filtro-protanopia");
+}
+
+body.deuteranopia #conteudo-principal {
+    filter: url("#filtro-deuteranopia");
+}
+
+body.tritanopia #conteudo-principal {
+    filter: url("#filtro-tritanopia");
+}
+
+body.acromatopsia #conteudo-principal {
+    filter: grayscale(100%);
+}

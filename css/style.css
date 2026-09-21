@@ -26,6 +26,22 @@ body.contrast{
   --shadow:none;
 }
 
+body.acromatopsia #conteudo-principal {
+    filter: grayscale(100%);
+}
+
+body.protanopia #conteudo-principal {
+    filter: url("#filtro-protanopia");
+}
+
+body.deuteranopia #conteudo-principal {
+  filter: url("#filtro-deuteranopia");
+}
+
+body.tritanopia #conteudo-principal {
+  filter: url("#filtro-tritanopia");
+}
+
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
@@ -648,7 +664,7 @@ footer{
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.788);
+    background: rgba(0, 0, 0, 0.445);
     z-index: 9999;
     align-items: center;
     justify-content: center;
@@ -661,7 +677,7 @@ footer{
 .opcoes-daltonismo {
     width: 90%;
     max-width: 450px;
-    background: var(--card);
+    background-color: #DDE3DE;
     border: 1px solid var(--border);
     border-radius: 18px;
     padding: 25px;
@@ -689,6 +705,14 @@ footer{
     border-color: var(--primary);
 }
 
-.opcoes-daltonismo .btn-fechar {
-    margin-top: 5px;
+.opcoes-daltonismo .btn-primary {
+  margin-top: 40px;
+  background: var(--teal);
+  color: #fff;
+  box-shadow: var(--shadow);
+  font: inherit;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 14px 26px;
+  cursor: pointer;
 }
