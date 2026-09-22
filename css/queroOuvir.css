@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f7f3ff;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.voz-container {
+    background: white;
+    width: 100%;
+    max-width: 750px;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.voz-container h1 {
+    color: #6c4ccf;
+    margin-bottom: 10px;
+}
+
+.voz-container > p {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.conteudo-voz {
+    background: #f3efff;
+    border: 2px solid #d8ccff;
+    border-radius: 15px;
+    padding: 20px;
+    min-height: 180px;
+    max-height: 350px;
+    overflow-y: auto;
+    text-align: left;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    white-space: pre-wrap;
+}
+
+.controles-voz {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.controles-voz button,
+.voltar {
+    border: none;
+    border-radius: 10px;
+    padding: 12px 18px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.controles-voz button {
+    background: #6c4ccf;
+    color: white;
+}
+
+.controles-voz button:hover {
+    background: #5638b5;
+    transform: translateY(-2px);
+}
+
+.velocidade {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.velocidade label {
+    font-weight: bold;
+}
+
+.velocidade select {
+    padding: 8px 12px;
+    border: 2px solid #d8ccff;
+    border-radius: 8px;
+    background: white;
+    cursor: pointer;
+}
+
+.voltar {
+    background: #e8e0ff;
+    color: #5a3db5;
+}
+
+.voltar:hover {
+    background: #d8ccff;
+}
+
+@media (max-width: 600px) {
+
+    .voz-container {
+        padding: 25px 18px;
+    }
+
+    .voz-container h1 {
+        font-size: 25px;
+    }
+
+    .controles-voz {
+        flex-direction: column;
+    }
+
+    .controles-voz button {
+        width: 100%;
+    }
+
+    .velocidade {
+        flex-direction: column;
+    }
+
+}

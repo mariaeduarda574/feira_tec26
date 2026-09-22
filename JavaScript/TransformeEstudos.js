@@ -1,4 +1,3 @@
-// FUNÇÃO PRA LIMPAR O CONTEÚDO OU O arquivo
 function atualizarBotaoLimpar() {
     const inputArquivo = document.getElementById("arquivoEstudo");
     const textarea = document.getElementById("textoEstudo");
@@ -16,23 +15,29 @@ function atualizarBotaoLimpar() {
 function btnLimparMaterial() {
     const inputArquivo = document.getElementById("arquivoEstudo");
     const textarea = document.getElementById("textoEstudo");
+    const botao = document.getElementById("btnLimparMaterial");
 
-    if (inputArquivo && inputArquivo.files.length > 0) {
+    if (inputArquivo) {
         inputArquivo.value = "";
+        inputArquivo.disabled = false;
     }
 
-    if (textarea && textarea.value.trim() !== "") {
+    if (textarea) {
         textarea.value = "";
+        textarea.disabled = false;
     }
 
-    atualizarBotaoLimpar();
+    if (botao) {
+        botao.textContent = "Limpar conteúdo";
+    }
 }
 
-// DESABILITAR DEPENDENDO DE QUAL O USUARIO ESCOLHER
 function arquivoSelecionado() {
     const inputArquivo = document.getElementById("arquivoEstudo");
     const textarea = document.getElementById("textoEstudo");
     const botao = document.getElementById("btnLimparMaterial");
+
+    if (!inputArquivo || !textarea || !botao) return;
 
     if (inputArquivo.files.length > 0) {
         textarea.disabled = true;
@@ -48,6 +53,8 @@ function textoDigitado() {
     const textarea = document.getElementById("textoEstudo");
     const botao = document.getElementById("btnLimparMaterial");
 
+    if (!inputArquivo || !textarea || !botao) return;
+
     if (textarea.value.trim() !== "") {
         inputArquivo.disabled = true;
         botao.textContent = "Limpar conteúdo";
@@ -57,19 +64,24 @@ function textoDigitado() {
     }
 }
 
-function btnLimparMaterial() {
-    const inputArquivo = document.getElementById("arquivoEstudo");
+function transformarEstudo(tipo) {
     const textarea = document.getElementById("textoEstudo");
-    const botao = document.getElementById("btnLimparMaterial");
+    const inputArquivo = document.getElementById("arquivoEstudo");
 
-    inputArquivo.value = "";
-    textarea.value = "";
+    let conteudo = "";
 
-    inputArquivo.disabled = false;
-    textarea.disabled = false;
+    if (textarea && textarea.value.trim() !== "") {
+        conteudo = textarea.value.trim();
+    } else if (inputArquivo && inputArquivo.files.length > 0) {
+        alert("Por enquanto, a leitura em voz alta funciona com textos colados.");
+        return;
+    } else {
+        alert("Cole um conteúdo para continuar.");
+        return;
+    }
 
-    botao.textContent = "Limpar conteúdo";
-
-    arquivoEstudoAtual = null;
-    conteudoArquivoAtual = "";
+    if (tipo === "ouvir") {
+        localStorage.setItem("conteudoEstudo", conteudo);
+        window.location.href = "TransformarEstudos/queroOuvir.html";
+    }
 }

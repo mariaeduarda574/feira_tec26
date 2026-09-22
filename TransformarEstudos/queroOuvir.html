@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../css/queroOuvir.css">
+    <title>Leitura em voz alta - Educaí</title>
+</head>
+
+<body>
+
+    <main class="voz-container">
+
+        <h1>Seu conteúdo em voz alta</h1>
+
+        <p>
+            Ouça o conteúdo que você enviou para estudar de uma forma mais acessível.
+        </p>
+
+        <div class="conteudo-voz" id="conteudoVoz"></div>
+
+        <div class="controles-voz">
+
+            <button onclick="iniciarLeitura()">
+                ▶ Ouvir
+            </button>
+
+            <button onclick="pausarLeitura()">
+                ⏸ Pausar
+            </button>
+
+            <button onclick="continuarLeitura()">
+                ▶ Continuar
+            </button>
+
+            <button onclick="pararLeitura()">
+                ⏹ Parar
+            </button>
+
+        </div>
+
+        <div class="velocidade">
+
+            <label for="velocidade">
+                Velocidade da leitura:
+            </label>
+
+            <select id="velocidade">
+                <option value="0.5">0,5x</option>
+                <option value="0.75">0,75x</option>
+                <option value="1" selected>1x</option>
+                <option value="1.25">1,25x</option>
+                <option value="1.5">1,5x</option>
+                <option value="2">2x</option>
+            </select>
+
+        </div>
+
+        <button class="voltar" onclick="voltarParaEstudos()">
+            ← Voltar
+        </button>
+
+    </main>
+
+    <script src="../JavaScript/queroOuvir.js"></script>
+
+
+</body>
+
+</html>
