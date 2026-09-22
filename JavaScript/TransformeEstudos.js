@@ -12,6 +12,49 @@ function atualizarBotaoLimpar() {
     }
 }
 
+function transformarEstudo(tipo) {
+
+    const texto = document.getElementById("textoEstudo").value.trim();
+    const resultado = document.getElementById("resultadoTransforme");
+
+    if (!texto) {
+        resultado.innerHTML = `
+            <div class="transforme-alerta">
+                <strong>Ops!</strong>
+                <p>Digite ou cole um conteúdo antes de escolher uma opção.</p>
+            </div>
+        `;
+        return;
+    }
+
+    switch (tipo) {
+
+        case "ouvir":
+            ouvirTexto(texto);
+            break;
+
+        case "libras":
+            traduzirLibras(texto);
+            break;
+
+        case "mapa":
+            criarMapaMental(texto);
+            break;
+
+        case "simples":
+            explicacaoSimples(texto);
+            break;
+
+        case "exercicios":
+            criarExercicios(texto);
+            break;
+
+        case "resumo":
+            criarResumo(texto);
+            break;
+    }
+}
+
 function btnLimparMaterial() {
     const inputArquivo = document.getElementById("arquivoEstudo");
     const textarea = document.getElementById("textoEstudo");

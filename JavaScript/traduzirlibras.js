@@ -197,6 +197,8 @@ async function obterConteudoEstudo() {
     );
 }
 
+
+
 async function transformarEstudo(tipo) {
     try {
         const conteudo =

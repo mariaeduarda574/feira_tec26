@@ -11,7 +11,7 @@
 
 <link rel="stylesheet" href="css/matemática.css">
 <link rel="stylesheet" href="css/TransformeEstudos.css">
-<link rel="icon" href="img/flavicon.png">
+<link rel="icon" type="image/png" href="img/flavicon.png">
 
 </head>
 
@@ -86,102 +86,49 @@
     </header>
 
 
-    <section class="transforme" id="transformar">
+     <section id="transformar" class="transform-section">
 
-        <div class="transforme-header">
             <h2>Transforme meu estudo</h2>
 
             <p>
-                Envie um material ou cole um texto e escolha a forma que
-                combina com você para estudar.
-            </p>
-        </div>
-
-        <div class="transforme-upload">
-
-            <strong>Envie seu material</strong>
-
-            <p>
-                Você pode enviar um PDF, Docx ou arquivos PowerPoint.
+                Escolha uma forma de estudar o conteúdo de Inglês.
             </p>
 
-            <input
-                type="file"
-                accept=".pdf, .docx, .pptx"
-                id="arquivoEstudo"
-                onchange="atualizarBotaoLimpar(); arquivoSelecionado()"
-            >
+            <input type="file" id="arquivo" class="arquivo">
 
             <textarea
                 id="textoEstudo"
-                class="transforme-input"
-                placeholder="Ou cole aqui o conteúdo que você quer transformar..."
-                oninput="textoDigitado()"
-            ></textarea>
+                placeholder="Digite ou cole aqui um conteúdo para estudar..."></textarea>
 
-            <button id="btnLimparMaterial" onclick="btnLimparMaterial()">
-                Limpar conteúdo
-            </button>
+            <div class="transform-options">
 
-        </div>
+                <button onclick="transformarEstudo('ouvir')">
+                    Ouvir conteúdo
+                </button>
 
-        <h3>Como você quer estudar?</h3>
+                <button onclick="transformarEstudo('libras')">
+                    Traduzir para Libras
+                </button>
 
-        <div class="transforme-options">
+                <button onclick="transformarEstudo('mapa')">
+                    Criar mapa mental
+                </button>
 
-            <button
-                class="transforme-option"
-                onclick="transformarEstudo('ouvir')"
-            >
-                <strong>Quero ouvir</strong>
-                <span>Leia o conteúdo enviado em voz alta.</span>
-            </button>
+                <button onclick="transformarEstudo('simples')">
+                    Explicar de forma simples
+                </button>
 
-            <button
-                class="transforme-option"
-                onclick="transformarEstudo('libras')"
-            >
-                <strong>Quero traduzir para Libras</strong>
-                <span>Traduza somente o conteúdo enviado e abra o avatar.</span>
-            </button>
+                <button onclick="transformarEstudo('exercicios')">
+                    Criar exercícios
+                </button>
 
-            <button
-                class="transforme-option"
-                onclick="transformarEstudo('mapa')"
-            >
-                <strong>Quero um mapa mental</strong>
-                <span>Organize as principais ideias do conteúdo.</span>
-            </button>
+                <button onclick="transformarEstudo('resumo')">
+                    Fazer resumo
+                </button>
 
-            <button
-                class="transforme-option"
-                onclick="transformarEstudo('simples')"
-            >
-                <strong>Quero uma explicação simples</strong>
-                <span>Veja uma versão mais fácil de compreender.</span>
-            </button>
+            </div>
 
-            <button
-                class="transforme-option"
-                onclick="transformarEstudo('exercicios')"
-            >
-                <strong>Quero exercícios</strong>
-                <span>Crie sugestões de questões para praticar.</span>
-            </button>
-
-            <button
-                class="transforme-option"
-                onclick="transformarEstudo('resumo')"
-            >
-                <strong>Quero um resumo</strong>
-                <span>Veja uma síntese do conteúdo.</span>
-            </button>
-
-        </div>
-
-        <div id="resultadoTransforme" class="transforme-result"></div>
-
-    </section>
+        </section>
 
 
     <!-- CONTEÚDOS -->
