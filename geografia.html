@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/geografia.css">
+    <link rel="icon" href="img/flavicon.png">
+
+    <title>Geografia - Educaí</title>
+</head>
+
+<body>
+
+    <!-- MENU LATERAL -->
+    <aside class="sidebar">
+
+        <div class="logo-container">
+            <a href="index.html" class="logo-link">
+                <img src="img/logo/logo.png" alt="Logo Educaí" class="logo">
+                <span>Educaí</span>
+            </a>
+        </div>
+
+        <nav class="menu">
+
+            <a href="#inicio">Início</a>
+            <a href="#transformar">Transforme meu estudo</a>
+            <a href="#materias">Conteúdos</a>
+
+            <a href="#cartografia">Cartografia</a>
+            <a href="#relevo">Relevo</a>
+            <a href="#clima">Clima</a>
+            <a href="#vegetacao">Vegetação</a>
+            <a href="#hidrografia">Hidrografia</a>
+            <a href="#populacao">População</a>
+            <a href="#urbanizacao">Urbanização</a>
+            <a href="#industrializacao">Industrialização</a>
+            <a href="#globalizacao">Globalização</a>
+            <a href="#meio-ambiente">Meio Ambiente</a>
+            <a href="#brasil">Geografia do Brasil</a>
+
+            <a href="#quiz">Quiz</a>
+
+        </nav>
+
+        <button class="voltar" onclick="voltarEducai()">
+            Voltar para Educaí
+        </button>
+
+    </aside>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="main-content">
+
+        <!-- INÍCIO -->
+        <header id="inicio">
+
+            <div>
+
+                <p class="mini-title">EDUCAÍ • GEOGRAFIA</p>
+
+                <h1>Olá, estudante!</h1>
+
+                <p class="subtitle">
+                    Conheça o espaço geográfico, a natureza e as relações entre sociedade e território.
+                </p>
+
+            </div>
+
+            <button class="theme-button" onclick="alternarTema()">
+                Alterar tema
+            </button>
+
+        </header>
+
+
+        <!-- TRANSFORME MEU ESTUDO -->
+        <section id="transformar" class="transform-section">
+
+            <h2>Transforme meu estudo</h2>
+
+            <p>
+                Escolha uma forma de estudar o conteúdo de Geografia.
+            </p>
+
+            <input type="file" id="arquivo" class="arquivo">
+
+            <textarea
+                id="textoEstudo"
+                placeholder="Digite ou cole aqui um conteúdo para estudar..."></textarea>
+
+            <div class="transform-options">
+
+                <button onclick="transformarEstudo('ouvir')">
+                    Ouvir conteúdo
+                </button>
+
+                <button onclick="transformarEstudo('libras')">
+                    Traduzir para Libras
+                </button>
+
+                <button onclick="transformarEstudo('mapa')">
+                    Criar mapa mental
+                </button>
+
+                <button onclick="transformarEstudo('simples')">
+                    Explicar de forma simples
+                </button>
+
+                <button onclick="transformarEstudo('exercicios')">
+                    Criar exercícios
+                </button>
+
+                <button onclick="transformarEstudo('resumo')">
+                    Fazer resumo
+                </button>
+
+            </div>
+
+            <div id="resultadoTransforme" class="transform-result"></div>
+
+        </section>
+
+
+        <!-- CONTEÚDOS -->
+        <section id="materias">
+
+            <h2>Conteúdos de Geografia</h2>
+
+            <p class="section-description">
+                Escolha um assunto para começar seus estudos.
+            </p>
+
+            <div class="cards-grid">
+
+                <a href="#cartografia" class="card">
+                    <h3>Cartografia</h3>
+                    <p>Aprenda sobre mapas, escalas, coordenadas e orientação.</p>
+                    <button onclick="mostrar('Cartografia')">Estudar</button>
+                </a>
+
+                <a href="#relevo" class="card">
+                    <h3>Relevo</h3>
+                    <p>Conheça as principais formas de relevo e sua formação.</p>
+                    <button onclick="mostrar('Relevo')">Estudar</button>
+                </a>
+
+                <a href="#clima" class="card">
+                    <h3>Clima</h3>
+                    <p>Entenda os diferentes tipos de clima e seus elementos.</p>
+                    <button onclick="mostrar('Clima')">Estudar</button>
+                </a>
+
+                <a href="#vegetacao" class="card">
+                    <h3>Vegetação</h3>
+                    <p>Conheça os principais tipos de vegetação do planeta.</p>
+                    <button onclick="mostrar('Vegetação')">Estudar</button>
+                </a>
+
+                <a href="#hidrografia" class="card">
+                    <h3>Hidrografia</h3>
+                    <p>Estude rios, bacias hidrográficas e recursos hídricos.</p>
+                    <button onclick="mostrar('Hidrografia')">Estudar</button>
+                </a>
+
+                <a href="#populacao" class="card">
+                    <h3>População</h3>
+                    <p>Entenda o crescimento e a distribuição da população.</p>
+                    <button onclick="mostrar('População')">Estudar</button>
+                </a>
+
+                <a href="#urbanizacao" class="card">
+                    <h3>Urbanização</h3>
+                    <p>Aprenda sobre o crescimento das cidades e seus desafios.</p>
+                     <button onclick="mostrar('Urbanização')">Estudar</button>
+                </a>
+
+                <a href="#industrializacao" class="card">
+                    <h3>Industrialização</h3>
+                    <p>Conheça o processo de desenvolvimento das indústrias.</p>
+                     <button onclick="mostrar('Industrialização')">Estudar</button>
+                </a>
+
+                <a href="#globalizacao" class="card">
+                    <h3>Globalização</h3>
+                    <p>Entenda as relações econômicas e culturais entre países.</p>
+                     <button onclick="mostrar('Globalização')">Estudar</button>
+                </a>
+
+                <a href="#meio-ambiente" class="card">
+                    <h3>Meio Ambiente</h3>
+                    <p>Estude os impactos das atividades humanas sobre a natureza.</p>
+                    <button onclick="mostrar('Meio Ambiente')">Estudar</button>
+                </a>
+
+                <a href="#brasil" class="card">
+                    <h3>Geografia do Brasil</h3>
+                    <p>Conheça o território, regiões e características naturais do Brasil.</p>
+                    <button onclick="mostrar('Geografia do Brasil')">Estudar</button>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- CARTOGRAFIA -->
+        <section id="cartografia" class="study-section">
+
+            <h2>Cartografia</h2>
+
+            <p>
+                A Cartografia é a área responsável pelo estudo e produção de mapas
+                e outras formas de representação do espaço geográfico.
+            </p>
+
+            <div class="example">
+
+                <strong>Elementos importantes:</strong>
+
+                <p>Mapa – representação de uma área da superfície terrestre.</p>
+                <p>Escala – relação entre o tamanho representado no mapa e o tamanho real.</p>
+                <p>Legenda – explica os símbolos utilizados no mapa.</p>
+                <p>Coordenadas geográficas – ajudam a localizar pontos na superfície terrestre.</p>
+                <p>Orientação – utiliza elementos como pontos cardeais e colaterais.</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- RELEVO -->
+        <section id="relevo" class="study-section">
+
+            <h2>Relevo</h2>
+
+            <p>
+                O relevo corresponde às diferentes formas presentes na superfície
+                terrestre. Ele é resultado da atuação de forças internas e externas.
+            </p>
+
+            <div class="example">
+
+                <strong>Principais formas:</strong>
+
+                <p>Montanhas – grandes elevações do terreno.</p>
+                <p>Planaltos – áreas onde predominam processos de erosão.</p>
+                <p>Planícies – áreas relativamente planas onde predomina a sedimentação.</p>
+                <p>Depressões – áreas mais baixas em relação às regiões próximas.</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- CLIMA -->
+        <section id="clima" class="study-section">
+
+            <h2>Clima</h2>
+
+            <p>
+                O clima representa o comportamento médio das condições atmosféricas
+                de uma determinada região durante um longo período.
+            </p>
+
+            <div class="example">
+
+                <strong>Elementos do clima:</strong>
+
+                <p>Temperatura.</p>
+                <p>Umidade.</p>
+                <p>Pressão atmosférica.</p>
+                <p>Precipitação.</p>
+                <p>Ventos.</p>
+
+                <strong>Alguns fatores climáticos:</strong>
+
+                <p>Latitude.</p>
+                <p>Altitude.</p>
+                <p>Relevo.</p>
+                <p>Maritimidade e continentalidade.</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- VEGETAÇÃO -->
+        <section id="vegetacao" class="study-section">
+
+            <h2>Vegetação</h2>
+
+            <p>
+                A vegetação corresponde ao conjunto de plantas que ocorre em
+                determinada região. Ela está relacionada às condições de clima,
+                solo e relevo.
+            </p>
+
+            <div class="example">
+
+                <strong>Exemplos de formações vegetais:</strong>
+
+                <p>Florestas.</p>
+                <p>Savanas.</p>
+                <p>Campos.</p>
+                <p>Vegetações desérticas.</p>
+                <p>Vegetação de regiões polares.</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- HIDROGRAFIA -->
+        <section id="hidrografia" class="study-section">
+
+            <h2>Hidrografia</h2>
+
+            <p>
+                A Hidrografia estuda as águas presentes na superfície terrestre,
+                incluindo rios, lagos, mares e oceanos.
+            </p>
+
+            <div class="example">
+
+                <strong>Conceitos importantes:</strong>
+
+                <p>Bacia hidrográfica – área drenada por um rio principal e seus afluentes.</p>
+                <p>Nascente – local onde um rio começa.</p>
+                <p>Foz – local onde o rio termina.</p>
+                <p>Afluente – rio que deságua em outro rio.</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- POPULAÇÃO -->
+        <section id="populacao" class="study-section">
+
+            <h2>População</h2>
+
+            <p>
+                A Geografia da população estuda a distribuição das pessoas pelo
+                território e suas características demográficas.
+            </p>
+
+            <div class="example">
+
+                <strong>Alguns conceitos:</strong>
+
+                <p>Densidade demográfica – quantidade de habitantes por área.</p>
+                <p>Crescimento populacional – variação no número de habitantes.</p>
+                <p>Migração – deslocamento de pessoas de um lugar para outro.</p>
+                <p>Expectativa de vida – média de anos que uma população pode viver.</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- URBANIZAÇÃO -->
+        <section id="urbanizacao" class="study-section">
+
+            <h2>Urbanização</h2>
+
+            <p>
+                Urbanização é o processo de crescimento da população que vive
+                em áreas urbanas e da expansão das cidades.
+            </p>
+
+            <div class="example">
+
+                <strong>Alguns desafios urbanos:</strong>
+
+                <p>Trânsito.</p>
+                <p>Poluição.</p>
+                <p>Falta de moradia adequada.</p>
+                <p>Desigualdade socioespacial.</p>
+                <p>Problemas de saneamento básico.</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- INDUSTRIALIZAÇÃO -->
+        <section id="industrializacao" class="study-section">
+
+            <h2>Industrialização</h2>
+
+            <p>
+                A industrialização é o processo de expansão das atividades
+                industriais e de transformação das formas de produção.
+            </p>
+
+            <div class="example">
+
+                <strong>Consequências da industrialização:</strong>
+
+                <p>Crescimento das cidades.</p>
+                <p>Ampliação da produção de mercadorias.</p>
+                <p>Criação de empregos industriais.</p>
+                <p>Transformações nas relações de trabalho.</p>
+                <p>Aumento do consumo de recursos naturais.</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- GLOBALIZAÇÃO -->
+        <section id="globalizacao" class="study-section">
+
+            <h2>Globalização</h2>
+
+            <p>
+                A globalização corresponde ao aumento das relações e conexões
+                entre diferentes partes do mundo.
+            </p>
+
+            <div class="example">
+
+                <strong>Características:</strong>
+
+                <p>Maior circulação de informações.</p>
+                <p>Ampliação das relações comerciais internacionais.</p>
+                <p>Avanço dos meios de transporte e comunicação.</p>
+                <p>Maior integração entre mercados.</p>
+                <p>Circulação internacional de pessoas, produtos e capitais.</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- MEIO AMBIENTE -->
+        <section id="meio-ambiente" class="study-section">
+
+            <h2>Meio Ambiente</h2>
+
+            <p>
+                O meio ambiente envolve os elementos naturais e sociais que
+                fazem parte do espaço onde vivemos.
+            </p>
+
+            <div class="example">
+
+                <strong>Alguns problemas ambientais:</strong>
+
+                <p>Desmatamento.</p>
+                <p>Poluição do ar e da água.</p>
+                <p>Degradação do solo.</p>
+                <p>Perda de biodiversidade.</p>
+                <p>Mudanças climáticas.</p>
+
+            </div>
+
+            <p>
+                A preservação ambiental depende do uso responsável dos recursos
+                naturais e de ações que reduzam os impactos das atividades humanas.
+            </p>
+
+        </section>
+
+
+        <!-- GEOGRAFIA DO BRASIL -->
+        <section id="brasil" class="study-section">
+
+            <h2>Geografia do Brasil</h2>
+
+            <p>
+                O Brasil possui um território extenso e apresenta grande diversidade
+                natural, econômica e cultural.
+            </p>
+
+            <div class="example">
+
+                <strong>Características do território brasileiro:</strong>
+
+                <p>Possui grande extensão territorial.</p>
+                <p>É dividido em cinco grandes regiões: Norte, Nordeste, Centro-Oeste, Sudeste e Sul.</p>
+                <p>Apresenta diferentes tipos de clima e vegetação.</p>
+                <p>Possui grande diversidade de rios e bacias hidrográficas.</p>
+                <p>Apresenta diferentes atividades econômicas em seu território.</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- QUIZ -->
+        <section id="quiz" class="quiz-section">
+
+            <h2>Quiz de Geografia</h2>
+
+            <p>
+                Teste seus conhecimentos respondendo às 10 questões.
+            </p>
+
+
+            <!-- QUESTÃO 1 -->
+            <div class="question">
+
+                <h3>1. O que é Cartografia?</h3>
+
+                <label>
+                    <input type="radio" name="q1" value="a">
+                    a) Estudo exclusivo dos rios
+                </label>
+
+                <label>
+                    <input type="radio" name="q1" value="b">
+                    b) Estudo e produção de mapas e representações do espaço
+                </label>
+
+                <label>
+                    <input type="radio" name="q1" value="c">
+                    c) Estudo dos animais
+                </label>
+
+                <label>
+                    <input type="radio" name="q1" value="d">
+                    d) Estudo das plantas
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 2 -->
+            <div class="question">
+
+                <h3>2. Qual alternativa apresenta uma forma de relevo?</h3>
+
+                <label>
+                    <input type="radio" name="q2" value="a">
+                    a) Montanha
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="b">
+                    b) Oceano
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="c">
+                    c) Floresta
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="d">
+                    d) Clima
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 3 -->
+            <div class="question">
+
+                <h3>3. Qual elemento faz parte do clima?</h3>
+
+                <label>
+                    <input type="radio" name="q3" value="a">
+                    a) Temperatura
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="b">
+                    b) População
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="c">
+                    c) Indústria
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="d">
+                    d) Fronteira
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 4 -->
+            <div class="question">
+
+                <h3>4. O que é uma bacia hidrográfica?</h3>
+
+                <label>
+                    <input type="radio" name="q4" value="a">
+                    a) Uma área drenada por um rio principal e seus afluentes
+                </label>
+
+                <label>
+                    <input type="radio" name="q4" value="b">
+                    b) Uma área exclusivamente desértica
+                </label>
+
+                <label>
+                    <input type="radio" name="q4" value="c">
+                    c) Uma região sem rios
+                </label>
+
+                <label>
+                    <input type="radio" name="q4" value="d">
+                    d) Uma área formada somente por montanhas
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 5 -->
+            <div class="question">
+
+                <h3>5. O que significa densidade demográfica?</h3>
+
+                <label>
+                    <input type="radio" name="q5" value="a">
+                    a) Quantidade de rios de uma região
+                </label>
+
+                <label>
+                    <input type="radio" name="q5" value="b">
+                    b) Quantidade de indústrias de uma cidade
+                </label>
+
+                <label>
+                    <input type="radio" name="q5" value="c">
+                    c) Quantidade de habitantes por área
+                </label>
+
+                <label>
+                    <input type="radio" name="q5" value="d">
+                    d) Quantidade de florestas de um país
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 6 -->
+            <div class="question">
+
+                <h3>6. O que é urbanização?</h3>
+
+                <label>
+                    <input type="radio" name="q6" value="a">
+                    a) Crescimento e expansão das áreas urbanas
+                </label>
+
+                <label>
+                    <input type="radio" name="q6" value="b">
+                    b) Diminuição das cidades
+                </label>
+
+                <label>
+                    <input type="radio" name="q6" value="c">
+                    c) Formação de desertos
+                </label>
+
+                <label>
+                    <input type="radio" name="q6" value="d">
+                    d) Expansão das áreas polares
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 7 -->
+            <div class="question">
+
+                <h3>7. Onde começou a Revolução Industrial?</h3>
+
+                <label>
+                    <input type="radio" name="q7" value="a">
+                    a) Brasil
+                </label>
+
+                <label>
+                    <input type="radio" name="q7" value="b">
+                    b) Inglaterra
+                </label>
+
+                <label>
+                    <input type="radio" name="q7" value="c">
+                    c) Japão
+                </label>
+
+                <label>
+                    <input type="radio" name="q7" value="d">
+                    d) Austrália
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 8 -->
+            <div class="question">
+
+                <h3>8. O que caracteriza a globalização?</h3>
+
+                <label>
+                    <input type="radio" name="q8" value="a">
+                    a) Isolamento entre os países
+                </label>
+
+                <label>
+                    <input type="radio" name="q8" value="b">
+                    b) Aumento das conexões entre diferentes partes do mundo
+                </label>
+
+                <label>
+                    <input type="radio" name="q8" value="c">
+                    c) Diminuição da comunicação
+                </label>
+
+                <label>
+                    <input type="radio" name="q8" value="d">
+                    d) Fim das relações comerciais
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 9 -->
+            <div class="question">
+
+                <h3>9. Quantas grandes regiões o Brasil possui?</h3>
+
+                <label>
+                    <input type="radio" name="q9" value="a">
+                    a) 3
+                </label>
+
+                <label>
+                    <input type="radio" name="q9" value="b">
+                    b) 4
+                </label>
+
+                <label>
+                    <input type="radio" name="q9" value="c">
+                    c) 5
+                </label>
+
+                <label>
+                    <input type="radio" name="q9" value="d">
+                    d) 6
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 10 -->
+            <div class="question">
+
+                <h3>10. Qual é um exemplo de problema ambiental?</h3>
+
+                <label>
+                    <input type="radio" name="q10" value="a">
+                    a) Desmatamento
+                </label>
+
+                <label>
+                    <input type="radio" name="q10" value="b">
+                    b) Cartografia
+                </label>
+
+                <label>
+                    <input type="radio" name="q10" value="c">
+                    c) Coordenada geográfica
+                </label>
+
+                <label>
+                    <input type="radio" name="q10" value="d">
+                    d) Latitude
+                </label>
+
+            </div>
+
+
+            <button class="quiz-button" onclick="corrigirQuiz()">
+                Corrigir Quiz
+            </button>
+
+            <div id="resultado" class="resultado"></div>
+
+        </section>
+
+
+        <footer>
+            <p>Educaí • Aprender transforma.</p>
+        </footer>
+
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        function voltarEducai() {
+            window.location.href = "index.html";
+        }
+
+
+        function alternarTema() {
+            document.body.classList.toggle("dark-mode");
+        }
+
+
+        function transformarEstudo(tipo) {
+
+            const texto = document.getElementById("textoEstudo").value.trim();
+            const resultado = document.getElementById("resultadoTransforme");
+
+            if (!texto) {
+
+                resultado.innerHTML =
+                    "<strong>Digite ou cole um conteúdo primeiro.</strong>";
+
+                resultado.classList.add("show");
+
+                return;
+            }
+
+
+            if (tipo === "ouvir") {
+
+                const fala = new SpeechSynthesisUtterance(texto);
+
+                fala.lang = "pt-BR";
+
+                speechSynthesis.speak(fala);
+
+                resultado.innerHTML =
+                    "<strong>Conteúdo sendo lido.</strong>" +
+                    "<p>O navegador está realizando a leitura do conteúdo.</p>";
+
+            }
+
+
+            else if (tipo === "simples") {
+
+                resultado.innerHTML =
+                    "<strong>Explicação simples</strong>" +
+                    "<p>" + texto + "</p>";
+
+            }
+
+
+            else if (tipo === "resumo") {
+
+                const palavras = texto.split(/\s+/);
+
+                const resumo = palavras.slice(0, 60).join(" ");
+
+                resultado.innerHTML =
+                    "<strong>Resumo</strong>" +
+                    "<p>" +
+                    resumo +
+                    (palavras.length > 60 ? "..." : "") +
+                    "</p>";
+
+            }
+
+
+            else if (tipo === "mapa") {
+
+                const palavras = texto
+                    .split(/\s+/)
+                    .filter(p => p.length > 4)
+                    .slice(0, 12);
+
+                resultado.innerHTML =
+                    "<strong>Mapa mental</strong>" +
+                    "<ul>" +
+                    palavras.map(p => "<li>" + p + "</li>").join("") +
+                    "</ul>";
+
+            }
+
+
+            else if (tipo === "exercicios") {
+
+                resultado.innerHTML =
+                    "<strong>Exercício para estudar</strong>" +
+                    "<p>Explique com suas próprias palavras qual é a ideia principal do conteúdo.</p>" +
+                    "<p>Depois, escreva três informações importantes que você encontrou.</p>";
+
+            }
+
+
+            else if (tipo === "libras") {
+
+                resultado.innerHTML =
+                    "<strong>Traduzir para Libras</strong>" +
+                    "<p>O conteúdo foi preparado para utilização com o recurso de acessibilidade em Libras.</p>";
+
+            }
+
+
+            resultado.classList.add("show");
+
+        }
+
+
+        function corrigirQuiz() {
+
+            const respostas = {
+
+                q1: "b",
+                q2: "a",
+                q3: "a",
+                q4: "a",
+                q5: "c",
+                q6: "a",
+                q7: "b",
+                q8: "b",
+                q9: "c",
+                q10: "a"
+
+            };
+
+
+            let acertos = 0;
+
+
+            for (let questao in respostas) {
+
+                const respostaSelecionada =
+                    document.querySelector(
+                        `input[name="${questao}"]:checked`
+                    );
+
+
+                if (
+                    respostaSelecionada &&
+                    respostaSelecionada.value === respostas[questao]
+                ) {
+
+                    acertos++;
+
+                }
+
+            }
+
+
+            const resultado =
+                document.getElementById("resultado");
+
+
+            resultado.innerHTML =
+                `<strong>Você acertou ${acertos}/10 questões!</strong>`;
+
+
+            if (acertos === 10) {
+
+                resultado.innerHTML +=
+                    "<p>Excelente! Você domina muito bem esse conteúdo.</p>";
+
+            }
+
+
+            else if (acertos >= 7) {
+
+                resultado.innerHTML +=
+                    "<p>Muito bom! Você possui um ótimo conhecimento.</p>";
+
+            }
+
+
+            else if (acertos >= 5) {
+
+                resultado.innerHTML +=
+                    "<p>Bom trabalho! Continue estudando para melhorar ainda mais.</p>";
+
+            }
+
+
+            else {
+
+                resultado.innerHTML +=
+                    "<p>Continue estudando. Você pode tentar novamente!</p>";
+
+            }
+
+
+            resultado.classList.add("show");
+
+        }
+
+    </script>
+
+    <script src="JavaScript/traduzirlibras.js"></script>
+
+<script src="JavaScript/TransformeEstudos.js"></script>
+<script src="JavaScript/daltonismo.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/historia.css">
+    <link rel="stylesheet" href="TransformeEstudos.css">
+    <link rel="icon" type="image/png" href="img/flavicon.png">
+
+
+    <title>História - Educaí</title>
+</head>
+
+<body>
+
+    <!-- MENU LATERAL -->
+    <aside class="sidebar">
+
+        <div class="logo-container">
+            <a href="index.html" class="logo-link">
+                <img src="img/logo/logo.png" alt="Logo Educaí" class="logo">
+                <span>Educaí</span>
+            </a>
+        </div>
+
+        <nav class="menu">
+
+            <a href="#inicio">Início</a>
+            <a href="#transformar">Transforme meu estudo</a>
+            <a href="#materias">Conteúdos</a>
+
+            <a href="#pre-historia">Pré-História</a>
+            <a href="#antiguidade">Antiguidade</a>
+            <a href="#idade-media">Idade Média</a>
+            <a href="#idade-moderna">Idade Moderna</a>
+            <a href="#brasil-colonial">Brasil Colonial</a>
+            <a href="#independencia">Independência do Brasil</a>
+            <a href="#imperio">Brasil Império</a>
+            <a href="#republica">Brasil República</a>
+            <a href="#revolucao-industrial">Revolução Industrial</a>
+            <a href="#guerras">Guerras Mundiais</a>
+            <a href="#ditadura">Ditadura Militar</a>
+
+            <a href="#quiz">Quiz</a>
+
+        </nav>
+
+        <button class="voltar" onclick="voltarEducai()">
+            Voltar para Educaí
+        </button>
+
+    </aside>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="main-content">
+
+        <!-- INÍCIO -->
+        <header id="inicio">
+
+            <div>
+                <p class="mini-title">EDUCAÍ • HISTÓRIA</p>
+
+                <h1>Olá, estudante!</h1>
+
+                <p class="subtitle">
+                    Conheça acontecimentos e sociedades que ajudaram a construir o mundo.
+                </p>
+            </div>
+
+            <button class="theme-button" onclick="alternarTema()">
+                Alterar tema
+            </button>
+
+        </header>
+
+
+        <!-- TRANSFORME MEU ESTUDO -->
+        <section id="transformar" class="transform-section">
+
+            <h2>Transforme meu estudo</h2>
+
+            <p>
+                Escolha uma forma de estudar o conteúdo de História.
+            </p>
+
+            <input type="file" id="arquivo" class="arquivo">
+
+            <textarea
+                id="textoEstudo"
+                placeholder="Digite ou cole aqui um conteúdo para estudar..."></textarea>
+
+            <div class="transform-options">
+
+                <button onclick="transformarEstudo('ouvir')">
+                    Ouvir conteúdo
+                </button>
+
+                <button onclick="transformarEstudo('libras')">
+                    Traduzir para Libras
+                </button>
+
+                <button onclick="transformarEstudo('mapa')">
+                    Criar mapa mental
+                </button>
+
+                <button onclick="transformarEstudo('simples')">
+                    Explicar de forma simples
+                </button>
+
+                <button onclick="transformarEstudo('exercicios')">
+                    Criar exercícios
+                </button>
+
+                <button onclick="transformarEstudo('resumo')">
+                    Fazer resumo
+                </button>
+
+            </div>
+
+            <div id="resultadoTransforme" class="transform-result"></div>
+
+        </section>
+
+
+        <!-- CONTEÚDOS -->
+        <section id="materias">
+
+            <h2>Conteúdos de História</h2>
+
+            <p class="section-description">
+                Escolha um assunto para começar seus estudos.
+            </p>
+
+            <div class="cards-grid">
+
+                <a href="#pre-historia" class="card">
+                    <h3>Pré-História</h3>
+                    <p>Conheça os primeiros períodos da história da humanidade.</p>
+                     <button onclick="mostrar('Pré-História')">Estudar</button>
+                </a>
+
+                <a href="#antiguidade" class="card">
+                    <h3>Antiguidade</h3>
+                    <p>Estude civilizações como Egito, Grécia e Roma.</p>
+                    <button onclick="mostrar('Antiguidade')">Estudar</button>
+                </a>
+
+                <a href="#idade-media" class="card">
+                    <h3>Idade Média</h3>
+                    <p>Entenda o feudalismo, a sociedade medieval e as mudanças da época.</p>
+                     <button onclick="mostrar('Idade Média')">Estudar</button>
+                </a>
+
+                <a href="#idade-moderna" class="card">
+                    <h3>Idade Moderna</h3>
+                    <p>Conheça o Renascimento, as Grandes Navegações e as reformas religiosas.</p>
+                    <button onclick="mostrar('Idade Moderna')">Estudar</button>
+                </a>
+
+                <a href="#brasil-colonial" class="card">
+                    <h3>Brasil Colonial</h3>
+                    <p>Estude a colonização portuguesa e a formação do Brasil.</p>
+                    <button onclick="mostrar('Brasil Colonial')">Estudar</button>
+                </a>
+
+                <a href="#independencia" class="card">
+                    <h3>Independência do Brasil</h3>
+                    <p>Entenda o processo que levou o Brasil a se tornar independente.</p>
+                    <button onclick="mostrar('Independência do Brasil')">Estudar</button>
+                </a>
+
+                <a href="#imperio" class="card">
+                    <h3>Brasil Império</h3>
+                    <p>Conheça os principais acontecimentos do período imperial brasileiro.</p>
+                     <button onclick="mostrar('Brasil Império')">Estudar</button>
+                </a>
+
+                <a href="#republica" class="card">
+                    <h3>Brasil República</h3>
+                    <p>Estude as principais fases da República brasileira.</p>
+                     <button onclick="mostrar('Brasil República')">Estudar</button>
+                </a>
+
+                <a href="#revolucao-industrial" class="card">
+                    <h3>Revolução Industrial</h3>
+                    <p>Entenda as transformações provocadas pela industrialização.</p>
+                    <button onclick="mostrar('Revolução Industrial')">Estudar</button>
+                </a>
+
+                <a href="#guerras" class="card">
+                    <h3>Guerras Mundiais</h3>
+                    <p>Conheça os principais acontecimentos das duas guerras mundiais.</p>
+                    <button onclick="mostrar('Guerras Mundiais')">Estudar</button>
+                </a>
+
+                <a href="#ditadura" class="card">
+                    <h3>Ditadura Militar</h3>
+                    <p>Estude o período da ditadura militar no Brasil.</p>
+                    <button onclick="mostrar('Ditadura Militar')">Estudar</button>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- PRÉ-HISTÓRIA -->
+        <section id="pre-historia" class="study-section">
+
+            <h2>Pré-História</h2>
+
+            <p>
+                A Pré-História corresponde ao período anterior ao surgimento da escrita.
+                É estudada principalmente por meio de vestígios arqueológicos.
+            </p>
+
+            <div class="example">
+
+                <strong>Principais períodos:</strong>
+
+                <p>Paleolítico – período marcado pela caça, pesca e coleta.</p>
+                <p>Neolítico – desenvolvimento da agricultura e da criação de animais.</p>
+                <p>Idade dos Metais – utilização de metais na fabricação de ferramentas e objetos.</p>
+
+            </div>
+
+            <p>
+                A agricultura contribuiu para a formação de comunidades mais permanentes,
+                alterando a organização da vida humana.
+            </p>
+
+        </section>
+
+
+        <!-- ANTIGUIDADE -->
+        <section id="antiguidade" class="study-section">
+
+            <h2>Antiguidade</h2>
+
+            <p>
+                A Antiguidade reúne importantes civilizações que se desenvolveram
+                principalmente na região do Mediterrâneo e do Oriente Próximo.
+            </p>
+
+            <div class="example">
+
+                <strong>Algumas civilizações importantes:</strong>
+
+                <p>Egito Antigo – desenvolvido às margens do rio Nilo.</p>
+                <p>Grécia Antiga – conhecida pelas cidades-Estado e pela filosofia.</p>
+                <p>Roma Antiga – responsável pela formação de um dos maiores impérios da Antiguidade.</p>
+                <p>Mesopotâmia – região entre os rios Tigre e Eufrates.</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- IDADE MÉDIA -->
+        <section id="idade-media" class="study-section">
+
+            <h2>Idade Média</h2>
+
+            <p>
+                A Idade Média é tradicionalmente situada entre a queda do Império Romano
+                do Ocidente e o início da Idade Moderna.
+            </p>
+
+            <div class="example">
+
+                <strong>Características:</strong>
+
+                <p>Feudalismo.</p>
+                <p>Sociedade dividida em diferentes grupos sociais.</p>
+                <p>Grande influência da Igreja Católica na Europa Ocidental.</p>
+                <p>Economia predominantemente rural em grande parte do período.</p>
+
+            </div>
+
+            <p>
+                Durante a Idade Média também ocorreram importantes transformações
+                políticas, econômicas e culturais.
+            </p>
+
+        </section>
+
+
+        <!-- IDADE MODERNA -->
+        <section id="idade-moderna" class="study-section">
+
+            <h2>Idade Moderna</h2>
+
+            <p>
+                A Idade Moderna foi marcada por transformações políticas, econômicas,
+                culturais e religiosas que modificaram as sociedades europeias.
+            </p>
+
+            <div class="example">
+
+                <strong>Principais acontecimentos:</strong>
+
+                <p>Renascimento cultural.</p>
+                <p>Reforma Protestante.</p>
+                <p>Grandes Navegações.</p>
+                <p>Fortalecimento das monarquias nacionais.</p>
+                <p>Expansão do comércio europeu.</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- BRASIL COLONIAL -->
+        <section id="brasil-colonial" class="study-section">
+
+            <h2>Brasil Colonial</h2>
+
+            <p>
+                O período colonial brasileiro começou após a chegada dos portugueses
+                ao território que hoje corresponde ao Brasil.
+            </p>
+
+            <div class="example">
+
+                <strong>Alguns acontecimentos importantes:</strong>
+
+                <p>Exploração do pau-brasil.</p>
+                <p>Implantação das capitanias hereditárias.</p>
+                <p>Produção de açúcar.</p>
+                <p>Utilização de trabalho escravizado.</p>
+                <p>Expansão territorial da colônia.</p>
+
+            </div>
+
+            <p>
+                A sociedade colonial foi marcada por desigualdades e pela exploração
+                de povos indígenas e de africanos escravizados.
+            </p>
+
+        </section>
+
+
+        <!-- INDEPENDÊNCIA -->
+        <section id="independencia" class="study-section">
+
+            <h2>Independência do Brasil</h2>
+
+            <p>
+                A Independência do Brasil foi declarada em 7 de setembro de 1822,
+                no contexto das transformações políticas ocorridas no início do século XIX.
+            </p>
+
+            <div class="example">
+
+                <strong>Alguns fatores relacionados ao processo:</strong>
+
+                <p>Transferência da corte portuguesa para o Brasil em 1808.</p>
+                <p>Elevação do Brasil à condição de Reino Unido em 1815.</p>
+                <p>Retorno de D. João VI para Portugal.</p>
+                <p>Conflitos políticos entre as elites brasileiras e as Cortes portuguesas.</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- IMPÉRIO -->
+        <section id="imperio" class="study-section">
+
+            <h2>Brasil Império</h2>
+
+            <p>
+                O Brasil Império começou após a Independência e terminou com a
+                Proclamação da República, em 1889.
+            </p>
+
+            <div class="example">
+
+                <strong>Principais períodos:</strong>
+
+                <p>Primeiro Reinado – governo de D. Pedro I.</p>
+                <p>Período Regencial – período entre os dois reinados.</p>
+                <p>Segundo Reinado – governo de D. Pedro II.</p>
+
+            </div>
+
+            <p>
+                Entre os acontecimentos do período estão conflitos internos,
+                mudanças econômicas, a Guerra do Paraguai e o processo de
+                abolição da escravidão.
+            </p>
+
+        </section>
+
+
+        <!-- REPÚBLICA -->
+        <section id="republica" class="study-section">
+
+            <h2>Brasil República</h2>
+
+            <p>
+                A República brasileira começou em 1889 e passou por diferentes
+                períodos políticos ao longo de sua história.
+            </p>
+
+            <div class="example">
+
+                <strong>Algumas fases:</strong>
+
+                <p>Primeira República.</p>
+                <p>Era Vargas.</p>
+                <p>Período democrático de 1946 a 1964.</p>
+                <p>Ditadura Militar.</p>
+                <p>Nova República.</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- REVOLUÇÃO INDUSTRIAL -->
+        <section id="revolucao-industrial" class="study-section">
+
+            <h2>Revolução Industrial</h2>
+
+            <p>
+                A Revolução Industrial começou na Inglaterra no século XVIII e
+                provocou grandes mudanças na produção, na economia e na sociedade.
+            </p>
+
+            <div class="example">
+
+                <strong>Principais características:</strong>
+
+                <p>Desenvolvimento das máquinas.</p>
+                <p>Crescimento das fábricas.</p>
+                <p>Expansão do trabalho assalariado.</p>
+                <p>Crescimento das cidades.</p>
+                <p>Aumento da produção de mercadorias.</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- GUERRAS MUNDIAIS -->
+        <section id="guerras" class="study-section">
+
+            <h2>Guerras Mundiais</h2>
+
+            <p>
+                O século XX foi marcado por duas grandes guerras que envolveram
+                diversos países e provocaram profundas transformações políticas,
+                econômicas e sociais.
+            </p>
+
+            <div class="example">
+
+                <strong>Primeira Guerra Mundial:</strong>
+
+                <p>Ocorreu entre 1914 e 1918.</p>
+                <p>Envolveu grandes potências e diferentes alianças militares.</p>
+
+                <strong>Segunda Guerra Mundial:</strong>
+
+                <p>Ocorreu entre 1939 e 1945.</p>
+                <p>Envolveu países de diferentes continentes.</p>
+                <p>Terminou em 1945 com a derrota das potências do Eixo.</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- DITADURA -->
+        <section id="ditadura" class="study-section">
+
+            <h2>Ditadura Militar no Brasil</h2>
+
+            <p>
+                A Ditadura Militar brasileira começou em 1964 e terminou em 1985.
+                Durante esse período, o país foi governado por militares.
+            </p>
+
+            <div class="example">
+
+                <strong>Características do período:</strong>
+
+                <p>Restrição de direitos políticos.</p>
+                <p>Censura aos meios de comunicação e à produção cultural.</p>
+                <p>Perseguição de opositores do regime.</p>
+                <p>Atuação de órgãos de repressão.</p>
+                <p>Processo de abertura política no final do período.</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- QUIZ -->
+        <section id="quiz" class="quiz-section">
+
+            <h2>Quiz de História</h2>
+
+            <p>
+                Teste seus conhecimentos respondendo às 10 questões.
+            </p>
+
+
+            <!-- QUESTÃO 1 -->
+            <div class="question">
+
+                <h3>1. Qual período é anterior ao surgimento da escrita?</h3>
+
+                <label>
+                    <input type="radio" name="q1" value="a">
+                    a) Idade Média
+                </label>
+
+                <label>
+                    <input type="radio" name="q1" value="b">
+                    b) Pré-História
+                </label>
+
+                <label>
+                    <input type="radio" name="q1" value="c">
+                    c) Idade Moderna
+                </label>
+
+                <label>
+                    <input type="radio" name="q1" value="d">
+                    d) Idade Contemporânea
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 2 -->
+            <div class="question">
+
+                <h3>2. Qual civilização se desenvolveu às margens do rio Nilo?</h3>
+
+                <label>
+                    <input type="radio" name="q2" value="a">
+                    a) Egípcia
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="b">
+                    b) Romana
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="c">
+                    c) Grega
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="d">
+                    d) Asteca
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 3 -->
+            <div class="question">
+
+                <h3>3. Qual sistema marcou grande parte da sociedade medieval europeia?</h3>
+
+                <label>
+                    <input type="radio" name="q3" value="a">
+                    a) Capitalismo industrial
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="b">
+                    b) Socialismo
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="c">
+                    c) Feudalismo
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="d">
+                    d) Mercantilismo
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 4 -->
+            <div class="question">
+
+                <h3>4. Em que ano foi declarada a Independência do Brasil?</h3>
+
+                <label>
+                    <input type="radio" name="q4" value="a">
+                    a) 1500
+                </label>
+
+                <label>
+                    <input type="radio" name="q4" value="b">
+                    b) 1789
+                </label>
+
+                <label>
+                    <input type="radio" name="q4" value="c">
+                    c) 1822
+                </label>
+
+                <label>
+                    <input type="radio" name="q4" value="d">
+                    d) 1889
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 5 -->
+            <div class="question">
+
+                <h3>5. Quem foi o primeiro imperador do Brasil?</h3>
+
+                <label>
+                    <input type="radio" name="q5" value="a">
+                    a) D. Pedro I
+                </label>
+
+                <label>
+                    <input type="radio" name="q5" value="b">
+                    b) D. Pedro II
+                </label>
+
+                <label>
+                    <input type="radio" name="q5" value="c">
+                    c) Getúlio Vargas
+                </label>
+
+                <label>
+                    <input type="radio" name="q5" value="d">
+                    d) Deodoro da Fonseca
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 6 -->
+            <div class="question">
+
+                <h3>6. Em que ano foi proclamada a República no Brasil?</h3>
+
+                <label>
+                    <input type="radio" name="q6" value="a">
+                    a) 1822
+                </label>
+
+                <label>
+                    <input type="radio" name="q6" value="b">
+                    b) 1888
+                </label>
+
+                <label>
+                    <input type="radio" name="q6" value="c">
+                    c) 1889
+                </label>
+
+                <label>
+                    <input type="radio" name="q6" value="d">
+                    d) 1930
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 7 -->
+            <div class="question">
+
+                <h3>7. Onde começou a Revolução Industrial?</h3>
+
+                <label>
+                    <input type="radio" name="q7" value="a">
+                    a) França
+                </label>
+
+                <label>
+                    <input type="radio" name="q7" value="b">
+                    b) Inglaterra
+                </label>
+
+                <label>
+                    <input type="radio" name="q7" value="c">
+                    c) Brasil
+                </label>
+
+                <label>
+                    <input type="radio" name="q7" value="d">
+                    d) Espanha
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 8 -->
+            <div class="question">
+
+                <h3>8. Em que ano começou a Primeira Guerra Mundial?</h3>
+
+                <label>
+                    <input type="radio" name="q8" value="a">
+                    a) 1914
+                </label>
+
+                <label>
+                    <input type="radio" name="q8" value="b">
+                    b) 1918
+                </label>
+
+                <label>
+                    <input type="radio" name="q8" value="c">
+                    c) 1939
+                </label>
+
+                <label>
+                    <input type="radio" name="q8" value="d">
+                    d) 1945
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 9 -->
+            <div class="question">
+
+                <h3>9. Em que ano começou a Ditadura Militar no Brasil?</h3>
+
+                <label>
+                    <input type="radio" name="q9" value="a">
+                    a) 1945
+                </label>
+
+                <label>
+                    <input type="radio" name="q9" value="b">
+                    b) 1964
+                </label>
+
+                <label>
+                    <input type="radio" name="q9" value="c">
+                    c) 1985
+                </label>
+
+                <label>
+                    <input type="radio" name="q9" value="d">
+                    d) 1988
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 10 -->
+            <div class="question">
+
+                <h3>10. Em que ano terminou a Ditadura Militar no Brasil?</h3>
+
+                <label>
+                    <input type="radio" name="q10" value="a">
+                    a) 1964
+                </label>
+
+                <label>
+                    <input type="radio" name="q10" value="b">
+                    b) 1979
+                </label>
+
+                <label>
+                    <input type="radio" name="q10" value="c">
+                    c) 1985
+                </label>
+
+                <label>
+                    <input type="radio" name="q10" value="d">
+                    d) 1988
+                </label>
+
+            </div>
+
+
+            <button class="quiz-button" onclick="corrigirQuiz()">
+                Corrigir Quiz
+            </button>
+
+            <div id="resultado" class="resultado"></div>
+
+        </section>
+
+
+        <footer>
+            <p>Educaí • Aprender transforma.</p>
+        </footer>
+
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        function voltarEducai() {
+            window.location.href = "index.html";
+        }
+
+
+        function alternarTema() {
+            document.body.classList.toggle("dark-mode");
+        }
+
+
+        function transformarEstudo(tipo) {
+
+            const texto = document.getElementById("textoEstudo").value.trim();
+            const resultado = document.getElementById("resultadoTransforme");
+
+            if (!texto) {
+                resultado.innerHTML =
+                    "<strong>Digite ou cole um conteúdo primeiro.</strong>";
+                resultado.classList.add("show");
+                return;
+            }
+
+            if (tipo === "ouvir") {
+
+                const fala = new SpeechSynthesisUtterance(texto);
+                fala.lang = "pt-BR";
+                speechSynthesis.speak(fala);
+
+                resultado.innerHTML =
+                    "<strong>Conteúdo sendo lido.</strong><p>Use os controles do navegador para acompanhar a leitura.</p>";
+
+            } else if (tipo === "simples") {
+
+                resultado.innerHTML =
+                    "<strong>Explicação simples</strong><p>" +
+                    texto +
+                    "</p>";
+
+            } else if (tipo === "resumo") {
+
+                const palavras = texto.split(/\s+/);
+                const resumo = palavras.slice(0, 60).join(" ");
+
+                resultado.innerHTML =
+                    "<strong>Resumo</strong><p>" +
+                    resumo +
+                    (palavras.length > 60 ? "..." : "") +
+                    "</p>";
+
+            } else if (tipo === "mapa") {
+
+                const palavras = texto
+                    .split(/\s+/)
+                    .filter(p => p.length > 4)
+                    .slice(0, 12);
+
+                resultado.innerHTML =
+                    "<strong>Mapa mental</strong><ul>" +
+                    palavras.map(p => "<li>" + p + "</li>").join("") +
+                    "</ul>";
+
+            } else if (tipo === "exercicios") {
+
+                resultado.innerHTML =
+                    "<strong>Exercício para estudar</strong>" +
+                    "<p>Explique com suas próprias palavras qual é a ideia principal do conteúdo.</p>" +
+                    "<p>Depois, escreva três informações importantes que você encontrou.</p>";
+
+            } else if (tipo === "libras") {
+
+                resultado.innerHTML =
+                    "<strong>Traduzir para Libras</strong>" +
+                    "<p>O conteúdo foi preparado para ser utilizado com o recurso de acessibilidade em Libras.</p>";
+
+            }
+
+            resultado.classList.add("show");
+        }
+
+
+        function corrigirQuiz() {
+
+            const respostas = {
+
+                q1: "b",
+                q2: "a",
+                q3: "c",
+                q4: "c",
+                q5: "a",
+                q6: "c",
+                q7: "b",
+                q8: "a",
+                q9: "b",
+                q10: "c"
+
+            };
+
+            let acertos = 0;
+
+            for (let questao in respostas) {
+
+                const respostaSelecionada =
+                    document.querySelector(
+                        `input[name="${questao}"]:checked`
+                    );
+
+                if (
+                    respostaSelecionada &&
+                    respostaSelecionada.value === respostas[questao]
+                ) {
+                    acertos++;
+                }
+
+            }
+
+            const resultado = document.getElementById("resultado");
+
+            resultado.innerHTML =
+                `<strong>Você acertou ${acertos}/10 questões!</strong>`;
+
+            if (acertos === 10) {
+
+                resultado.innerHTML +=
+                    "<p>Excelente! Você domina muito bem esse conteúdo.</p>";
+
+            } else if (acertos >= 7) {
+
+                resultado.innerHTML +=
+                    "<p>Muito bom! Você possui um ótimo conhecimento.</p>";
+
+            } else if (acertos >= 5) {
+
+                resultado.innerHTML +=
+                    "<p>Bom trabalho! Continue estudando para melhorar ainda mais.</p>";
+
+            } else {
+
+                resultado.innerHTML +=
+                    "<p>Continue estudando. Você pode tentar novamente!</p>";
+
+            }
+
+            resultado.classList.add("show");
+        }
+
+    </script>
+
+    <script src="JavaScript/traduzirlibras.js"></script>
+
+<script src="JavaScript/TransformeEstudos.js"></script>
+<script src="JavaScript/daltonismo.js"></script>
+
+</body>
+
+</html>

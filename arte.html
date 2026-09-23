@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/arte.css">
+    <link rel="icon" href="img/flavicon.png">
+
+    <title>Arte - Educaí</title>
+</head>
+
+<body>
+
+    <!-- MENU LATERAL -->
+    <aside class="sidebar">
+
+        <div class="logo-container">
+            <a href="index.html" class="logo-link">
+                <img src="img/logo/logo.png" alt="Logo Educaí" class="logo">
+                <span>Educaí</span>
+            </a>
+        </div>
+
+        <nav class="menu">
+
+            <a href="#inicio">Início</a>
+            <a href="#transformar">Transforme meu estudo</a>
+            <a href="#materias">Conteúdos</a>
+
+            <a href="#artes-visuais">Artes Visuais</a>
+            <a href="#pintura">Pintura</a>
+            <a href="#escultura">Escultura</a>
+            <a href="#musica">Música</a>
+            <a href="#danca">Dança</a>
+            <a href="#teatro">Teatro</a>
+            <a href="#cinema">Cinema</a>
+            <a href="#fotografia">Fotografia</a>
+            <a href="#arte-brasileira">Arte Brasileira</a>
+            <a href="#arte-contemporanea">Arte Contemporânea</a>
+            <a href="#arte-e-sociedade">Arte e Sociedade</a>
+            <a href="#movimentos">Movimentos Artísticos</a>
+
+            <a href="#quiz">Quiz</a>
+
+        </nav>
+
+        <button class="voltar" onclick="voltarEducai()">
+            Voltar para Educaí
+        </button>
+
+    </aside>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="main-content">
+
+        <!-- INÍCIO -->
+        <header id="inicio">
+
+            <div>
+
+                <p class="mini-title">EDUCAÍ • ARTE</p>
+
+                <h1>Olá, estudante!</h1>
+
+                <p class="subtitle">
+                    Explore a criatividade, a cultura e diferentes formas de expressão artística.
+                </p>
+
+            </div>
+
+            <button class="theme-button" onclick="alternarTema()">
+                Alterar tema
+            </button>
+
+        </header>
+
+
+        <!-- TRANSFORME MEU ESTUDO -->
+        <section id="transformar" class="transform-section">
+
+            <h2>Transforme meu estudo</h2>
+
+            <p>
+                Escolha uma forma de estudar o conteúdo de Arte.
+            </p>
+
+            <input type="file" id="arquivo" class="arquivo">
+
+            <textarea
+                id="textoEstudo"
+                placeholder="Digite ou cole aqui um conteúdo para estudar..."></textarea>
+
+            <div class="transform-options">
+
+                <button onclick="transformarEstudo('ouvir')">
+                    Ouvir conteúdo
+                </button>
+
+                <button onclick="transformarEstudo('libras')">
+                    Traduzir para Libras
+                </button>
+
+                <button onclick="transformarEstudo('mapa')">
+                    Criar mapa mental
+                </button>
+
+                <button onclick="transformarEstudo('simples')">
+                    Explicar de forma simples
+                </button>
+
+                <button onclick="transformarEstudo('exercicios')">
+                    Criar exercícios
+                </button>
+
+                <button onclick="transformarEstudo('resumo')">
+                    Fazer resumo
+                </button>
+
+            </div>
+
+            <div id="resultadoTransforme" class="transform-result"></div>
+
+        </section>
+
+
+        <!-- CONTEÚDOS -->
+        <section id="materias">
+
+            <h2>Conteúdos de Arte</h2>
+
+            <p class="section-description">
+                Escolha um assunto para começar seus estudos.
+            </p>
+
+            <div class="cards-grid">
+
+                <a href="#artes-visuais" class="card">
+                    <h3>Artes Visuais</h3>
+                    <p>Conheça diferentes formas de expressão visual.</p>
+                    <button onclick="mostrar('Artes Visuais')">Estudar</button>
+                </a>
+
+                <a href="#pintura" class="card">
+                    <h3>Pintura</h3>
+                    <p>Aprenda sobre técnicas, estilos e elementos da pintura.</p>
+                    <button onclick="mostrar('Pintura')">Estudar</button>
+                </a>
+
+                <a href="#escultura" class="card">
+                    <h3>Escultura</h3>
+                    <p>Conheça a arte de criar formas tridimensionais.</p>
+                    <button onclick="mostrar('Escultura')">Estudar</button>
+                </a>
+
+                <a href="#musica" class="card">
+                    <h3>Música</h3>
+                    <p>Explore sons, ritmos, instrumentos e estilos musicais.</p>
+                    <button onclick="mostrar('Música')">Estudar</button>
+                </a>
+
+                <a href="#danca" class="card">
+                    <h3>Dança</h3>
+                    <p>Conheça a dança como forma de expressão corporal.</p>
+                    <button onclick="mostrar('Dança')">Estudar</button>
+                </a>
+
+                <a href="#teatro" class="card">
+                    <h3>Teatro</h3>
+                    <p>Aprenda sobre representação, personagens e encenação.</p>
+                    <button onclick="mostrar('Teatro')">Estudar</button>
+                </a>
+
+                <a href="#cinema" class="card">
+                    <h3>Cinema</h3>
+                    <p>Entenda o cinema como linguagem e manifestação artística.</p>
+                     <button onclick="mostrar('Cinema')">Estudar</button>
+                </a>
+
+                <a href="#fotografia" class="card">
+                    <h3>Fotografia</h3>
+                    <p>Conheça elementos e técnicas da linguagem fotográfica.</p>
+                     <button onclick="mostrar('Fotografia')">Estudar</button>
+                </a>
+
+                <a href="#arte-brasileira" class="card">
+                    <h3>Arte Brasileira</h3>
+                    <p>Conheça manifestações e artistas da arte brasileira.</p>
+                    <button onclick="mostrar('Arte Brasileira')">Estudar</button>
+                </a>
+
+                <a href="#arte-contemporanea" class="card">
+                    <h3>Arte Contemporânea</h3>
+                    <p>Explore características da produção artística atual.</p>
+                     <button onclick="mostrar('Arte Contemporânea')">Estudar</button>
+                </a>
+
+                <a href="#arte-e-sociedade" class="card">
+                    <h3>Arte e Sociedade</h3>
+                    <p>Entenda a relação entre arte, cultura e sociedade.</p>
+                    <button onclick="mostrar('Arte e Sociedade')">Estudar</button>
+                </a>
+
+                <a href="#movimentos" class="card">
+                    <h3>Movimentos Artísticos</h3>
+                    <p>Conheça diferentes movimentos e períodos da história da arte.</p>
+                     <button onclick="mostrar('Movimentos Artísticos')">Estudar</button>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ARTES VISUAIS -->
+        <section id="artes-visuais" class="study-section">
+
+            <h2>Artes Visuais</h2>
+
+            <p>
+                As artes visuais são formas de expressão artística que utilizam
+                elementos que podem ser percebidos principalmente pela visão.
+            </p>
+
+            <div class="example">
+
+                <strong>Exemplos:</strong>
+
+                <p>Pintura</p>
+                <p>Desenho</p>
+                <p>Escultura</p>
+                <p>Fotografia</p>
+                <p>Gravura</p>
+                <p>Instalação artística</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- PINTURA -->
+        <section id="pintura" class="study-section">
+
+            <h2>Pintura</h2>
+
+            <p>
+                A pintura é uma manifestação artística que utiliza cores,
+                formas e diferentes materiais para criar imagens e expressar ideias.
+            </p>
+
+            <div class="example">
+
+                <strong>Elementos da pintura:</strong>
+
+                <p>Cor</p>
+                <p>Linha</p>
+                <p>Forma</p>
+                <p>Textura</p>
+                <p>Luz e sombra</p>
+                <p>Composição</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ESCULTURA -->
+        <section id="escultura" class="study-section">
+
+            <h2>Escultura</h2>
+
+            <p>
+                A escultura é uma forma de arte tridimensional. Ela pode ser
+                produzida utilizando materiais como pedra, madeira, metal,
+                argila e outros.
+            </p>
+
+            <div class="example">
+
+                <strong>Características:</strong>
+
+                <p>Possui volume e profundidade.</p>
+                <p>Pode ser observada de diferentes ângulos.</p>
+                <p>Pode utilizar diferentes materiais.</p>
+                <p>Pode representar pessoas, animais, objetos ou ideias.</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- MÚSICA -->
+        <section id="musica" class="study-section">
+
+            <h2>Música</h2>
+
+            <p>
+                A música é uma forma de expressão artística baseada principalmente
+                na organização de sons e silêncios.
+            </p>
+
+            <div class="example">
+
+                <strong>Elementos musicais:</strong>
+
+                <p>Melodia</p>
+                <p>Ritmo</p>
+                <p>Harmonia</p>
+                <p>Timbre</p>
+                <p>Intensidade</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- DANÇA -->
+        <section id="danca" class="study-section">
+
+            <h2>Dança</h2>
+
+            <p>
+                A dança utiliza movimentos do corpo como forma de expressão,
+                comunicação e manifestação cultural.
+            </p>
+
+            <div class="example">
+
+                <strong>Elementos da dança:</strong>
+
+                <p>Movimento</p>
+                <p>Espaço</p>
+                <p>Tempo</p>
+                <p>Ritmo</p>
+                <p>Expressão corporal</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- TEATRO -->
+        <section id="teatro" class="study-section">
+
+            <h2>Teatro</h2>
+
+            <p>
+                O teatro é uma manifestação artística baseada na representação
+                de histórias e situações por meio de atores e outros elementos
+                cênicos.
+            </p>
+
+            <div class="example">
+
+                <strong>Elementos do teatro:</strong>
+
+                <p>Atores</p>
+                <p>Personagens</p>
+                <p>Roteiro</p>
+                <p>Cenário</p>
+                <p>Figurino</p>
+                <p>Iluminação</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- CINEMA -->
+        <section id="cinema" class="study-section">
+
+            <h2>Cinema</h2>
+
+            <p>
+                O cinema é uma linguagem artística e audiovisual que utiliza
+                imagens em movimento, sons e outros recursos para contar histórias
+                ou transmitir ideias.
+            </p>
+
+            <div class="example">
+
+                <strong>Elementos cinematográficos:</strong>
+
+                <p>Roteiro</p>
+                <p>Direção</p>
+                <p>Fotografia</p>
+                <p>Montagem</p>
+                <p>Trilha sonora</p>
+                <p>Atuação</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOTOGRAFIA -->
+        <section id="fotografia" class="study-section">
+
+            <h2>Fotografia</h2>
+
+            <p>
+                A fotografia utiliza imagens para registrar momentos, pessoas,
+                lugares, objetos e diferentes situações.
+            </p>
+
+            <div class="example">
+
+                <strong>Elementos importantes:</strong>
+
+                <p>Enquadramento</p>
+                <p>Iluminação</p>
+                <p>Composição</p>
+                <p>Foco</p>
+                <p>Perspectiva</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ARTE BRASILEIRA -->
+        <section id="arte-brasileira" class="study-section">
+
+            <h2>Arte Brasileira</h2>
+
+            <p>
+                A arte brasileira apresenta grande diversidade devido à influência
+                de diferentes povos e culturas presentes na formação do país.
+            </p>
+
+            <div class="example">
+
+                <strong>Influências importantes:</strong>
+
+                <p>Povos indígenas</p>
+                <p>Culturas africanas</p>
+                <p>Influências europeias</p>
+                <p>Culturas populares brasileiras</p>
+                <p>Manifestações regionais</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ARTE CONTEMPORÂNEA -->
+        <section id="arte-contemporanea" class="study-section">
+
+            <h2>Arte Contemporânea</h2>
+
+            <p>
+                A arte contemporânea reúne diferentes formas de expressão e
+                frequentemente explora temas relacionados à sociedade, tecnologia,
+                identidade, política, cultura e cotidiano.
+            </p>
+
+            <div class="example">
+
+                <strong>Características:</strong>
+
+                <p>Uso de diferentes materiais.</p>
+                <p>Experimentação de novas linguagens.</p>
+                <p>Interação com o público.</p>
+                <p>Uso de tecnologia em algumas obras.</p>
+                <p>Discussão de temas atuais.</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ARTE E SOCIEDADE -->
+        <section id="arte-e-sociedade" class="study-section">
+
+            <h2>Arte e Sociedade</h2>
+
+            <p>
+                A arte está relacionada à sociedade e pode representar costumes,
+                valores, acontecimentos históricos e diferentes formas de pensar.
+            </p>
+
+            <div class="example">
+
+                <strong>A arte pode:</strong>
+
+                <p>Expressar sentimentos e ideias.</p>
+                <p>Registrar aspectos de uma cultura.</p>
+                <p>Questionar problemas sociais.</p>
+                <p>Preservar tradições.</p>
+                <p>Estimular reflexões.</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- MOVIMENTOS ARTÍSTICOS -->
+        <section id="movimentos" class="study-section">
+
+            <h2>Movimentos Artísticos</h2>
+
+            <p>
+                Ao longo da história, diferentes movimentos artísticos surgiram
+                com características, ideias e estilos próprios.
+            </p>
+
+            <div class="example">
+
+                <strong>Alguns movimentos:</strong>
+
+                <p>Renascimento</p>
+                <p>Barroco</p>
+                <p>Neoclassicismo</p>
+                <p>Romantismo</p>
+                <p>Impressionismo</p>
+                <p>Cubismo</p>
+                <p>Surrealismo</p>
+                <p>Modernismo</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- QUIZ -->
+        <section id="quiz" class="quiz-section">
+
+            <h2>Quiz de Arte</h2>
+
+            <p>
+                Teste seus conhecimentos respondendo às 10 questões.
+            </p>
+
+
+            <!-- QUESTÃO 1 -->
+            <div class="question">
+
+                <h3>1. Qual destas é uma forma de arte visual?</h3>
+
+                <label>
+                    <input type="radio" name="q1" value="a">
+                    a) Pintura
+                </label>
+
+                <label>
+                    <input type="radio" name="q1" value="b">
+                    b) Matemática
+                </label>
+
+                <label>
+                    <input type="radio" name="q1" value="c">
+                    c) Geografia
+                </label>
+
+                <label>
+                    <input type="radio" name="q1" value="d">
+                    d) Química
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 2 -->
+            <div class="question">
+
+                <h3>2. Qual é uma característica da escultura?</h3>
+
+                <label>
+                    <input type="radio" name="q2" value="a">
+                    a) Possui apenas sons
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="b">
+                    b) É uma forma de arte tridimensional
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="c">
+                    c) Utiliza somente papel
+                </label>
+
+                <label>
+                    <input type="radio" name="q2" value="d">
+                    d) Não possui volume
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 3 -->
+            <div class="question">
+
+                <h3>3. Qual destes é um elemento musical?</h3>
+
+                <label>
+                    <input type="radio" name="q3" value="a">
+                    a) Melodia
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="b">
+                    b) Latitude
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="c">
+                    c) Relevo
+                </label>
+
+                <label>
+                    <input type="radio" name="q3" value="d">
+                    d) Clima
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 4 -->
+            <div class="question">
+
+                <h3>4. Qual manifestação artística utiliza principalmente movimentos do corpo?</h3>
+
+                <label>
+                    <input type="radio" name="q4" value="a">
+                    a) Pintura
+                </label>
+
+                <label>
+                    <input type="radio" name="q4" value="b">
+                    b) Fotografia
+                </label>
+
+                <label>
+                    <input type="radio" name="q4" value="c">
+                    c) Dança
+                </label>
+
+                <label>
+                    <input type="radio" name="q4" value="d">
+                    d) Escultura
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 5 -->
+            <div class="question">
+
+                <h3>5. Qual destes é um elemento do teatro?</h3>
+
+                <label>
+                    <input type="radio" name="q5" value="a">
+                    a) Personagem
+                </label>
+
+                <label>
+                    <input type="radio" name="q5" value="b">
+                    b) Latitude
+                </label>
+
+                <label>
+                    <input type="radio" name="q5" value="c">
+                    c) Precipitação
+                </label>
+
+                <label>
+                    <input type="radio" name="q5" value="d">
+                    d) Escala cartográfica
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 6 -->
+            <div class="question">
+
+                <h3>6. O cinema utiliza principalmente:</h3>
+
+                <label>
+                    <input type="radio" name="q6" value="a">
+                    a) Apenas esculturas
+                </label>
+
+                <label>
+                    <input type="radio" name="q6" value="b">
+                    b) Imagens em movimento e sons
+                </label>
+
+                <label>
+                    <input type="radio" name="q6" value="c">
+                    c) Somente pinturas
+                </label>
+
+                <label>
+                    <input type="radio" name="q6" value="d">
+                    d) Apenas textos escritos
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 7 -->
+            <div class="question">
+
+                <h3>7. Qual destas culturas influenciou a formação da arte brasileira?</h3>
+
+                <label>
+                    <input type="radio" name="q7" value="a">
+                    a) Apenas a cultura europeia
+                </label>
+
+                <label>
+                    <input type="radio" name="q7" value="b">
+                    b) Apenas a cultura africana
+                </label>
+
+                <label>
+                    <input type="radio" name="q7" value="c">
+                    c) Apenas a cultura indígena
+                </label>
+
+                <label>
+                    <input type="radio" name="q7" value="d">
+                    d) Diversas culturas, incluindo indígenas, africanas e europeias
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 8 -->
+            <div class="question">
+
+                <h3>8. Qual movimento artístico está associado a Pablo Picasso?</h3>
+
+                <label>
+                    <input type="radio" name="q8" value="a">
+                    a) Cubismo
+                </label>
+
+                <label>
+                    <input type="radio" name="q8" value="b">
+                    b) Barroco
+                </label>
+
+                <label>
+                    <input type="radio" name="q8" value="c">
+                    c) Romantismo
+                </label>
+
+                <label>
+                    <input type="radio" name="q8" value="d">
+                    d) Renascimento
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 9 -->
+            <div class="question">
+
+                <h3>9. O que a arte pode representar?</h3>
+
+                <label>
+                    <input type="radio" name="q9" value="a">
+                    a) Apenas objetos
+                </label>
+
+                <label>
+                    <input type="radio" name="q9" value="b">
+                    b) Apenas acontecimentos históricos
+                </label>
+
+                <label>
+                    <input type="radio" name="q9" value="c">
+                    c) Sentimentos, ideias, culturas e acontecimentos
+                </label>
+
+                <label>
+                    <input type="radio" name="q9" value="d">
+                    d) Somente paisagens
+                </label>
+
+            </div>
+
+
+            <!-- QUESTÃO 10 -->
+            <div class="question">
+
+                <h3>10. Qual alternativa apresenta apenas manifestações artísticas?</h3>
+
+                <label>
+                    <input type="radio" name="q10" value="a">
+                    a) Pintura, dança e música
+                </label>
+
+                <label>
+                    <input type="radio" name="q10" value="b">
+                    b) Matemática, química e física
+                </label>
+
+                <label>
+                    <input type="radio" name="q10" value="c">
+                    c) Geografia, história e biologia
+                </label>
+
+                <label>
+                    <input type="radio" name="q10" value="d">
+                    d) Clima, relevo e vegetação
+                </label>
+
+            </div>
+
+
+            <button class="quiz-button" onclick="corrigirQuiz()">
+                Corrigir Quiz
+            </button>
+
+            <div id="resultado" class="resultado"></div>
+
+        </section>
+
+
+        <footer>
+            <p>Educaí • Aprender transforma.</p>
+        </footer>
+
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        function voltarEducai() {
+            window.location.href = "index.html";
+        }
+
+
+        function alternarTema() {
+            document.body.classList.toggle("dark-mode");
+        }
+
+
+        function transformarEstudo(tipo) {
+
+            const texto = document.getElementById("textoEstudo").value.trim();
+
+            const resultado =
+                document.getElementById("resultadoTransforme");
+
+
+            if (!texto) {
+
+                resultado.innerHTML =
+                    "<strong>Digite ou cole um conteúdo primeiro.</strong>";
+
+                resultado.classList.add("show");
+
+                return;
+            }
+
+
+            if (tipo === "ouvir") {
+
+                const fala =
+                    new SpeechSynthesisUtterance(texto);
+
+                fala.lang = "pt-BR";
+
+                speechSynthesis.speak(fala);
+
+                resultado.innerHTML =
+                    "<strong>Conteúdo sendo lido.</strong>" +
+                    "<p>O navegador está realizando a leitura do conteúdo.</p>";
+
+            }
+
+
+            else if (tipo === "simples") {
+
+                resultado.innerHTML =
+                    "<strong>Explicação simples</strong>" +
+                    "<p>" + texto + "</p>";
+
+            }
+
+
+            else if (tipo === "resumo") {
+
+                const palavras =
+                    texto.split(/\s+/);
+
+                const resumo =
+                    palavras.slice(0, 60).join(" ");
+
+                resultado.innerHTML =
+                    "<strong>Resumo</strong>" +
+                    "<p>" +
+                    resumo +
+                    (palavras.length > 60 ? "..." : "") +
+                    "</p>";
+
+            }
+
+
+            else if (tipo === "mapa") {
+
+                const palavras =
+                    texto
+                        .split(/\s+/)
+                        .filter(p => p.length > 4)
+                        .slice(0, 12);
+
+                resultado.innerHTML =
+                    "<strong>Mapa mental</strong>" +
+                    "<ul>" +
+                    palavras
+                        .map(p => "<li>" + p + "</li>")
+                        .join("") +
+                    "</ul>";
+
+            }
+
+
+            else if (tipo === "exercicios") {
+
+                resultado.innerHTML =
+                    "<strong>Exercício para estudar</strong>" +
+                    "<p>Explique com suas próprias palavras qual é a ideia principal do conteúdo.</p>" +
+                    "<p>Depois, escreva três informações importantes que você encontrou.</p>";
+
+            }
+
+
+            else if (tipo === "libras") {
+
+                resultado.innerHTML =
+                    "<strong>Traduzir para Libras</strong>" +
+                    "<p>O conteúdo foi preparado para utilização com o recurso de acessibilidade em Libras.</p>";
+
+            }
+
+
+            resultado.classList.add("show");
+
+        }
+
+
+        function corrigirQuiz() {
+
+            const respostas = {
+
+                q1: "a",
+                q2: "b",
+                q3: "a",
+                q4: "c",
+                q5: "a",
+                q6: "b",
+                q7: "d",
+                q8: "a",
+                q9: "c",
+                q10: "a"
+
+            };
+
+
+            let acertos = 0;
+
+
+            for (let questao in respostas) {
+
+                const respostaSelecionada =
+                    document.querySelector(
+                        `input[name="${questao}"]:checked`
+                    );
+
+
+                if (
+                    respostaSelecionada &&
+                    respostaSelecionada.value === respostas[questao]
+                ) {
+
+                    acertos++;
+
+                }
+
+            }
+
+
+            const resultado =
+                document.getElementById("resultado");
+
+
+            resultado.innerHTML =
+                `<strong>Você acertou ${acertos}/10 questões!</strong>`;
+
+
+            if (acertos === 10) {
+
+                resultado.innerHTML +=
+                    "<p>Excelente! Você domina muito bem esse conteúdo.</p>";
+
+            }
+
+
+            else if (acertos >= 7) {
+
+                resultado.innerHTML +=
+                    "<p>Muito bom! Você possui um ótimo conhecimento.</p>";
+
+            }
+
+
+            else if (acertos >= 5) {
+
+                resultado.innerHTML +=
+                    "<p>Bom trabalho! Continue estudando para melhorar ainda mais.</p>";
+
+            }
+
+
+            else {
+
+                resultado.innerHTML +=
+                    "<p>Continue estudando. Você pode tentar novamente!</p>";
+
+            }
+
+
+            resultado.classList.add("show");
+
+        }
+
+    </script>
+
+    <script src="JavaScript/traduzirlibras.js"></script>
+
+<script src="JavaScript/TransformeEstudos.js"></script>
+<script src="JavaScript/daltonismo.js"></script>
+
+</body>
+
+</html>
