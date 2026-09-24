@@ -686,3 +686,20 @@ footer {
     background: #36b5ba;
     transform: translateY(-1px);
 }
+
+
+body.protanopia{
+    filter: url("#filtro-protanopia");
+}
+
+body.deuteranopia{
+    filter: url("#filtro-deuteranopia");
+}
+
+body.tritanopia{
+    filter: url("#filtro-tritanopia");
+}
+
+body.acromatopsia{
+    filter: grayscale(100%);
+}

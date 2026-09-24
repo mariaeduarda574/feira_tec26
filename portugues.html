@@ -10,7 +10,7 @@
 ```
 <title>Português - Educaí</title>
 
-<link rel="stylesheet" href="css/português.css">
+<link rel="stylesheet" href="css/portugues.css">
 <link rel="stylesheet" href="css/TransformeEstudos.css">
 
 
@@ -32,7 +32,6 @@
     </div>
 
     <ul class="menu">
-        <li><a href="#inicio">Início</a></li>
         <li><a href="#transformar">Transforme meu estudo</a></li>
         <li><a href="#materias">Conteúdos</a></li>
         <li><a href="#gramatica">Gramática</a></li>
@@ -64,7 +63,7 @@
             <h1>Olá, estudante!</h1>
 
             <p class="subtitle">
-                Aprenda Matemática de forma simples, prática e interativa.
+                Aprenda português de forma simples, prática e interativa.
             </p>
         </div>
 
@@ -83,11 +82,18 @@
                 Escolha uma forma de estudar o conteúdo de Inglês.
             </p>
 
-            <input type="file" id="arquivo" class="arquivo">
-
+            <input 
+                type="file" 
+                id="arquivoEstudo" 
+                onchange="arquivoSelecionado()"
+            >
             <textarea
                 id="textoEstudo"
-                placeholder="Digite ou cole aqui um conteúdo para estudar..."></textarea>
+                placeholder="Digite ou cole aqui um conteúdo para estudar..." oninput="textoDigitado()"></textarea>
+
+            <button id="btnLimparMaterial" onclick="btnLimparMaterial()">
+                Limpar conteúdo
+            </button>
 
             <div class="transform-options">
 
@@ -97,18 +103,6 @@
 
                 <button onclick="transformarEstudo('libras')">
                     Traduzir para Libras
-                </button>
-
-                <button onclick="transformarEstudo('mapa')">
-                    Criar mapa mental
-                </button>
-
-                <button onclick="transformarEstudo('simples')">
-                    Explicar de forma simples
-                </button>
-
-                <button onclick="transformarEstudo('exercicios')">
-                    Criar exercícios
                 </button>
 
                 <button onclick="transformarEstudo('resumo')">

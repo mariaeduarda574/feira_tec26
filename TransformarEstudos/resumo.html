@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../css/resumo.css">
+
+    <title>Resumo Simples - Educaí</title>
+</head>
+
+<body>
+
+    <main class="pagina-resumo">
+
+        <section class="cabecalho-resumo">
+
+            <span>EDUCAÍ</span>
+
+            <h1>Resumo simples</h1>
+
+            <p>
+                Transforme seu conteúdo em uma versão mais simples
+                e fácil de entender.
+            </p>
+
+        </section>
+
+        <section class="material-original">
+
+            <h2>Seu material</h2>
+
+            <div id="materialOriginal"></div>
+
+        </section>
+
+        <button
+            id="btnGerarResumo"
+            class="btn-gerar"
+            onclick="gerarResumo()"
+        >
+            Gerar resumo simples
+        </button>
+
+        <section
+            id="areaResumo"
+            class="area-resumo"
+            style="display: none;"
+        >
+
+            <h2>Seu resumo</h2>
+
+            <div id="textoResumo"></div>
+
+            <div class="botoes-resumo">
+
+                <button onclick="copiarResumo()">
+                    Copiar
+                </button>
+
+                <button onclick="ouvirResumo()">
+                    Ouvir
+                </button>
+
+                <button onclick="pararResumo()">
+                    Parar
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="../JavaScript/resumo.js"></script>
+
+</body>
+
+</html>

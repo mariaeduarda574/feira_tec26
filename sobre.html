@@ -72,8 +72,7 @@
                     <h3>Maria Eduarda</h3>
 
                     <p>
-                        Participou do desenvolvimento e da organização
-                        das ideias do projeto.
+                        Participou do desenvolvimento do site e organização das ideias .
                     </p>
 
                 </div>
@@ -91,9 +90,8 @@
                     <h3>Livia Alves</h3>
 
                     <p>
-                        Participou da criação, organização e desenvolvimento
-                        do site, ajudando a transformar as ideias do grupo
-                        em uma plataforma funcional.
+                        Contribuiu para o desenvolvimento do projeto,
+                        organização dos conteúdos e desenvolvimento do banner.
                     </p>
 
                 </div>
@@ -111,8 +109,9 @@
                     <h3>Isabella Teixeira</h3>
 
                     <p>
-                        Contribuiu para o desenvolvimento do projeto,
-                        organização dos conteúdos e proposta de acessibilidade.
+                        Participou da criação, organização e desenvolvimento
+                        do site, ajudando a transformar as ideias do grupo
+                        em uma plataforma funcional.
                     </p>
 
                 </div>
@@ -149,8 +148,8 @@
                     <h3>Apolo Moreno</h3>
 
                     <p>
-                        Contribuiu para o desenvolvimento e organização
-                        da plataforma junto ao restante do grupo.
+                        Contribuiu para o desenvolvimento, organização
+                        da plataforma e nos conteúdos.
                     </p>
 
                 </div>
@@ -236,6 +235,40 @@
         </footer>
 
     </main>
+
+    <script src="JavaScript/daltonismo.js"></script>
+
+
+    <svg width="0" height="0" style="position:absolute">
+        <filter id="filtro-protanopia">
+            <feColorMatrix
+                type="matrix"
+                values="
+                0.567 0.433 0     0 0
+                0.558 0.442 0     0 0
+                0     0.242 0.758 0 0
+                0     0     0     1 0">
+            </feColorMatrix>
+        </filter>
+    </svg>
+
+    <svg width="0" height="0" style="position:absolute">
+        <filter id="filtro-deuteranopia">
+            <feColorMatrix type="matrix" values="0.625 0.375 0     0 0
+                                            0.700 0.300 0     0 0
+                                            0     0.300 0.700 0 0
+                                            0     0     0     1 0" />
+        </filter>
+    </svg>
+
+    <svg width="0" height="0" style="position:absolute">
+        <filter id="filtro-tritanopia">
+            <feColorMatrix type="matrix" values="0.950  0.050  0.000  0  0
+        0.000  0.433  0.567  0  0
+        0.000  0.475  0.525  0  0
+        0.000  0.000  0.000  1  0" />
+        </filter>
+    </svg>
 
 </body>
 </html>

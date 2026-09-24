@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="css/educacao_fisica.css">
+    <link rel="stylesheet" href="css/TransformeEstudos.css">
     <link rel="icon" type="image/png" href="img/flavicon.png">
 
     <title>Educação Física - Educaí</title>
@@ -26,7 +27,6 @@
 
         <nav class="menu">
 
-            <a href="#inicio">Início</a>
             <a href="#transformar">Transforme meu estudo</a>
             <a href="#materias">Conteúdos</a>
             <a href="#capacidades">Capacidades Físicas</a>
@@ -78,20 +78,26 @@
         </header>
 
 
-        <!-- TRANSFORME MEU ESTUDO -->
         <section id="transformar" class="transform-section">
 
             <h2>Transforme meu estudo</h2>
 
             <p>
-                Escolha uma forma de estudar o conteúdo de Educação Física.
+                Escolha uma forma de estudar o conteúdo de Inglês.
             </p>
 
-            <input type="file" id="arquivo" class="arquivo">
-
+            <input 
+                type="file" 
+                id="arquivoEstudo" 
+                onchange="arquivoSelecionado()"
+            >
             <textarea
                 id="textoEstudo"
-                placeholder="Digite ou cole aqui um conteúdo para estudar..."></textarea>
+                placeholder="Digite ou cole aqui um conteúdo para estudar..." oninput="textoDigitado()"></textarea>
+
+            <button id="btnLimparMaterial" onclick="btnLimparMaterial()">
+                Limpar conteúdo
+            </button>
 
             <div class="transform-options">
 
@@ -101,18 +107,6 @@
 
                 <button onclick="transformarEstudo('libras')">
                     Traduzir para Libras
-                </button>
-
-                <button onclick="transformarEstudo('mapa')">
-                    Criar mapa mental
-                </button>
-
-                <button onclick="transformarEstudo('simples')">
-                    Explicar de forma simples
-                </button>
-
-                <button onclick="transformarEstudo('exercicios')">
-                    Criar exercícios
                 </button>
 
                 <button onclick="transformarEstudo('resumo')">
@@ -1008,8 +1002,11 @@
 
     </script>
 
-    <script src="traduzirlibras.js"></script>
+    <script src="JavaScript/traduzirlibras.js"></script>
+
+    <script src="JavaScript/TransformeEstudos.js"></script>
     <script src="JavaScript/daltonismo.js"></script>
+
 
     <svg width="0" height="0" style="position:absolute">
         <filter id="filtro-protanopia">

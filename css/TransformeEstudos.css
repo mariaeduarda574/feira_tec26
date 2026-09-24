@@ -150,3 +150,25 @@ padding: 9px 14px;
 border-radius: 8px;
 cursor: pointer;
 }
+
+#btnLimparMaterial {
+    display: block;
+    margin: 40px auto;
+    background-color: var(--primary);
+    color: var(--surface);
+    border: 2px solid var(--teal);
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: var(--shadow);
+}
+
+#btnLimparMaterial:hover {
+    background-color: var(--teal-dark);
+    border-color: var(--teal-dark);
+    transform: translateY(-2px);
+}
+

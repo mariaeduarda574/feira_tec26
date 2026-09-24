@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>Matemática - Educaí</title>
+
+<link rel="stylesheet" href="css/matematica.css">
+<link rel="stylesheet" href="css/TransformeEstudos.css">
+<link rel="icon" type="image/png" href="img/flavicon.png">
+
+</head>
+
+<body>
+
+```
+<!-- MENU LATERAL -->
+<aside class="sidebar">
+
+    <div class="logo-container">
+        <a href="index.html" class="logo-link">
+            <img src="img/logo/logo.png" alt="Logo Educaí" class="logo">
+            <span>Educaí</span>
+        </a>
+    </div>
+
+    <nav class="menu">
+
+        <a href="#transformar">Transforme meu estudo</a>
+        <a href="#materias">Conteúdos</a>
+        <a href="#operacoes">Operações básicas</a>
+        <a href="#fracoes">Frações</a>
+        <a href="#potenciacao">Potenciação</a>
+        <a href="#radiciacao">Radiciação</a>
+        <a href="#razao">Razão e proporção</a>
+        <a href="#porcentagem">Porcentagem</a>
+        <a href="#regra-tres">Regra de três</a>
+        <a href="#equacoes">Equações</a>
+        <a href="#sistemas">Sistemas</a>
+        <a href="#funcoes">Funções</a>
+        <a href="#geometria">Geometria</a>
+        <a href="#areas">Áreas e perímetros</a>
+        <a href="#estatistica">Estatística</a>
+        <a href="#probabilidade">Probabilidade</a>
+        <a href="#pitagoras">Teorema de Pitágoras</a>
+        <a href="#mmc-mdc">MMC e MDC</a>
+        <a href="#numeros">Conjuntos numéricos</a>
+
+        <a href="#quiz">Quiz</a>
+
+    </nav>
+
+    <button class="voltar" onclick="voltarEducai()">
+        Voltar para Educaí
+    </button>
+
+</aside>
+
+
+<!-- CONTEÚDO PRINCIPAL -->
+<main id="conteudo-principal" class="main-content">
+
+    <!-- INÍCIO -->
+    <header id="inicio">
+
+        <div>
+            <p class="mini-title">EDUCAÍ • MATEMÁTICA</p>
+
+            <h1>Olá, estudante!</h1>
+
+            <p class="subtitle">
+                Aprenda Matemática de forma simples, prática e interativa.
+            </p>
+        </div>
+
+        <button class="theme-button" onclick="alternarTema()">
+            Modo escuro
+        </button>
+
+    </header>
+
+
+        <section id="transformar" class="transform-section">
+
+            <h2>Transforme meu estudo</h2>
+
+            <p>
+                Escolha uma forma de estudar o conteúdo de Inglês.
+            </p>
+
+            <input 
+                type="file" 
+                id="arquivoEstudo" 
+                onchange="arquivoSelecionado()"
+            >
+            <textarea
+                id="textoEstudo"
+                placeholder="Digite ou cole aqui um conteúdo para estudar..." oninput="textoDigitado()"></textarea>
+
+            <button id="btnLimparMaterial" onclick="btnLimparMaterial()">
+                Limpar conteúdo
+            </button>
+
+            <div class="transform-options">
+
+                <button onclick="transformarEstudo('ouvir')">
+                    Ouvir conteúdo
+                </button>
+
+                <button onclick="transformarEstudo('libras')">
+                    Traduzir para Libras
+                </button>
+                
+                <button onclick="transformarEstudo('resumo')">
+                    Fazer resumo
+                </button>
+
+            </div>
+
+        </section>
+
+
+    <!-- CONTEÚDOS -->
+    <section id="materias">
+
+        <h2>Conteúdos de Matemática</h2>
+
+        <p class="section-description">
+            Escolha um assunto para começar seus estudos.
+        </p>
+
+        <div class="cards-grid">
+
+            <a href="#operacoes" class="card">
+                <h3>Operações básicas</h3>
+                <p>Aprenda adição, subtração, multiplicação e divisão.</p>
+                <button onclick="mostrar('Operações básicas')">Estudar</button>
+            </a>
+
+            <a href="#fracoes" class="card">
+                <h3>Frações</h3>
+                <p>Aprenda a representar, comparar e realizar operações com frações.</p>
+                <button onclick="mostrar('Frações')">Estudar</button>
+            </a>
+
+            <a href="#potenciacao" class="card">
+                <h3>Potenciação</h3>
+                <p>Entenda potências, propriedades e suas aplicações.</p>
+                <button onclick="mostrar('Potenciação')">Estudar</button>
+            </a>
+
+            <a href="#radiciacao" class="card">
+                <h3>Radiciação</h3>
+                <p>Aprenda raízes quadradas, cúbicas e suas propriedades.</p>
+                 <button onclick="mostrar('Radiciação')">Estudar</button>
+            </a>
+
+            <a href="#razao" class="card">
+                <h3>Razão e proporção</h3>
+                <p>Entenda relações entre grandezas e proporções.</p>
+                <button onclick="mostrar('Razão e proporção')">Estudar</button>
+            </a>
+
+            <a href="#porcentagem" class="card">
+                <h3>Porcentagem</h3>
+                <p>Aprenda a calcular descontos, aumentos e porcentagens.</p>
+                 <button onclick="mostrar('Porcentagem')">Estudar</button>
+            </a>
+
+            <a href="#regra-tres" class="card">
+                <h3>Regra de três</h3>
+                <p>Resolva problemas envolvendo grandezas proporcionais.</p>
+                 <button onclick="mostrar('Regra de três')">Estudar</button>
+            </a>
+
+            <a href="#equacoes" class="card">
+                <h3>Equações</h3>
+                <p>Aprenda a encontrar valores desconhecidos em equações.</p>
+                <button onclick="mostrar('Equações')">Estudar</button>
+            </a>
+
+            <a href="#sistemas" class="card">
+                <h3>Sistemas</h3>
+                <p>Resolva sistemas de equações com duas ou mais incógnitas.</p>
+                <button onclick="mostrar('Sistemas')">Estudar</button>
+            </a>
+
+            <a href="#funcoes" class="card">
+                <h3>Funções</h3>
+                <p>Entenda relações entre variáveis e representação gráfica.</p>
+                <button onclick="mostrar('Funções')">Estudar</button>
+            </a>
+
+            <a href="#geometria" class="card">
+                <h3>Geometria</h3>
+                <p>Conheça conceitos de figuras, ângulos e formas geométricas.</p>
+                <button onclick="mostrar('Geometria')">Estudar</button>
+            </a>
+
+            <a href="#areas" class="card">
+                <h3>Áreas e perímetros</h3>
+                <p>Aprenda a calcular área e perímetro de diferentes figuras.</p>
+                 <button onclick="mostrar('Áreas e perímetros')">Estudar</button>
+            </a>
+
+            <a href="#estatistica" class="card">
+                <h3>Estatística</h3>
+                <p>Aprenda média, mediana, moda e interpretação de dados.</p>
+                 <button onclick="mostrar('Estatística')">Estudar</button>
+            </a>
+
+            <a href="#probabilidade" class="card">
+                <h3>Probabilidade</h3>
+                <p>Entenda as chances de ocorrência de determinados eventos.</p>
+                 <button onclick="mostrar('Probabilidade')">Estudar</button>
+            </a>
+
+            <a href="#pitagoras" class="card">
+                <h3>Teorema de Pitágoras</h3>
+                <p>Aprenda a relação entre os lados de um triângulo retângulo.</p>
+                <button onclick="mostrar('Teorema de Pitágoras')">Estudar</button>
+            </a>
+
+            <a href="#mmc-mdc" class="card">
+                <h3>MMC e MDC</h3>
+                <p>Aprenda mínimo múltiplo comum e máximo divisor comum.</p>
+                <button onclick="mostrar('MMC e MDC')">Estudar</button>
+            </a>
+
+            <a href="#numeros" class="card">
+                <h3>Conjuntos numéricos</h3>
+                <p>Conheça números naturais, inteiros, racionais e reais.</p>
+                 <button onclick="mostrar('Conjuntos numéricos')">Estudar</button>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- OPERAÇÕES -->
+    <section id="operacoes" class="study-section">
+
+        <h2>Operações básicas</h2>
+
+        <p>
+            As quatro operações fundamentais da Matemática são adição,
+            subtração, multiplicação e divisão.
+        </p>
+
+        <div class="example">
+
+            <strong>Adição:</strong>
+            <p>25 + 15 = 40</p>
+
+            <strong>Subtração:</strong>
+            <p>50 - 20 = 30</p>
+
+            <strong>Multiplicação:</strong>
+            <p>8 × 5 = 40</p>
+
+            <strong>Divisão:</strong>
+            <p>40 ÷ 8 = 5</p>
+
+        </div>
+
+        <p>
+            A ordem das operações também é importante. Em expressões
+            matemáticas, normalmente resolvemos primeiro os parênteses,
+            depois potências e raízes, multiplicações e divisões e,
+            por último, adições e subtrações.
+        </p>
+
+    </section>
+
+
+    <!-- FRAÇÕES -->
+    <section id="fracoes" class="study-section">
+
+        <h2>Frações</h2>
+
+        <p>
+            Frações representam partes de um todo. O número de cima é o
+            numerador e o número de baixo é o denominador.
+        </p>
+
+        <div class="example">
+
+            <p>1/2 = uma metade</p>
+            <p>3/4 = três quartos</p>
+            <p>2/5 = dois quintos</p>
+
+            <strong>Exemplo de adição:</strong>
+
+            <p>
+                1/4 + 2/4 = 3/4
+            </p>
+
+        </div>
+
+        <p>
+            Para somar ou subtrair frações com o mesmo denominador,
+            mantemos o denominador e realizamos a operação nos numeradores.
+        </p>
+
+    </section>
+
+
+    <!-- POTENCIAÇÃO -->
+    <section id="potenciacao" class="study-section">
+
+        <h2>Potenciação</h2>
+
+        <p>
+            Potenciação é uma forma de representar multiplicações
+            repetidas de um mesmo número.
+        </p>
+
+        <div class="example">
+
+            <p>2² = 2 × 2 = 4</p>
+
+            <p>3³ = 3 × 3 × 3 = 27</p>
+
+            <p>5² = 25</p>
+
+            <strong>Elementos:</strong>
+
+            <p>
+                Em 2³, o 2 é a base e o 3 é o expoente.
+            </p>
+
+        </div>
+
+        <p>
+            Todo número diferente de zero elevado a zero é igual a 1.
+        </p>
+
+        <p>
+            Exemplo: 7⁰ = 1.
+        </p>
+
+    </section>
+
+
+    <!-- RADICIAÇÃO -->
+    <section id="radiciacao" class="study-section">
+
+        <h2>Radiciação</h2>
+
+        <p>
+            A radiciação é a operação inversa da potenciação.
+        </p>
+
+        <div class="example">
+
+            <p>√25 = 5</p>
+
+            <p>√36 = 6</p>
+
+            <p>√49 = 7</p>
+
+            <p>∛27 = 3</p>
+
+        </div>
+
+        <p>
+            A raiz quadrada de um número é o valor que, multiplicado
+            por ele mesmo, produz o número original.
+        </p>
+
+    </section>
+
+
+    <!-- RAZÃO E PROPORÇÃO -->
+    <section id="razao" class="study-section">
+
+        <h2>Razão e proporção</h2>
+
+        <p>
+            Razão é a comparação entre duas grandezas por meio de uma divisão.
+        </p>
+
+        <div class="example">
+
+            <p>
+                Se uma turma possui 10 meninas e 5 meninos,
+                a razão entre meninas e meninos é:
+            </p>
+
+            <p>10/5 = 2</p>
+
+            <strong>Proporção:</strong>
+
+            <p>
+                2/4 = 3/6
+            </p>
+
+        </div>
+
+        <p>
+            Em uma proporção, duas razões possuem o mesmo valor.
+        </p>
+
+    </section>
+
+
+    <!-- PORCENTAGEM -->
+    <section id="porcentagem" class="study-section">
+
+        <h2>Porcentagem</h2>
+
+        <p>
+            Porcentagem representa uma parte de 100 e é indicada pelo
+            símbolo %.
+        </p>
+
+        <div class="example">
+
+            <strong>Exemplos:</strong>
+
+            <p>10% = 10/100 = 0,10</p>
+
+            <p>25% = 25/100 = 0,25</p>
+
+            <p>50% = 50/100 = 0,50</p>
+
+            <strong>Exemplo prático:</strong>
+
+            <p>
+                20% de 200 = 40
+            </p>
+
+        </div>
+
+        <p>
+            A porcentagem é muito utilizada em descontos, aumentos,
+            juros e situações do cotidiano.
+        </p>
+
+    </section>
+
+
+    <!-- REGRA DE TRÊS -->
+    <section id="regra-tres" class="study-section">
+
+        <h2>Regra de três</h2>
+
+        <p>
+            A regra de três pode ser utilizada para descobrir um valor
+            desconhecido quando existe uma relação de proporcionalidade
+            entre grandezas.
+        </p>
+
+        <div class="example">
+
+            <p>
+                Se 2 cadernos custam R$ 20, quanto custam 5 cadernos?
+            </p>
+
+            <p>
+                2 → 20
+            </p>
+
+            <p>
+                5 → x
+            </p>
+
+            <p>
+                2x = 100
+            </p>
+
+            <p>
+                x = 50
+            </p>
+
+            <strong>Resposta: R$ 50.</strong>
+
+        </div>
+
+    </section>
+
+
+    <!-- EQUAÇÕES -->
+    <section id="equacoes" class="study-section">
+
+        <h2>Equações</h2>
+
+        <p>
+            Uma equação é uma igualdade que possui uma ou mais incógnitas.
+            O objetivo é descobrir o valor que torna a igualdade verdadeira.
+        </p>
+
+        <div class="example">
+
+            <strong>Exemplo:</strong>
+
+            <p>
+                x + 5 = 12
+            </p>
+
+            <p>
+                x = 12 - 5
+            </p>
+
+            <p>
+                x = 7
+            </p>
+
+        </div>
+
+        <strong>Equação do segundo grau:</strong>
+
+        <p>
+            Uma equação do segundo grau pode ser escrita na forma:
+        </p>
+
+        <div class="example">
+
+            <p>
+                ax² + bx + c = 0
+            </p>
+
+            <p>
+                com a ≠ 0.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- SISTEMAS -->
+    <section id="sistemas" class="study-section">
+
+        <h2>Sistemas de equações</h2>
+
+        <p>
+            Um sistema de equações é formado por duas ou mais equações
+            que possuem incógnitas em comum.
+        </p>
+
+        <div class="example">
+
+            <strong>Exemplo:</strong>
+
+            <p>
+                x + y = 10
+            </p>
+
+            <p>
+                x - y = 2
+            </p>
+
+            <p>
+                Somando as duas equações:
+            </p>
+
+            <p>
+                2x = 12
+            </p>
+
+            <p>
+                x = 6
+            </p>
+
+            <p>
+                y = 4
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- FUNÇÕES -->
+    <section id="funcoes" class="study-section">
+
+        <h2>Funções</h2>
+
+        <p>
+            Uma função relaciona valores de uma variável com valores
+            correspondentes de outra variável.
+        </p>
+
+        <div class="example">
+
+            <strong>Função do primeiro grau:</strong>
+
+            <p>
+                f(x) = ax + b
+            </p>
+
+            <p>
+                Exemplo:
+            </p>
+
+            <p>
+                f(x) = 2x + 1
+            </p>
+
+            <p>
+                Se x = 3:
+            </p>
+
+            <p>
+                f(3) = 2 × 3 + 1 = 7
+            </p>
+
+        </div>
+
+        <p>
+            O gráfico de uma função do primeiro grau é uma reta.
+        </p>
+
+    </section>
+
+
+    <!-- GEOMETRIA -->
+    <section id="geometria" class="study-section">
+
+        <h2>Geometria</h2>
+
+        <p>
+            A Geometria estuda formas, tamanhos, posições e propriedades
+            de figuras no plano e no espaço.
+        </p>
+
+        <div class="example">
+
+            <strong>Principais figuras planas:</strong>
+
+            <p>Triângulo</p>
+            <p>Quadrado</p>
+            <p>Retângulo</p>
+            <p>Círculo</p>
+            <p>Losango</p>
+            <p>Trapézio</p>
+
+            <strong>Elementos importantes:</strong>
+
+            <p>Vértices</p>
+            <p>Lados</p>
+            <p>Ângulos</p>
+            <p>Diagonais</p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ÁREAS -->
+    <section id="areas" class="study-section">
+
+        <h2>Áreas e perímetros</h2>
+
+        <p>
+            O perímetro corresponde à medida do contorno de uma figura.
+            A área representa a medida da superfície ocupada.
+        </p>
+
+        <div class="example">
+
+            <strong>Quadrado:</strong>
+
+            <p>
+                Área = lado × lado
+            </p>
+
+            <p>
+                Perímetro = 4 × lado
+            </p>
+
+            <strong>Retângulo:</strong>
+
+            <p>
+                Área = base × altura
+            </p>
+
+            <p>
+                Perímetro = 2 × (base + altura)
+            </p>
+
+            <strong>Triângulo:</strong>
+
+            <p>
+                Área = (base × altura) / 2
+            </p>
+
+            <strong>Círculo:</strong>
+
+            <p>
+                Área = π × r²
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ESTATÍSTICA -->
+    <section id="estatistica" class="study-section">
+
+        <h2>Estatística</h2>
+
+        <p>
+            A Estatística trabalha com coleta, organização,
+            análise e interpretação de dados.
+        </p>
+
+        <div class="example">
+
+            <strong>Média aritmética:</strong>
+
+            <p>
+                Soma dos valores ÷ quantidade de valores.
+            </p>
+
+            <p>
+                Exemplo:
+            </p>
+
+            <p>
+                6 + 8 + 10 = 24
+            </p>
+
+            <p>
+                24 ÷ 3 = 8
+            </p>
+
+            <strong>Média = 8.</strong>
+
+            <p>
+                Moda é o valor que aparece com maior frequência.
+            </p>
+
+            <p>
+                Mediana é o valor central de uma sequência ordenada.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROBABILIDADE -->
+    <section id="probabilidade" class="study-section">
+
+        <h2>Probabilidade</h2>
+
+        <p>
+            Probabilidade representa a chance de determinado evento acontecer.
+        </p>
+
+        <div class="example">
+
+            <p>
+                Probabilidade =
+                número de casos favoráveis /
+                número de casos possíveis
+            </p>
+
+            <strong>Exemplo:</strong>
+
+            <p>
+                Ao lançar uma moeda, existem 2 resultados possíveis:
+                cara ou coroa.
+            </p>
+
+            <p>
+                A probabilidade de sair cara é:
+            </p>
+
+            <p>
+                1/2 = 50%
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- PITÁGORAS -->
+    <section id="pitagoras" class="study-section">
+
+        <h2>Teorema de Pitágoras</h2>
+
+        <p>
+            O Teorema de Pitágoras é utilizado em triângulos retângulos.
+            Ele relaciona os comprimentos dos dois catetos e da hipotenusa.
+        </p>
+
+        <div class="example">
+
+            <strong>Fórmula:</strong>
+
+            <p>
+                a² = b² + c²
+            </p>
+
+            <strong>Exemplo:</strong>
+
+            <p>
+                Se os catetos medem 3 e 4:
+            </p>
+
+            <p>
+                a² = 3² + 4²
+            </p>
+
+            <p>
+                a² = 9 + 16
+            </p>
+
+            <p>
+                a² = 25
+            </p>
+
+            <p>
+                a = 5
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- MMC E MDC -->
+    <section id="mmc-mdc" class="study-section">
+
+        <h2>MMC e MDC</h2>
+
+        <p>
+            MMC significa Mínimo Múltiplo Comum. É o menor múltiplo
+            positivo comum entre dois ou mais números.
+        </p>
+
+        <div class="example">
+
+            <strong>Exemplo de MMC:</strong>
+
+            <p>
+                Múltiplos de 4: 4, 8, 12, 16...
+            </p>
+
+            <p>
+                Múltiplos de 6: 6, 12, 18...
+            </p>
+
+            <p>
+                MMC(4,6) = 12
+            </p>
+
+        </div>
+
+        <p>
+            MDC significa Máximo Divisor Comum. É o maior número
+            que divide dois ou mais números sem deixar resto.
+        </p>
+
+        <div class="example">
+
+            <p>
+                MDC(12,18) = 6
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONJUNTOS NUMÉRICOS -->
+    <section id="numeros" class="study-section">
+
+        <h2>Conjuntos numéricos</h2>
+
+        <p>
+            Os números podem ser organizados em diferentes conjuntos.
+        </p>
+
+        <div class="example">
+
+            <strong>Números naturais (N):</strong>
+
+            <p>
+                0, 1, 2, 3, 4, 5...
+            </p>
+
+            <strong>Números inteiros (Z):</strong>
+
+            <p>
+                ..., -3, -2, -1, 0, 1, 2, 3...
+            </p>
+
+            <strong>Números racionais (Q):</strong>
+
+            <p>
+                Podem ser representados por uma fração de dois números inteiros.
+            </p>
+
+            <p>
+                Exemplos: 1/2, 3/4, -2, 0,5.
+            </p>
+
+            <strong>Números reais (R):</strong>
+
+            <p>
+                Incluem os números racionais e irracionais.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- QUIZ -->
+    <section id="quiz" class="quiz-section">
+
+        <h2>Quiz de Matemática</h2>
+
+        <p>
+            Teste seus conhecimentos respondendo às 10 questões.
+        </p>
+
+
+        <!-- QUESTÃO 1 -->
+        <div class="question">
+
+            <h3>1. Quanto é 25 + 37?</h3>
+
+            <label>
+                <input type="radio" name="q1" value="a">
+                a) 52
+            </label>
+
+            <label>
+                <input type="radio" name="q1" value="b">
+                b) 62
+            </label>
+
+            <label>
+                <input type="radio" name="q1" value="c">
+                c) 72
+            </label>
+
+            <label>
+                <input type="radio" name="q1" value="d">
+                d) 82
+            </label>
+
+        </div>
+
+
+        <!-- QUESTÃO 2 -->
+        <div class="question">
+
+            <h3>2. Qual é o resultado de 8 × 7?</h3>
+
+            <label>
+                <input type="radio" name="q2" value="a">
+                a) 54
+            </label>
+
+            <label>
+                <input type="radio" name="q2" value="b">
+                b) 56
+            </label>
+
+            <label>
+                <input type="radio" name="q2" value="c">
+                c) 64
+            </label>
+
+            <label>
+                <input type="radio" name="q2" value="d">
+                d) 48
+            </label>
+
+        </div>
+
+
+        <!-- QUESTÃO 3 -->
+        <div class="question">
+
+            <h3>3. Quanto é 50% de 200?</h3>
+
+            <label>
+                <input type="radio" name="q3" value="a">
+                a) 50
+            </label>
+
+            <label>
+                <input type="radio" name="q3" value="b">
+                b) 75
+            </label>
+
+            <label>
+                <input type="radio" name="q3" value="c">
+                c) 100
+            </label>
+
+            <label>
+                <input type="radio" name="q3" value="d">
+                d) 150
+            </label>
+
+        </div>
+
+
+        <!-- QUESTÃO 4 -->
+        <div class="question">
+
+            <h3>4. Qual é o resultado de 3²?</h3>
+
+            <label>
+                <input type="radio" name="q4" value="a">
+                a) 6
+            </label>
+
+            <label>
+                <input type="radio" name="q4" value="b">
+                b) 9
+            </label>
+
+            <label>
+                <input type="radio" name="q4" value="c">
+                c) 12
+            </label>
+
+            <label>
+                <input type="radio" name="q4" value="d">
+                d) 15
+            </label>
+
+        </div>
+
+
+        <!-- QUESTÃO 5 -->
+        <div class="question">
+
+            <h3>5. Qual é a raiz quadrada de 81?</h3>
+
+            <label>
+                <input type="radio" name="q5" value="a">
+                a) 7
+            </label>
+
+            <label>
+                <input type="radio" name="q5" value="b">
+                b) 8
+            </label>
+
+            <label>
+                <input type="radio" name="q5" value="c">
+                c) 9
+            </label>
+
+            <label>
+                <input type="radio" name="q5" value="d">
+                d) 10
+            </label>
+
+        </div>
+
+
+        <!-- QUESTÃO 6 -->
+        <div class="question">
+
+            <h3>6. Resolva: x + 8 = 15</h3>
+
+            <label>
+                <input type="radio" name="q6" value="a">
+                a) x = 5
+            </label>
+
+            <label>
+                <input type="radio" name="q6" value="b">
+                b) x = 6
+            </label>
+
+            <label>
+                <input type="radio" name="q6" value="c">
+                x = 7
+            </label>
+
+            <label>
+                <input type="radio" name="q6" value="d">
+                x = 8
+            </label>
+
+        </div>
+
+
+        <!-- QUESTÃO 7 -->
+        <div class="question">
+
+            <h3>7. Qual é a área de um quadrado com lado 5 cm?</h3>
+
+            <label>
+                <input type="radio" name="q7" value="a">
+                a) 10 cm²
+            </label>
+
+            <label>
+                <input type="radio" name="q7" value="b">
+                b) 20 cm²
+            </label>
+
+            <label>
+                <input type="radio" name="q7" value="c">
+                c) 25 cm²
+            </label>
+
+            <label>
+                <input type="radio" name="q7" value="d">
+                d) 30 cm²
+            </label>
+
+        </div>
+
+
+        <!-- QUESTÃO 8 -->
+        <div class="question">
+
+            <h3>8. Qual é o MMC de 4 e 6?</h3>
+
+            <label>
+                <input type="radio" name="q8" value="a">
+                a) 8
+            </label>
+
+            <label>
+                <input type="radio" name="q8" value="b">
+                b) 10
+            </label>
+
+            <label>
+                <input type="radio" name="q8" value="c">
+                c) 12
+            </label>
+
+            <label>
+                <input type="radio" name="q8" value="d">
+                d) 24
+            </label>
+
+        </div>
+
+
+        <!-- QUESTÃO 9 -->
+        <div class="question">
+
+            <h3>9. Qual é a média de 6, 8 e 10?</h3>
+
+            <label>
+                <input type="radio" name="q9" value="a">
+                a) 6
+            </label>
+
+            <label>
+                <input type="radio" name="q9" value="b">
+                b) 7
+            </label>
+
+            <label>
+                <input type="radio" name="q9" value="c">
+                c) 8
+            </label>
+
+            <label>
+                <input type="radio" name="q9" value="d">
+                d) 9
+            </label>
+
+        </div>
+
+
+        <!-- QUESTÃO 10 -->
+        <div class="question">
+
+            <h3>10. Em um triângulo retângulo com catetos 3 e 4, qual é a hipotenusa?</h3>
+
+            <label>
+                <input type="radio" name="q10" value="a">
+                a) 5
+            </label>
+
+            <label>
+                <input type="radio" name="q10" value="b">
+                b) 6
+            </label>
+
+            <label>
+                <input type="radio" name="q10" value="c">
+                c) 7
+            </label>
+
+            <label>
+                <input type="radio" name="q10" value="d">
+                d) 8
+            </label>
+
+        </div>
+
+
+        <button class="quiz-button" onclick="corrigirQuiz()">
+            Corrigir Quiz
+        </button>
+
+        <div id="resultado" class="resultado"></div>
+
+    </section>
+
+
+    <footer>
+        <p>Educaí • Aprender transforma.</p>
+    </footer>
+
+</main>
+
+
+<!-- JAVASCRIPT -->
+<script src="traduzirlibras.js"></script>
+
+<script>
+
+    function voltarEducai() {
+        window.location.href = "index.html";
+    }
+
+
+    function alternarTema() {
+        document.body.classList.toggle("dark-mode");
+    }
+
+
+    function mostrar(id) {
+
+        const elemento = document.getElementById(id);
+
+        if (elemento) {
+
+            elemento.scrollIntoView({
+                behavior: "smooth"
+            });
+
+        }
+
+    }
+
+
+    function corrigirQuiz() {
+
+        const respostas = {
+
+            q1: "b",
+            q2: "b",
+            q3: "c",
+            q4: "b",
+            q5: "c",
+            q6: "c",
+            q7: "c",
+            q8: "c",
+            q9: "c",
+            q10: "a"
+
+        };
+
+        let acertos = 0;
+
+        for (let questao in respostas) {
+
+            const respostaSelecionada =
+                document.querySelector(
+                    `input[name="${questao}"]:checked`
+                );
+
+            if (
+                respostaSelecionada &&
+                respostaSelecionada.value === respostas[questao]
+            ) {
+
+                acertos++;
+
+            }
+
+        }
+
+
+        const resultado = document.getElementById("resultado");
+
+        resultado.innerHTML =
+            `<strong>Você acertou ${acertos}/10 questões!</strong>`;
+
+
+        if (acertos === 10) {
+
+            resultado.innerHTML +=
+                "<p>Excelente! Você domina muito bem esse conteúdo.</p>";
+
+        } else if (acertos >= 7) {
+
+            resultado.innerHTML +=
+                "<p>Muito bom! Você já possui um ótimo conhecimento.</p>";
+
+        } else if (acertos >= 5) {
+
+            resultado.innerHTML +=
+                "<p>Bom trabalho! Continue estudando para melhorar ainda mais.</p>";
+
+        } else {
+
+            resultado.innerHTML +=
+                "<p>Continue estudando. Você pode tentar novamente!</p>";
+
+        }
+
+    }
+
+
+    function aumentarProgresso() {
+
+        const barra = document.getElementById("barra");
+        const porcentagem = document.getElementById("porcentagem");
+
+        if (barra && porcentagem) {
+
+            let valor = parseInt(barra.value);
+
+            if (valor < 100) {
+
+                valor += 10;
+
+                barra.value = valor;
+                porcentagem.textContent = valor + "%";
+
+            }
+
+        }
+
+    }
+
+</script>
+
+<script src="JavaScript/traduzirlibras.js"></script>
+
+<script src="JavaScript/TransformeEstudos.js"></script>
+<script src="JavaScript/daltonismo.js"></script>
+
+    <svg width="0" height="0" style="position:absolute">
+        <filter id="filtro-protanopia">
+            <feColorMatrix
+                type="matrix"
+                values="
+                0.567 0.433 0     0 0
+                0.558 0.442 0     0 0
+                0     0.242 0.758 0 0
+                0     0     0     1 0">
+            </feColorMatrix>
+        </filter>
+    </svg>
+
+    <svg width="0" height="0" style="position:absolute">
+        <filter id="filtro-deuteranopia">
+            <feColorMatrix type="matrix" values="0.625 0.375 0     0 0
+                                            0.700 0.300 0     0 0
+                                            0     0.300 0.700 0 0
+                                            0     0     0     1 0" />
+        </filter>
+    </svg>
+
+    <svg width="0" height="0" style="position:absolute">
+        <filter id="filtro-tritanopia">
+            <feColorMatrix type="matrix" values="0.950  0.050  0.000  0  0
+        0.000  0.433  0.567  0  0
+        0.000  0.475  0.525  0  0
+        0.000  0.000  0.000  1  0" />
+        </filter>
+    </svg>
+
+</body>
+
+</html>

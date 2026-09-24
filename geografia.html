@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="css/geografia.css">
+    <link rel="stylesheet" href="css/TransformeEstudos.css">
     <link rel="icon" href="img/flavicon.png">
 
     <title>Geografia - Educaí</title>
@@ -25,10 +26,8 @@
 
         <nav class="menu">
 
-            <a href="#inicio">Início</a>
             <a href="#transformar">Transforme meu estudo</a>
             <a href="#materias">Conteúdos</a>
-
             <a href="#cartografia">Cartografia</a>
             <a href="#relevo">Relevo</a>
             <a href="#clima">Clima</a>
@@ -83,14 +82,21 @@
             <h2>Transforme meu estudo</h2>
 
             <p>
-                Escolha uma forma de estudar o conteúdo de Geografia.
+                Escolha uma forma de estudar o conteúdo de Inglês.
             </p>
 
-            <input type="file" id="arquivo" class="arquivo">
-
+            <input 
+                type="file" 
+                id="arquivoEstudo" 
+                onchange="arquivoSelecionado()"
+            >
             <textarea
                 id="textoEstudo"
-                placeholder="Digite ou cole aqui um conteúdo para estudar..."></textarea>
+                placeholder="Digite ou cole aqui um conteúdo para estudar..." oninput="textoDigitado()"></textarea>
+
+            <button id="btnLimparMaterial" onclick="btnLimparMaterial()">
+                Limpar conteúdo
+            </button>
 
             <div class="transform-options">
 
@@ -102,25 +108,11 @@
                     Traduzir para Libras
                 </button>
 
-                <button onclick="transformarEstudo('mapa')">
-                    Criar mapa mental
-                </button>
-
-                <button onclick="transformarEstudo('simples')">
-                    Explicar de forma simples
-                </button>
-
-                <button onclick="transformarEstudo('exercicios')">
-                    Criar exercícios
-                </button>
-
                 <button onclick="transformarEstudo('resumo')">
                     Fazer resumo
                 </button>
 
             </div>
-
-            <div id="resultadoTransforme" class="transform-result"></div>
 
         </section>
 
@@ -998,6 +990,38 @@
 
 <script src="JavaScript/TransformeEstudos.js"></script>
 <script src="JavaScript/daltonismo.js"></script>
+
+
+    <svg width="0" height="0" style="position:absolute">
+        <filter id="filtro-protanopia">
+            <feColorMatrix
+                type="matrix"
+                values="
+                0.567 0.433 0     0 0
+                0.558 0.442 0     0 0
+                0     0.242 0.758 0 0
+                0     0     0     1 0">
+            </feColorMatrix>
+        </filter>
+    </svg>
+
+    <svg width="0" height="0" style="position:absolute">
+        <filter id="filtro-deuteranopia">
+            <feColorMatrix type="matrix" values="0.625 0.375 0     0 0
+                                            0.700 0.300 0     0 0
+                                            0     0.300 0.700 0 0
+                                            0     0     0     1 0" />
+        </filter>
+    </svg>
+
+    <svg width="0" height="0" style="position:absolute">
+        <filter id="filtro-tritanopia">
+            <feColorMatrix type="matrix" values="0.950  0.050  0.000  0  0
+        0.000  0.433  0.567  0  0
+        0.000  0.475  0.525  0  0
+        0.000  0.000  0.000  1  0" />
+        </filter>
+    </svg>
 
 </body>
 

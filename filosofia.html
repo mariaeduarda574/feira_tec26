@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="css/filosofia.css">
+    <link rel="stylesheet" href="css/TransformeEstudos.css">
     <link rel="icon" type="image/png" href="img/flavicon.png">
 
     <title>Filosofia - Educaí</title>
@@ -26,7 +27,6 @@
 
         <nav class="menu">
 
-            <a href="#inicio">Início</a>
             <a href="#transformar">Transforme meu estudo</a>
             <a href="#materias">Conteúdos</a>
             <a href="#introducao">Introdução à Filosofia</a>
@@ -101,18 +101,6 @@
 
                 <button onclick="transformarEstudo('libras')">
                     Traduzir para Libras
-                </button>
-
-                <button onclick="transformarEstudo('mapa')">
-                    Criar mapa mental
-                </button>
-
-                <button onclick="transformarEstudo('simples')">
-                    Explicar de forma simples
-                </button>
-
-                <button onclick="transformarEstudo('exercicios')">
-                    Criar exercícios
                 </button>
 
                 <button onclick="transformarEstudo('resumo')">
@@ -853,9 +841,6 @@
     </main>
 
 
-    <!-- JAVASCRIPT -->
-    <script src="traduzirlibras.js"></script>
-
     <script>
 
         function voltarEducai() {
@@ -976,8 +961,11 @@
 
     </script>
 
-    <script src="traduzirlibras.js"></script>
+    <script src="JavaScript/traduzirlibras.js"></script>
+
+    <script src="JavaScript/TransformeEstudos.js"></script>
     <script src="JavaScript/daltonismo.js"></script>
+
 
     <svg width="0" height="0" style="position:absolute">
         <filter id="filtro-protanopia">

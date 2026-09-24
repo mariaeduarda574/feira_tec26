@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f5edff, #ffeef8);
+    padding: 40px 20px;
+}
+
+.pagina-resumo {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+}
+
+.cabecalho-resumo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.cabecalho-resumo span {
+    color: #8b4bb5;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.cabecalho-resumo h1 {
+    margin: 10px 0;
+    color: #4d2368;
+    font-size: 38px;
+}
+
+.cabecalho-resumo p {
+    color: #666;
+    font-size: 16px;
+}
+
+.material-original,
+.area-resumo {
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 25px rgba(80, 30, 100, 0.12);
+}
+
+.material-original h2,
+.area-resumo h2 {
+    color: #5b2878;
+    margin-bottom: 15px;
+}
+
+#conteudoOriginal {
+    background: #faf7fc;
+    padding: 20px;
+    border-radius: 15px;
+    color: #444;
+    line-height: 1.7;
+    white-space: pre-line;
+    max-height: 350px;
+    overflow-y: auto;
+}
+
+.btn-gerar {
+    width: 100%;
+    border: none;
+    padding: 16px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #7b2cbf, #c04b9b);
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-bottom: 25px;
+}
+
+.btn-gerar:hover {
+    transform: translateY(-2px);
+}
+
+#textoResumo {
+    background: #faf7fc;
+    padding: 20px;
+    border-radius: 15px;
+    color: #333;
+    line-height: 1.8;
+    white-space: pre-line;
+}
+
+.botoes-resumo {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.botoes-resumo button {
+    flex: 1;
+    border: none;
+    padding: 13px;
+    border-radius: 12px;
+    background: #eee2f5;
+    color: #5b2878;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.botoes-resumo button:hover {
+    background: #dfc9eb;
+}
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 25px 15px;
+    }
+
+    .cabecalho-resumo h1 {
+        font-size: 30px;
+    }
+
+    .botoes-resumo {
+        flex-direction: column;
+    }
+}
+
+body.protanopia{
+    filter: url("#filtro-protanopia");
+}
+
+body.deuteranopia{
+    filter: url("#filtro-deuteranopia");
+}
+
+body.tritanopia{
+    filter: url("#filtro-tritanopia");
+}
+
+body.acromatopsia{
+    filter: grayscale(100%);
+}

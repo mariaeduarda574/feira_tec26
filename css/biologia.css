@@ -722,18 +722,18 @@ footer {
     }
 }
 
-body.protanopia #conteudo-principal {
+body.protanopia{
     filter: url("#filtro-protanopia");
 }
 
-body.deuteranopia #conteudo-principal {
+body.deuteranopia{
     filter: url("#filtro-deuteranopia");
 }
 
-body.tritanopia #conteudo-principal {
+body.tritanopia{
     filter: url("#filtro-tritanopia");
 }
 
-body.acromatopsia #conteudo-principal {
+body.acromatopsia{
     filter: grayscale(100%);
 }

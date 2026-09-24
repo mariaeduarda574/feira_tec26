@@ -723,18 +723,34 @@ footer {
 }
 
 
-body.protanopia #conteudo-principal {
+body.protanopia .sidebar {
     filter: url("#filtro-protanopia");
 }
 
-body.deuteranopia #conteudo-principal {
+body.deuteranopia .sidebar {
     filter: url("#filtro-deuteranopia");
 }
 
-body.tritanopia #conteudo-principal {
+body.tritanopia .sidebar {
     filter: url("#filtro-tritanopia");
 }
 
-body.acromatopsia #conteudo-principal {
+body.acromatopsia .sidebar {
+    filter: grayscale(100%);
+}
+
+body.protanopia .main-content {
+    filter: url("#filtro-protanopia");
+}
+
+body.deuteranopia .main-content {
+    filter: url("#filtro-deuteranopia");
+}
+
+body.tritanopia .main-content {
+    filter: url("#filtro-tritanopia");
+}
+
+body.acromatopsia .main-content {
     filter: grayscale(100%);
 }

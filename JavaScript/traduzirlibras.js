@@ -156,7 +156,8 @@ function carregarScript(src) {
 
 async function obterConteudoEstudo() {
     const inputArquivo =
-        document.getElementById("arquivoEstudo");
+        document.getElementById("arquivoEstudo") ||
+        document.getElementById("arquivo");
 
     const textarea =
         document.getElementById("textoEstudo");
@@ -272,3 +273,79 @@ function escaparHTML(texto) {
 
     return div.innerHTML;
 }
+
+/*
+ * Correção do botão de Libras:
+ * algumas páginas antigas do projeto possuem sua própria função
+ * transformarEstudo(), então interceptamos apenas o clique do botão
+ * de Libras antes do onclick dessas páginas.
+ */
+(function instalarBotaoLibrasEducaI() {
+    if (window.__educaiLibrasFixInstalado) return;
+    window.__educaiLibrasFixInstalado = true;
+
+    async function executarLibras() {
+        try {
+            const inputArquivo =
+                document.getElementById("arquivoEstudo") ||
+                document.getElementById("arquivo");
+            const textarea = document.getElementById("textoEstudo");
+
+            let conteudo = "";
+            let nomeArquivo = "Conteúdo enviado";
+
+            if (inputArquivo && inputArquivo.files && inputArquivo.files.length) {
+                arquivoEstudoAtual = inputArquivo.files[0];
+                nomeArquivo = arquivoEstudoAtual.name;
+
+                mostrarResultadoTransforme(
+                    "📖 Lendo o arquivo para preparar a tradução em Libras...",
+                    "carregando"
+                );
+
+                conteudo = await extrairTextoDoArquivo(arquivoEstudoAtual);
+            } else if (textarea && textarea.value.trim()) {
+                conteudo = textarea.value.trim();
+            }
+
+            if (!conteudo || !conteudo.trim()) {
+                mostrarResultadoTransforme(
+                    "❌ Digite/cole um conteúdo ou selecione um arquivo antes de traduzir para Libras.",
+                    "erro"
+                );
+                return;
+            }
+
+            sessionStorage.setItem("educai_libras_texto", conteudo);
+            sessionStorage.setItem("educai_libras_nome", nomeArquivo);
+
+            window.location.href = "libras.html";
+        } catch (erro) {
+            console.error("Educaí - erro ao preparar Libras:", erro);
+            mostrarResultadoTransforme(
+                "❌ Não foi possível preparar o conteúdo para Libras: " + erro.message,
+                "erro"
+            );
+        }
+    }
+
+    window.__educaiTraduzirLibras = executarLibras;
+
+    document.addEventListener("click", function (evento) {
+        const botao = evento.target.closest("button");
+        if (!botao) return;
+
+        const textoBotao = (botao.textContent || "").trim().toLowerCase();
+        const onclick = botao.getAttribute("onclick") || "";
+
+        if (
+            textoBotao.includes("traduzir para libras") ||
+            onclick.includes("transformarestudo('libras')") ||
+            onclick.includes('transformarestudo("libras")')
+        ) {
+            evento.preventDefault();
+            evento.stopImmediatePropagation();
+            executarLibras();
+        }
+    }, true);
+})();
