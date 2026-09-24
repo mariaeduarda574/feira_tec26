@@ -6,7 +6,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background: #f7f3ff;
+    background: linear-gradient(135deg, #91d8dd, #ffffff);
     color: #333;
     min-height: 100vh;
     display: flex;
@@ -26,7 +26,7 @@ body {
 }
 
 .voz-container h1 {
-    color: #6c4ccf;
+    color: #46c2bc;
     margin-bottom: 10px;
 }
 
@@ -36,8 +36,8 @@ body {
 }
 
 .conteudo-voz {
-    background: #f3efff;
-    border: 2px solid #d8ccff;
+    background: #fffcfc;
+    border: 2px solid #0d5f51;
     border-radius: 15px;
     padding: 20px;
     min-height: 180px;
@@ -68,12 +68,12 @@ body {
 }
 
 .controles-voz button {
-    background: #6c4ccf;
+    background: #46c2bc;
     color: white;
 }
 
 .controles-voz button:hover {
-    background: #5638b5;
+    background: #1d9e98;
     transform: translateY(-2px);
 }
 
@@ -91,19 +91,19 @@ body {
 
 .velocidade select {
     padding: 8px 12px;
-    border: 2px solid #d8ccff;
+    border: 2px solid #ffffff;
     border-radius: 8px;
     background: white;
     cursor: pointer;
 }
 
 .voltar {
-    background: #e8e0ff;
-    color: #5a3db5;
+    background: #ffffff;
+    color: #1d9e98;
 }
 
 .voltar:hover {
-    background: #d8ccff;
+    background: #fdfcff;
 }
 
 @media (max-width: 600px) {
